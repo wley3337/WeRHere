@@ -8,22 +8,18 @@ import './App.css';
 // import PWAshelter from '/icons/PWAshelter.svg'
 
 class App extends Component {
-  handleClick(){
-    console.log('clicked')
-  }
   // A[10; 0] B[0; 0] C[5; 8.66]
-  //equilateral triangle coordinates: A[0; -100] B[-100; -100] C[-50; -14.44]
+  //equilateral triangle coordinates for triangle with 10 unit sides: A[0; -100] B[-100; -100] C[-50; -14.44]
   render() {
     return (
       <div className="App">
         <svg viewBox="0 0 203 173">
-            <g  onClick={()=>{console.log("safety")}}>
+            <g  onClick={()=>{console.log("safety")}} alt="safety">
               <polygon 
                   points="51 86, 151 86, 101 .44" 
                   stroke="#000"
                   strokeWidth=".080rem"
                   fill="#4AD7DC" 
-                  alt="safety"
                 />
               <text 
                 x="82.5" 
@@ -34,12 +30,11 @@ class App extends Component {
               </text>
             </g>
              
-            <g onClick={()=>{console.log("health")}}>
+            <g onClick={()=>{console.log("health")}} alt="health" >
               <polygon 
                 points="51.5 86, 150.5 86, 101 172"
                 stroke="#000"  
                 fill="#AD49BE" 
-                alt="health" 
               />
               <text 
                 x="82" 
@@ -49,13 +44,12 @@ class App extends Component {
                   Health
               </text>
             </g>
-            <g onClick={()=>{console.log("food")}}>
+            <g onClick={()=>{console.log("food")}} alt="food" >
               <polygon 
                 points="1 172.66, 51 86, 101 172.66"
                 stroke="#000" 
                 strokeWidth=".08rem" 
                 fill="#38B981" 
-                alt="food" 
               />
               <text 
                 x="36" 
@@ -65,13 +59,12 @@ class App extends Component {
                   Food
               </text>
           </g>
-          <g onClick={()=>{console.log("shelter")}}>
+          <g onClick={()=>{console.log("shelter")}} alt="shelter" >
               <polygon 
                 points="101 172.66, 151 86, 201 172.66"
                 stroke="#000" 
                 strokeWidth=".08rem" 
                 fill="#FEF445" 
-                alt="shelter" 
               />
               <text 
                 x="131" 
