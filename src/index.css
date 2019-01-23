@@ -16,3 +16,8 @@ code {
 .triangle-logo{
   display: inline-block;
 }
+
+#view-width{
+  width: 100vw;
+  height: 100vh;
+}
