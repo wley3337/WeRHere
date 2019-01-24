@@ -1,0 +1,70 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+
+
+/* ********* Icon Styles ******** */
+
+.icon-text{
+  font-family: "Lato";
+  color: white; 
+  font-size: 15;             
+}
+
+.safety-icon{
+  stroke: #000;
+  stroke-width : .080rem;
+  fill:#4AD7DC; 
+}
+
+.health-icon{
+  stroke: #000;
+  fill:#AD49BE; 
+}
+
+.food-icon{
+  stroke: #000;
+  stroke-width : .080rem;
+  fill:#38B981; 
+}
+.shelter-icon{
+  stroke: #000;
+  stroke-width : .080rem;
+  fill:#FEF445; 
+}
+
+
+/* 1111111 */
+.shelter-icon{
+  stroke: #000;
+  stroke-width : .080rem;
+  fill:#0336ff; 
+}
+
+.health-icon{
+  stroke: #000;
+  fill:#ff0266; 
+}
+
+.food-icon{
+  stroke: #000;
+  stroke-width : .080rem;
+  fill:#04e762; 
+}
+.safety-icon{
+  stroke: #000;
+  stroke-width : .080rem;
+  fill: #ffde03; 
+}
