@@ -6,6 +6,9 @@ import MainMenu from '../components/mainMenu';
 
 //css files
 import '../css/App.css';
+import 'semantic-ui-css/semantic.min.css'
+import { PhoneIcon } from '../icons/PhoneIcon';
+import { SemanticPhoneIcon } from '../icons/SemanticPhoneIcon';
 
 class App extends Component {
   // A[10; 0] B[0; 0] C[5; 8.66]
@@ -14,6 +17,7 @@ class App extends Component {
     return (
       <div className="App">
        <Route exact path="/" render ={() => <MainMenu />}/>
+       <Route exact path="/" render ={() => <SemanticPhoneIcon />}/>
       </div>
     );
   }

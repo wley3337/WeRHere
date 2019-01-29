@@ -28,7 +28,7 @@ const mainMenu= (props) =>{
           <text 
             x="82" 
             y="118"
-            className="icon-text">
+            className="health-icon-text icon-text">
               Health
           </text>
         </g>

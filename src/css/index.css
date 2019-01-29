@@ -17,10 +17,15 @@ code {
 
 /* ********* Icon Styles ******** */
 
+
+  /* note: color for svg text fields is a fill property */
 .icon-text{
   font-family: "Lato";
-  color: white; 
+  fill: black; 
   font-size: 15;             
+}
+.health-icon-text{
+  fill: white
 }
 
 .safety-icon{
@@ -50,12 +55,13 @@ code {
 .shelter-icon{
   stroke: #000;
   stroke-width : .080rem;
-  fill:#0336ff; 
+  fill:#ff0266; 
 }
 
 .health-icon{
   stroke: #000;
-  fill:#ff0266; 
+  text-emphasis-color: white;
+  fill:#0336ff; 
 }
 
 .food-icon{
