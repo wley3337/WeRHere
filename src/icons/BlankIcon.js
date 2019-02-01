@@ -1,10 +1,14 @@
 import React from 'react'
+import { Image } from 'semantic-ui-react'
 
 
 
 export const BlankIcon= () =>{
     return(
-        <img
-        src=""></img>
+        <Image
+        size="tiny"
+        alt=""
+        src=""
+        />
     )
 }

@@ -1,12 +1,13 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import * as actions from '../redux/actions'
+import { Link } from 'react-router-dom'
 
 
-const mainMenu= (props) =>{
+const MainMenu= (props) =>{
     return(
         <svg viewBox="0 0 203 173">
-        <g  onClick={()=>{console.log("safety")}} alt="safety">
+        <Link to="/safety" alt="safety">
           <polygon 
               points="51 86, 151 86, 101 .44" 
               className="safety-icon"
@@ -14,13 +15,13 @@ const mainMenu= (props) =>{
           <text 
             x="82.5" 
             y="61"
-            className="icon-text" 
+            className="safety-icon-text icon-text" 
             >
               Safety
           </text>
-        </g>
+        </Link>
          
-        <g onClick={()=>{console.log("health")}} alt="health" >
+        <Link to="/health" alt="health" >
           <polygon 
             points="51.5 86, 150.5 86, 101 172" 
             className="health-icon"
@@ -31,8 +32,8 @@ const mainMenu= (props) =>{
             className="health-icon-text icon-text">
               Health
           </text>
-        </g>
-        <g onClick={()=>{console.log("food")}} alt="food" >
+        </Link>
+        <Link to="/food" alt="food" >
           <polygon 
             points="1 172.66, 51 86, 101 172.66"
             className="food-icon"
@@ -40,11 +41,11 @@ const mainMenu= (props) =>{
           <text 
             x="36" 
             y="141"
-            className="icon-text" >
+            className="food-icon-text icon-text" >
               Food
           </text>
-      </g>
-      <g onClick={()=>{console.log("shelter")}} alt="shelter" >
+      </Link>
+      <Link to="/shelter" alt="shelter" >
           <polygon 
             points="101 172.66, 151 86, 201 172.66"
             className="shelter-icon"
@@ -52,12 +53,12 @@ const mainMenu= (props) =>{
           <text 
             x="131" 
             y="141" 
-            className="icon-text">
+            className="shelter-icon-text icon-text">
             Shelter
           </text>
-      </g>
+      </Link>
     </svg>
     )
 }
 
-export default connect(null, actions)(mainMenu)
+export default connect(null, actions)(MainMenu)

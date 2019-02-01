@@ -2,13 +2,12 @@ import React, { Component } from 'react';
 import { Route } from  'react-router-dom';
 
 //components
-import MainMenu from '../components/mainMenu';
+import { HomePg } from './HomePg';
+import HealthMain from './HealthMain';
 
 //css files
-import '../css/App.css';
-import 'semantic-ui-css/semantic.min.css'
-import { PhoneIcon } from '../icons/PhoneIcon';
-import { SemanticPhoneIcon } from '../icons/SemanticPhoneIcon';
+import 'semantic-ui-css/semantic.min.css';
+import '../css/index.css';
 
 class App extends Component {
   // A[10; 0] B[0; 0] C[5; 8.66]
@@ -16,8 +15,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-       <Route exact path="/" render ={() => <MainMenu />}/>
-       <Route exact path="/" render ={() => <SemanticPhoneIcon />}/>
+       <Route exact path="/" render ={() => <HomePg />}/>
+       <Route exact path="/health" render ={() => <HealthMain />}/>
       </div>
     );
   }
