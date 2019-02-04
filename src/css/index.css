@@ -14,6 +14,7 @@ code {
 .bg-div{
   height: 100vh;
   width: 100%;
+  
 }
 
 .flex{
@@ -109,18 +110,22 @@ code {
 /* Secondary Color */
 .safety-2{
   background-color: #008ba3;
+  fill: #008ba3;
 }
 
 .health-2{
   background-color: #000070;
+  fill: #000070;
 }
 
 .food-2{
   background-color: #005005;
+  fill: #005005;
 }
 
 .shelter-2{
   background-color: #c79100;
+  fill: #c79100;
 }
 
 
@@ -140,4 +145,19 @@ code {
 
 .shelter-l{
   background-color: #62efff;
+}
+
+/* ******** Bottom NavBar ******** */
+
+.nav-bar{
+height: 12vh;
+ 
+}
+
+.nav-bar-main{
+
+}
+
+.nav-bar-sub{
+
 }

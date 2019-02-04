@@ -16,7 +16,7 @@ class App extends Component {
     return (
       <div className="App">
        <Route exact path="/" render ={() => <HomePg />}/>
-       <Route exact path="/health" render ={() => <HealthMain />}/>
+       <Route path="/health" render ={() => <HealthMain />}/>
       </div>
     );
   }
