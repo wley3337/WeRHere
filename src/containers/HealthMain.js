@@ -20,12 +20,13 @@ import MentalHealth from './MentalHealth'
         <div
             className="health-2 bg-div"
         >   
-             {/* this looks like it is diplaying regardless as well, however I it's layered undernieth */}
+            {/* this looks like it is diplaying regardless as well, however I it's layered undernieth */}
             <Route exact={true} path='/health/mental-health' component={MentalHealth} />
                 
 
-                {/* this is displaying regardless of sub route '/health' */}
+            {/* this is displaying regardless of sub route '/health' */}
             <Route exact={true} path='/health' render={() => <HealthMenu />} />
+
             <NavBar section={"health"} />
         </div>
     )
