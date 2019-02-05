@@ -10,9 +10,9 @@ export const MenuCard= ({menuObj}) =>{
             <Card.Content textAlign="center" > 
                 <Link to={menuObj.route} >
                     <div className=".health-text">
-                    {menuObj.title}
+                        {menuObj.title}
                     </div>
-                    {menuObj.icon}
+                        {menuObj.icon}
                     </Link>
             </Card.Content>
         </Card>

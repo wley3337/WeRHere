@@ -1,6 +1,6 @@
 import React from 'react'
 import {SemanticPhoneIcon, HospitalIcon, CompussIcon} from '../icons'
-export const healthMenu = ()=>{
+export const healthMenuObj = ()=>{
     return(
         [
             {
@@ -9,8 +9,8 @@ export const healthMenu = ()=>{
                 icon: <SemanticPhoneIcon />
             },
             {
-                title: "Clenics",
-                route: "/health/clenics",
+                title: "Clinics",
+                route: "/health/clinics",
                 icon: <HospitalIcon />
             }
         ]

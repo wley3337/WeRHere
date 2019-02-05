@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import {TRUE, FALSE} from './actions/types'
+import {TRUE, FALSE, SET_CHILD_MENTAL_HEALTH_PROVIDERS } from './actions/types'
 
 
 const hypothermiaAlert = (state = false, action) =>{
@@ -16,8 +16,27 @@ const hypothermiaAlert = (state = false, action) =>{
 }
 
 
+//health reducers 
+
+const childMentalHealthProviders = (state = [], action) =>{
+    switch(action.type){
+        case SET_CHILD_MENTAL_HEALTH_PROVIDERS:
+            
+            return   action.payload
+
+        default:
+            return state 
+    }
+}
+
+
+
+
+
+//combined reducers 
 const reducers ={
-    hypothermiaAlert: hypothermiaAlert
+    hypothermiaAlert: hypothermiaAlert,
+    childMentalHealthProviders: childMentalHealthProviders
 }
 
 export default combineReducers(reducers)

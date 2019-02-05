@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { healthMenu } from '../enumerables/HealthMenuObj'
+import { healthMenuObj } from '../enumerables/HealthMenuObj'
 import { MenuCard } from './MenuCard';
 import { Card } from 'semantic-ui-react';
 
@@ -8,7 +8,7 @@ import { Card } from 'semantic-ui-react';
       
         <Card.Group centered doubling stackable >
 
-            {healthMenu().map( (menuObj, index) => 
+            {healthMenuObj().map( (menuObj, index) => 
                     <MenuCard  menuObj={menuObj} key={index} />
             )}
         
