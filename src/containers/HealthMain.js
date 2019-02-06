@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Route } from 'react-router-dom'
+import { Route, withRouter } from 'react-router-dom'
 //redux
 import { connect } from 'react-redux'
 import * as actions from '../redux/actions'
@@ -20,12 +20,10 @@ import MentalHealth from './MentalHealth'
         <div
             className="health-2 bg-div"
         >   
-            {/* this looks like it is diplaying regardless as well, however I it's layered undernieth */}
-            <Route exact={true} path='/health/mental-health' component={MentalHealth} />
-                
-
-            {/* this is displaying regardless of sub route '/health' */}
-            <Route exact={true} path='/health' render={() => <HealthMenu />} />
+            
+            <Route exact path='/health/mental-health' component={MentalHealth} />
+        
+            <Route exact path='/health' render={() => <HealthMenu />} />
 
             <NavBar section={"health"} />
         </div>
@@ -34,5 +32,6 @@ import MentalHealth from './MentalHealth'
 }
 
 
-
-export default connect(null, actions )(HealthMain)
+//need to wrap the componenent 'withRouter' because it won't rerender the children unless
+// its state or props change, which are not changing when the route changes
+export default withRouter(connect(null, actions )(HealthMain))
