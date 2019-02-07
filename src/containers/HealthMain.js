@@ -14,6 +14,7 @@ import MentalHealth from './MentalHealth'
 
     componentDidMount(){
         this.props.getChildMentalHealthProviders()
+        this.props.getAdultMentalHealthProviders()
     }
 
     render(){return(

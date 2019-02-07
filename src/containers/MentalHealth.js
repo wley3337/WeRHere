@@ -19,6 +19,19 @@ class MentalHealth extends Component {
             activeMenuItem: focus
         })
     }
+
+    displayList = () =>{
+        switch(this.state.activeMenuItem){
+            case 'Adult Mental Health Services':
+                return this.props.adultMentalHealthProviders
+
+            case 'Youth Mental Health Services':
+                return this.props.childMentalHealthProviders
+
+            default:
+                return []
+        }
+    }
     
     render(){
         return(
@@ -49,8 +62,9 @@ class MentalHealth extends Component {
                 </Menu>
                     {/* Segment is used to display content */}
                 <Segment attached='bottom'>
+
                         {/* used 'location' for this because of key word provider */}
-                        {this.props.childMentalHealthProviders.map( (location, index) => {
+                        {this.displayList().map( (location, index) => {
                             return <HealthListItem location={location} slug={nameSlug(location.NAME)}key={index}/> 
                         })}
                        
@@ -63,7 +77,8 @@ class MentalHealth extends Component {
 
 const mapStateToProps = (state) =>{
     return {
-        childMentalHealthProviders: state.childMentalHealthProviders
+        childMentalHealthProviders: state.childMentalHealthProviders,
+        adultMentalHealthProviders: state.adultMentalHealthProviders
     }
 }
 

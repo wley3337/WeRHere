@@ -1,5 +1,10 @@
 import { combineReducers } from 'redux';
-import {TRUE, FALSE, SET_CHILD_MENTAL_HEALTH_PROVIDERS } from './actions/types'
+import {
+        TRUE, 
+        FALSE, 
+        SET_CHILD_MENTAL_HEALTH_PROVIDERS,
+        SET_ADULT_MENTAL_HEALTH_PROVIDERS 
+                                            } from './actions/types'
 
 
 const hypothermiaAlert = (state = false, action) =>{
@@ -29,6 +34,18 @@ const childMentalHealthProviders = (state = [], action) =>{
     }
 }
 
+const adultMentalHealthProviders = (state = [], action) =>{
+    switch(action.type){
+        case SET_ADULT_MENTAL_HEALTH_PROVIDERS:
+            
+            return   action.payload
+
+        default:
+            return state 
+    }
+}
+
+
 
 
 
@@ -36,7 +53,8 @@ const childMentalHealthProviders = (state = [], action) =>{
 //combined reducers 
 const reducers ={
     hypothermiaAlert: hypothermiaAlert,
-    childMentalHealthProviders: childMentalHealthProviders
+    childMentalHealthProviders: childMentalHealthProviders,
+    adultMentalHealthProviders: adultMentalHealthProviders
 }
 
 export default combineReducers(reducers)

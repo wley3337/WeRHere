@@ -5,6 +5,8 @@
 
 ### Under Youth Mental Health Services:
 
+
+
 #### Childrens Mental Health API
 
 
@@ -33,5 +35,31 @@
         YCOORD(pin): "XXXXXX.xxxxxxxxx"
 
         ZIP(pin): "20020"
+        
+        }
+
+
+
+#### Adult Mental Health API
+
+* URL:
+- 'https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Public_Service_WebMercator/MapServer/30/query?where=1%3D1&outFields=*&outSR=4326&f=json'
+
+
+* Data Structure:
+    (all X and x are integers and keys must be accessed in all caps 'NAME' not 'name')
+    - { 
+
+        OBJECTID(pin): 1
+
+        NAME(pin): "Name of Provider"
+
+        XCOORD(pin): "XXXXXX.xx"
+        
+        YCOORD(pin): "XXXXXX.xx"
+        
+        ADDRESS_ID(pin): "XXXXXX"
+
+        ADDRESS(pin): "XXX StreetName STREET NE"
         
         }
