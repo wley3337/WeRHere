@@ -36,7 +36,7 @@ class MentalHealth extends Component {
     render(){
         return(
             <div>
-
+                
                 <div className="health-text">MentalHealth</div>
 
                 <Menu attached='top' tabular >
@@ -75,12 +75,4 @@ class MentalHealth extends Component {
     }
 }
 
-const mapStateToProps = (state) =>{
-    return {
-        childMentalHealthProviders: state.childMentalHealthProviders,
-        adultMentalHealthProviders: state.adultMentalHealthProviders
-    }
-}
-
-
-export default connect(mapStateToProps, actions)(MentalHealth)
+export default MentalHealth
