@@ -1,18 +1,15 @@
 import React, { Component } from 'react'
-//redux
-import { connect } from 'react-redux'
-import * as actions from '../redux/actions'
 
 //components
-import { HealthListItem } from '../components/HealthListItem';
+import { ClinicListItem } from '../components/ClinicListItem';
 import { Input, Menu, Segment } from 'semantic-ui-react'
 
 //helper function 
 import { nameSlug } from '../helperFunctions/HelperFunctions'
 
 
-class MentalHealth extends Component {
-    state={ activeMenuItem: 'Youth Mental Health Services'}
+class ClinicHealth extends Component {
+    state={ activeMenuItem: 'Dialysis Clinics'}
 
     setActiveMenuItem= (focus) =>{
         this.setState({
@@ -22,11 +19,11 @@ class MentalHealth extends Component {
 
     displayList = () =>{
         switch(this.state.activeMenuItem){
-            case 'Adult Mental Health Services':
-                return this.props.adultMentalHealthProviders
+            case 'Dialysis Clinics':
+                return this.props.dialysisClinics
 
-            case 'Youth Mental Health Services':
-                return this.props.childMentalHealthProviders
+            case 'Primary Care Centers':
+                return this.props.primaryCareCenters
 
             default:
                 return []
@@ -37,20 +34,20 @@ class MentalHealth extends Component {
         return(
             <div>
                 
-                <div className="health-text">MentalHealth</div>
+                <div className="health-text">Clinics</div>
 
                 <Menu attached='top' tabular >
 
                     <Menu.Item 
-                        name='Youth Mental Health Services' 
-                        active={this.state.activeMenuItem === 'Youth Mental Health Services'} 
-                        onClick={() => this.setActiveMenuItem('Youth Mental Health Services')} 
+                        name='Dialysis Clinics' 
+                        active={this.state.activeMenuItem === 'Dialysis Clinics'} 
+                        onClick={() => this.setActiveMenuItem('Dialysis Clinics')} 
                         className="health-2 health-text"
                     />
                     <Menu.Item 
-                        name='Adult Mental Health Services' 
-                        active={this.state.activeMenuItem === 'Adult Mental Health Services'} 
-                        onClick={() => this.setActiveMenuItem('Adult Mental Health Services')}
+                        name='Primary Care Centers' 
+                        active={this.state.activeMenuItem === 'Primary Care Centers'} 
+                        onClick={() => this.setActiveMenuItem('Primary Care Centers')}
                         className="health-2 health-text" 
                         />
                 </Menu>
@@ -59,7 +56,7 @@ class MentalHealth extends Component {
 
                         {/* used 'location' for this because of key word provider */}
                         {this.displayList().map( (location, index) => {
-                            return <HealthListItem location={location} slug={nameSlug(location.attributes.NAME)}key={index}/> 
+                            return <ClinicListItem location={location} slug={nameSlug(location.attributes.NAME)}key={index}/> 
                         })}
                        
                 </Segment>
@@ -69,4 +66,4 @@ class MentalHealth extends Component {
     }
 }
 
-export default MentalHealth
+export default ClinicHealth

@@ -9,6 +9,9 @@ import HealthMenu from '../components/HealthMenu'
 import{  NavBar } from '../components/NavBar'
 import MentalHealth from './MentalHealth'
 import { HealthItemDetail } from '../components/HealthItemDetail'
+import ClinicHealth from './ClinicHealth'
+import { ClinicItemDetail } from '../components/ClinicItemDetail'
+
 
 //helper function 
 import { nameDeSlug } from '../helperFunctions/HelperFunctions'
@@ -18,20 +21,29 @@ import { nameDeSlug } from '../helperFunctions/HelperFunctions'
     componentDidMount(){
         this.props.getChildMentalHealthProviders()
         this.props.getAdultMentalHealthProviders()
+        this.props.getDialysisClinics()
+        this.props.getPrimaryCareCenters()
     }
     
     getMentalHealthLocation(paramsName){
         const locationName = nameDeSlug(paramsName)
         const allMentalHealLocations =[...this.props.childMentalHealthProviders, ...this.props.adultMentalHealthProviders]
-        const locationObj = allMentalHealLocations.find((location) => location.NAME === locationName)
+        const locationObj = allMentalHealLocations.find((location) => location.attributes.NAME === locationName)
+        return locationObj
+    }
+
+    getClinicLocation(paramsName){
+        const locationName = nameDeSlug(paramsName)
+        const allClinicLocations =[...this.props.dialysisClinics, ...this.props.primaryCareCenters]
+        const locationObj = allClinicLocations.find((location) => location.attributes.NAME === locationName)
         return locationObj
     }
 
     render(){return(
-        <div
-            className="health-2 bg-div"
-        >   
-        {/* ? is there a way to dispatch an action to the return or set a value as props or should I just pass the info to the child and process that there?  */}
+        <div className="health-2 bg-div">  
+
+            <Route exact path='/health' render={() => <HealthMenu  />} />
+            
             <Route exact path='/health/mental-health' render={() => {
                    return < MentalHealth 
                                 childMentalHealthProviders={this.props.childMentalHealthProviders}
@@ -39,9 +51,25 @@ import { nameDeSlug } from '../helperFunctions/HelperFunctions'
                             
                             />
                 } }/>
-            <Route exact path='/health/mental-health/:id' render={ ({match}) => { return <HealthItemDetail location={this.getMentalHealthLocation(match.params.id)} />} } />
+            
+            <Route exact path='/health/mental-health/:id' render={ ({match}) => { 
+                    return <HealthItemDetail 
+                                location={this.getMentalHealthLocation(match.params.id)} />
+                } } />
+
+            <Route exact path='/health/clinics' render={() => {
+                   return < ClinicHealth 
+                                dialysisClinics={this.props.dialysisClinics}
+                                primaryCareCenters={this.props.primaryCareCenters}
+                            
+                            />
+                } }/>
+            
+            <Route exact path='/health/clinics/:id' render={ ({match}) => { 
+                    return <ClinicItemDetail 
+                                location={this.getClinicLocation(match.params.id)} />
+                } } />          
         
-            <Route exact path='/health' render={() => <HealthMenu  />} />
 
             <NavBar section={"health"} />
         </div>
@@ -52,7 +80,9 @@ import { nameDeSlug } from '../helperFunctions/HelperFunctions'
 const mapStateToProps = (state) =>{
     return {
         childMentalHealthProviders: state.childMentalHealthProviders,
-        adultMentalHealthProviders: state.adultMentalHealthProviders
+        adultMentalHealthProviders: state.adultMentalHealthProviders,
+        dialysisClinics: state.dialysisClinics,
+        primaryCareCenters: state.primaryCareCenters
     }
 }
 

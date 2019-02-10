@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-export const HealthItemDetail = ({location}) =>{ 
+export const ClinicItemDetail = ({location}) =>{ 
     
     return (!location ? null 
             :

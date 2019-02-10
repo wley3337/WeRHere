@@ -3,7 +3,9 @@ import {
         TRUE, 
         FALSE, 
         SET_CHILD_MENTAL_HEALTH_PROVIDERS,
-        SET_ADULT_MENTAL_HEALTH_PROVIDERS 
+        SET_ADULT_MENTAL_HEALTH_PROVIDERS,
+        SET_DIALYSIS_CLINICS,
+        SET_PRIMARY_CARE_CENTERS 
                                             } from './actions/types'
 
 
@@ -45,6 +47,28 @@ const adultMentalHealthProviders = (state = [], action) =>{
     }
 }
 
+const dialysisClinics = (state = [], action ) => {
+
+    switch(action.type){
+        case SET_DIALYSIS_CLINICS:
+            return action.payload
+
+        default:
+            return state
+    }
+}
+
+const primaryCareCenters = (state= [], action) =>{
+    switch(action.type){
+        case SET_PRIMARY_CARE_CENTERS:
+            return action.payload
+
+        default:
+            return state
+    }
+
+}
+
 
 
 
@@ -54,7 +78,9 @@ const adultMentalHealthProviders = (state = [], action) =>{
 const reducers ={
     hypothermiaAlert: hypothermiaAlert,
     childMentalHealthProviders: childMentalHealthProviders,
-    adultMentalHealthProviders: adultMentalHealthProviders
+    adultMentalHealthProviders: adultMentalHealthProviders,
+    dialysisClinics: dialysisClinics,
+    primaryCareCenters: primaryCareCenters
 }
 
 export default combineReducers(reducers)
