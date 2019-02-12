@@ -59,7 +59,8 @@ class MentalHealth extends Component {
 
                         {/* used 'location' for this because of key word provider */}
                         {this.displayList().map( (location, index) => {
-                            return <HealthListItem location={location} slug={nameSlug(location.attributes.NAME)}key={index}/> 
+                           
+                            return <HealthListItem location={location} slug={nameSlug(location.properties.NAME)}key={index}/> 
                         })}
                        
                 </Segment>

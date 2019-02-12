@@ -11,6 +11,7 @@
 * react-redux
 * redux-thunk
 * semantic-ui-react
+* mapbox-gl
 
 ## Menu READMEs 
 * [Health Menu and APIs](./AdditionalREADME/HealthREADME.md) 

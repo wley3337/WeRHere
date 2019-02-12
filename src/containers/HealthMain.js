@@ -28,14 +28,14 @@ import { nameDeSlug } from '../helperFunctions/HelperFunctions'
     getMentalHealthLocation(paramsName){
         const locationName = nameDeSlug(paramsName)
         const allMentalHealLocations =[...this.props.childMentalHealthProviders, ...this.props.adultMentalHealthProviders]
-        const locationObj = allMentalHealLocations.find((location) => location.attributes.NAME === locationName)
+        const locationObj = allMentalHealLocations.find((location) => location.properties.NAME === locationName)
         return locationObj
     }
 
     getClinicLocation(paramsName){
         const locationName = nameDeSlug(paramsName)
         const allClinicLocations =[...this.props.dialysisClinics, ...this.props.primaryCareCenters]
-        const locationObj = allClinicLocations.find((location) => location.attributes.NAME === locationName)
+        const locationObj = allClinicLocations.find((location) => location.properties.NAME === locationName)
         return locationObj
     }
 

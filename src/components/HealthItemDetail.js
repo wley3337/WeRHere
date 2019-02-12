@@ -7,9 +7,9 @@ export const HealthItemDetail = ({location}) =>{
             :
 
             <div className="health-text">
-                <h1>{location.attributes.NAME}</h1> 
+                <h1>{location.properties.NAME}</h1> 
 
-                <h2>Address: {`${location.attributes.ADDRESS}`}</h2>
+                <h2>Address: {`${location.properties.ADDRESS}`}</h2>
 
             </div>
     )

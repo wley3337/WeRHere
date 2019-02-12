@@ -8,9 +8,9 @@ export const ClinicListItem = ({ location, slug }) =>{
     return (
         <div>
             <Link to={`/health/clinics/${slug}`} >
-            <div> {location.attributes.NAME} </div> 
-            <div> {location.attributes.ADDRESS} </div>
-            <div> {location.attributes.PHONE} </div>
+            <div> {location.properties.NAME} </div> 
+            <div> {location.properties.ADDRESS} </div>
+            <div> {location.properties.PHONE} </div>
              </Link>
         </div>
     )

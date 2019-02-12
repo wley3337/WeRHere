@@ -6,12 +6,12 @@ export const nameDeSlug = (name) => { return name.replace(/(_)/gm, " ").replace(
 
 export const removeFromKey= (arry, stringToRemove) => {
     arry.map( (ele) => { 
-                // a note here: attributes is the first nest this might 
+                // a note here: properties is a sub key this might 
                 // need to be added as another argument 
-                for( let key in ele.attributes){
+                for( let key in ele.properties){
                     if(key.includes(stringToRemove)) {
-                            ele.attributes[key.replace(stringToRemove, "")] = ele.attributes[key]
-                            delete ele.attributes[key]
+                            ele.properties[key.replace(stringToRemove, "")] = ele.properties[key]
+                            delete ele.properties[key]
                     }       
                 }          
     })

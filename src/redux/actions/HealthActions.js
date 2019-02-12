@@ -19,10 +19,13 @@ import { removeFromKey } from '../../helperFunctions/HelperFunctions'
 //** fetch child mental health providers  */
 
 export const getChildMentalHealthProviders = () => dispatch => {
-    fetch('https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Public_Service_WebMercator/MapServer/31/query?where=1%3D1&outFields=*&outSR=4326&f=json')
+  
+   // geojson:
+     fetch('https://opendata.arcgis.com/datasets/04e62c8179404e3bb515d3b5bf4599e0_31.geojson')
+   
     .then(r => r.json())
     .then(data => { 
-        // const childProviderArray = data.features.map( provider => provider.attributes)
+
         const childProviderArray = data.features
         dispatch({type: SET_CHILD_MENTAL_HEALTH_PROVIDERS, payload: childProviderArray})
     })
@@ -31,10 +34,11 @@ export const getChildMentalHealthProviders = () => dispatch => {
 
 //** fetch adult mental health providers */
 export const getAdultMentalHealthProviders = () => dispatch => {
-    fetch('https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Public_Service_WebMercator/MapServer/30/query?where=1%3D1&outFields=*&outSR=4326&f=json')
+    //geoJson:
+    fetch('https://opendata.arcgis.com/datasets/da634bb38ffe4fa3b2e6e0391fbf1618_30.geojson')
     .then(r => r.json())
     .then(data => { 
-        // const adultProviderArray = data.features.map( provider => provider.attributes)
+       
         const adultProviderArray = data.features
         
         dispatch({type: SET_ADULT_MENTAL_HEALTH_PROVIDERS, payload: adultProviderArray})
@@ -45,9 +49,11 @@ export const getAdultMentalHealthProviders = () => dispatch => {
 // ** fetch Dialysis Clinics
 
 export const getDialysisClinics = () => dispatch =>{
-    fetch('https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Health_WebMercator/MapServer/2/query?where=1%3D1&outFields=*&outSR=4326&f=json')
+    //geoJson:
+    fetch('https://opendata.arcgis.com/datasets/45452b5fbb4a41efa44ce7c8eb3fc194_2.geojson')
     .then(r=> r.json())
     .then(data => {
+
         const dialysisClinics = data.features
         dispatch({type: SET_DIALYSIS_CLINICS, payload: dialysisClinics})
     })
@@ -56,11 +62,13 @@ export const getDialysisClinics = () => dispatch =>{
 
 //** fetch Primary Care Center Data */
 export const getPrimaryCareCenters = () => dispatch =>{
-    fetch('https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Health_WebMercator/MapServer/7/query?where=1%3D1&outFields=*&outSR=4326&f=json')
+    //geoJson
+    fetch('https://opendata.arcgis.com/datasets/018890d7399245759f05c7932261ef44_7.geojson')
     .then(r=> r.json())
     .then(data => {
+   
         const primaryCareCenters = data.features
-        const adjustedPrimaryCareCenters = removeFromKey(primaryCareCenters, "PrimaryCarePt.")
+        const adjustedPrimaryCareCenters = removeFromKey(primaryCareCenters, "PrimaryCarePt")
         dispatch({type: SET_PRIMARY_CARE_CENTERS, payload: adjustedPrimaryCareCenters})
         
     })

@@ -11,58 +11,66 @@
 
 
 * URL:
-- 'https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Public_Service_WebMercator/MapServer/31/query?where=1%3D1&outFields=*&outSR=4326&f=json'
+- 'https://opendata.arcgis.com/datasets/04e62c8179404e3bb515d3b5bf4599e0_31.geojson'
 
+`
 
-* Data Structure:
-    (all X and x are integers and keys must be accessed in all caps 'NAME' not 'name')
-    - { 
+    [
+        {
 
-        OBJECTID(pin): 1
-
-        ADDRESS_ID(pin): XXXXXX
-
-        CITY(pin): "WASHINGTON"
-
-        STATE(pin): "DC"
-
-        NAME(pin): "Name of Institution"
-
-        ADDRESS(pin): "XXXX Pennsylvania Ave., SE"
-
-        XCOORD(pin): "XXXXXX.xxxxxxxxx"
-
-        YCOORD(pin): "XXXXXX.xxxxxxxxx"
-
-        ZIP(pin): "20020"
-        
+            geometry:{
+                coordinates: [
+                    -77.0323972697698,
+                    38.903202600512195
+                ]
+            }
+            properties:{
+                ADDRESS: "1012 14th St., NW"
+                ADDRESS_ID: 240262
+                CITY: "WASHINGTON"
+                NAME: "First Home Care Corporation"
+                OBJECTID: 2
+                STATE: "DC"
+                XCOORD: "397190.060500003"
+                YCOORD: "137260.449999999"
+                ZIP: "20005"
+            }
         }
+    ]
+`
 
 
 
 #### Adult Mental Health API
 
 * URL:
-- 'https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Public_Service_WebMercator/MapServer/30/query?where=1%3D1&outFields=*&outSR=4326&f=json'
+- 'https://opendata.arcgis.com/datasets/da634bb38ffe4fa3b2e6e0391fbf1618_30.geojson'
 
 
 * Data Structure:
-    (all X and x are integers and keys must be accessed in all caps 'NAME' not 'name')
-    - { 
 
-        OBJECTID(pin): 1
+ 
+ ```
+[{
 
-        NAME(pin): "Name of Provider"
+    geometry: {
+        coordinates: 
+            [-76.99208608719246, 
+            38.93131975731531]
+    }
 
-        XCOORD(pin): "XXXXXX.xx"
-        
-        YCOORD(pin): "XXXXXX.xx"
-        
-        ADDRESS_ID(pin): "XXXXXX"
+    properties: {
+        ADDRESS: "1001 LAWRENCE STREET NE"
+        ADDRESS_ID: "289589"
+        NAME: "Anchor Mental Health"
+        OBJECTID: 1
+        XCOORD: "400686.38"
+        YCOORD: "140381.22"
+    }
 
-        ADDRESS(pin): "XXX StreetName STREET NE"
-        
-        }
+}]
+```
+
 
 
 
@@ -72,192 +80,184 @@
 
 
 * URL:
-- 'https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Health_WebMercator/MapServer/2/query?where=1%3D1&outFields=*&outSR=4326&f=json'
+- 'https://opendata.arcgis.com/datasets/45452b5fbb4a41efa44ce7c8eb3fc194_2.geojson'
 
 
 * Data Structure:
-    (all X and x are integers and keys must be accessed in all caps 'NAME' not 'name')
-    - { 
+    
+```
+[{
+geometry: {
 
-        attributes: {
+coordinates: 
+        [-77.01523765178548, 
+        38.93097111263292]
+}
 
-            GIS_ID: 1
+properties:{
 
-            NAME(pin): "Name of Institution"
+    ADDRESS: "106 Irving St NW"
+    GIS_ID: "dia_1"
+    NAME: "BMA of Columbia Heights"
+    OBJECTID: 1
+    PHONE: "(202) 829-0060"
+    WEB_URL: null
+}
 
-            ADDRESS(pin): "XXXX Pennsylvania Ave., SE"
+}]
 
-            PHONE: "(XXX) XXX-XXXX"
-
-            WEB_URL: null (note: most seam to be null)
-            
-        }
-
-        geometry: {
-
-            X: "XXXXXX.xxxxxxxxx"
-
-            Y: "XXXXXX.xxxxxxxxx"
-
-        }
-
-
-        
-        }
+```
 
 
 #### Primary Care Centers API
 
 
 * URL:
-- 'https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Health_WebMercator/MapServer/7/query?where=1%3D1&outFields=*&outSR=4326&f=json'
+- 'https://opendata.arcgis.com/datasets/018890d7399245759f05c7932261ef44_7.geojson'
 
 
 * Data Structure:
-    (all X and x are integers and keys must be accessed in all caps 'NAME' not 'name')
-    - { 
+   ```
+[{
 
-        attributes: {
+    geometry:{
+        coordinates: 
+            [-77.01329921978609, 
+            38.89551157369499]
 
-                PRIMARY_CARE_INFO.ABILITY_TO_PAY: "Yes"
-                PRIMARY_CARE_INFO.ACCEPT_NEW_PT: "Yes"
-                PRIMARY_CARE_INFO.ADDRID: 299726
-                PRIMARY_CARE_INFO.AMHARIC: "Yes"
-                PRIMARY_CARE_INFO.ANC: "6C"
-                PRIMARY_CARE_INFO.ASL: "Yes"
-                PRIMARY_CARE_INFO.CARDIOLOGY: " "
-                PRIMARY_CARE_INFO.CHILDCARE: " "
-                PRIMARY_CARE_INFO.CHILD_SPECIAL_NEEDS: " "
-                PRIMARY_CARE_INFO.CHINESE_TRADITIONAL: "Yes"
-                PRIMARY_CARE_INFO.DENTISTRY: "Yes"
-                PRIMARY_CARE_INFO.DERMATOLOGY: " "
-                PRIMARY_CARE_INFO.ELDERLY: "Yes"
-                PRIMARY_CARE_INFO.ENDOCRINOLOGY: " "
-                PRIMARY_CARE_INFO.ENGLISH: "Yes"
-                PRIMARY_CARE_INFO.EVENING_HOURS: "No"
-                PRIMARY_CARE_INFO.EXCLUDED_PLANS: " "
-                PRIMARY_CARE_INFO.FACILITY_AFFILIATION: " "
-                PRIMARY_CARE_INFO.FACILITY_SETTING: "Community Health Center-FQHC"
-                PRIMARY_CARE_INFO.FACILITY_TYPE: "Private Non-Profit"
-                PRIMARY_CARE_INFO.FRENCH: "Yes"
-                PRIMARY_CARE_INFO.GASTROENTEROLOGY: " "
-                PRIMARY_CARE_INFO.GASTRO_ENT: "Yes"
-                PRIMARY_CARE_INFO.GENERAL_SURGERY: " "
-                PRIMARY_CARE_INFO.GIS_ID: "PC_32"
-                PRIMARY_CARE_INFO.HEALTH_NUTR_ED: "Yes"
-                PRIMARY_CARE_INFO.HIV: "Yes"
-                PRIMARY_CARE_INFO.HIV_AIDS: " "
-                PRIMARY_CARE_INFO.HOMELESS: "Yes"
-                PRIMARY_CARE_INFO.HOSPITAL_AFFILIATION: " "
-                PRIMARY_CARE_INFO.HOURS_FRIDAY: "7:45 AM- 4:00 PM"
-                PRIMARY_CARE_INFO.HOURS_MONDAY: "7:45 AM- 4:00 PM"
-                PRIMARY_CARE_INFO.HOURS_SATURDAY: "7:45 - 12:00 Noon"
-                PRIMARY_CARE_INFO.HOURS_SUNDAY: " "
-                PRIMARY_CARE_INFO.HOURS_THURSDAY: "7:45 AM- 4:00 PM"
-                PRIMARY_CARE_INFO.HOURS_TUESDAY: "7:45 AM- 4:00 PM"
-                PRIMARY_CARE_INFO.HOURS_WEDNESDAY: "7:45 AM- 4:00 PM"
-                PRIMARY_CARE_INFO.HR_CONTACT: "Provider Specialist or Human Resources"
-                PRIMARY_CARE_INFO.HR_EMAIL: "FirstName@Location.org"
-                PRIMARY_CARE_INFO.HR_PHONE: "202-715-7900"
-                PRIMARY_CARE_INFO.INFECTIOUS_DISEASE: "Yes"
-                PRIMARY_CARE_INFO.INSURANCE_ALLIANCE: "Yes"
-                PRIMARY_CARE_INFO.INSURANCE_OTHER: " "
-                PRIMARY_CARE_INFO.INSURANCE_SCREEN: "Yes"
-                PRIMARY_CARE_INFO.INTEL_DISABLED: "Yes"
-                PRIMARY_CARE_INFO.KOREAN: "Yes"
-                PRIMARY_CARE_INFO.LANGUAGE_LIMITED: "Yes"
-                PRIMARY_CARE_INFO.LBGT: "Yes"
-                PRIMARY_CARE_INFO.LIMITED_ACCESS: " "
-                PRIMARY_CARE_INFO.MEDICAID: "Yes"
-                PRIMARY_CARE_INFO.MEDICAL_SERVICES_AVAILABLE: "Infectious Disease, Nephrology, Gastroenterology, Podiatry, Primary Care, Psychiatry, Reproductive Health, STI Test/Treatment, Urology"
-                PRIMARY_CARE_INFO.MEDICARE: "Yes"
-                PRIMARY_CARE_INFO.MENTAL_HEALTH: " "
-                PRIMARY_CARE_INFO.MENTAL_ILLNESS: "Yes"
-                PRIMARY_CARE_INFO.NEPHROLOGY: "Yes"
-                PRIMARY_CARE_INFO.NEUROLOGY: " "
-                PRIMARY_CARE_INFO.OBJECTID: null
-                PRIMARY_CARE_INFO.OBJECTID_1: 29
-                PRIMARY_CARE_INFO.OBSTETRICS: " "
-                PRIMARY_CARE_INFO.ONCOLOGY: " "
-                PRIMARY_CARE_INFO.OPEN_ACCESS_SCHEDULE: "Yes"
-                PRIMARY_CARE_INFO.OPEN_ACCESS_TIME: "7:45AM-8:45AM; 12:45PM-1:45 PM or at provider's discretion"
-                PRIMARY_CARE_INFO.OPEN_TO_PUBLIC: "Yes"
-                PRIMARY_CARE_INFO.OPTHALMOLOGY: " "
-                PRIMARY_CARE_INFO.ORAL_SURGERY: " "
-                PRIMARY_CARE_INFO.ORTHOPEDIC: " "
-                PRIMARY_CARE_INFO.OTHER_LANGUAGE: " "
-                PRIMARY_CARE_INFO.OTHER_SERVICES: "Dental, Health Ed/Nutrition"
-                PRIMARY_CARE_INFO.OTHER_SPECIALTY: " "
-                PRIMARY_CARE_INFO.OTHER_SPECIAL_POP: " "
-                PRIMARY_CARE_INFO.PEDIATRICS: " "
-                PRIMARY_CARE_INFO.PHARMACY: " "
-                PRIMARY_CARE_INFO.PHYSICALLY_DISABLED: "Yes"
-                PRIMARY_CARE_INFO.PODIATRY: "Yes"
-                PRIMARY_CARE_INFO.POP_SERVED: "All"
-                PRIMARY_CARE_INFO.PRACTICE_SETTING: "Community Health Center, FQHC"
-                PRIMARY_CARE_INFO.PRACTICE_TYPE: " "
-                PRIMARY_CARE_INFO.PRIMARY_CARE: "Yes"
-                PRIMARY_CARE_INFO.PRIVATE_EMPLOYER_INSURANCE: "Yes, please call"
-                PRIMARY_CARE_INFO.PRIVATE_INSURANCE: "Yes, please call"
-                PRIMARY_CARE_INFO.PRIVATE_PLANS: "Blue Cross"
-                PRIMARY_CARE_INFO.PSYCHIATRY: "Yes"
-                PRIMARY_CARE_INFO.PUBLIC_INSURANCE: "Yes"
-                PRIMARY_CARE_INFO.PUBLIC_SERVICES: "Yes"
-                PRIMARY_CARE_INFO.PULMONARY_MEDICINE: " "
-                PRIMARY_CARE_INFO.QUADRANT: "NW"
-                PRIMARY_CARE_INFO.REPRODUCTIVE_HEALTH: "Yes"
-                PRIMARY_CARE_INFO.RHEUMATOLOGY: " "
-                PRIMARY_CARE_INFO.SCHEDULE_APPT_EMAIL: " "
-                PRIMARY_CARE_INFO.SCHEDULE_APPT_PHONE: "Yes, by phone"
-                PRIMARY_CARE_INFO.SCHEDULE_APPT_WEB: " "
-                PRIMARY_CARE_INFO.SLIDING_SCALE: "Yes"
-                PRIMARY_CARE_INFO.SOCIAL_SERVICES: "Yes"
-                PRIMARY_CARE_INFO.SPANISH: "Yes"
-                PRIMARY_CARE_INFO.STI_TEST_TREAT: "Yes"
-                PRIMARY_CARE_INFO.TREATMENT_FOR_ALL: "Yes"
-                PRIMARY_CARE_INFO.UROLOGY: "Yes"
-                PRIMARY_CARE_INFO.VIETNAMESE: "Yes"
-                PRIMARY_CARE_INFO.WEEKEND_HOURS: null
-                PRIMARY_CARE_INFO.WIC: " "
-                PRIMARY_CARE_INFO.YESNO_: null
-                PrimaryCarePt.ADDRESS: "425 2ND STREET NW"
-                PrimaryCarePt.ADDRID: 299726
-                PrimaryCarePt.ADMINISTRA: " "
-                PrimaryCarePt.CHARGENURS: " "
-                PrimaryCarePt.CITY: "WASHINGTON"
-                PrimaryCarePt.CT_HPSA: " "
-                PrimaryCarePt.FAX: " "
-                PrimaryCarePt.GIS_ID: "PC_32"
-                PrimaryCarePt.INSURANCE_ACCEPTED: " "
-                PrimaryCarePt.LAST_MODIFIED_ACTION: null
-                PrimaryCarePt.LAST_MODIFIED_DATE: null
-                PrimaryCarePt.LAST_MODIFIED_USER: null
-                PrimaryCarePt.MAR_CENSUS: "005900"
-                PrimaryCarePt.MEDICALDIR: " "
-                PrimaryCarePt.NAME: "Unity - Central Union Mission Health Center"
-                PrimaryCarePt.OBJECTID: 1
-                PrimaryCarePt.PHONE: "202-508-0500; 202-469-4699 (Appointment Scheduling Number)"
-                PrimaryCarePt.POPULATION_SERVED: " "
-                PrimaryCarePt.SEE_PATIENTS_WHO_CANT_PAY: " "
-                PrimaryCarePt.STATE: "DC"
-                PrimaryCarePt.WALKIN_UNSCHEDULED: "Yes"
-                PrimaryCarePt.WARD: 6
-                PrimaryCarePt.WEB_URL: "http://www.unityhealthcare.org/HealthCenters/ServiceCentralUnion.html"
-                PrimaryCarePt.XCOORD: 398846.5
-                PrimaryCarePt.YCOORD: 136406.27
-                PrimaryCarePt.ZIP: 20001
-                PrimaryCarePt.ZIP_1: "20001"
-            
-        }
+    },
 
-        geometry: {
+    properties:{
 
-            X: "XXXXXX.xxxxxxxxx"
+    PRIMARY_CARE_INFOABILITY_TO_PAY: "Yes"
+    PRIMARY_CARE_INFOACCEPT_NEW_PT: "Yes"
+    PRIMARY_CARE_INFOADDRID: 299726
+    PRIMARY_CARE_INFOAMHARIC: "Yes"
+    PRIMARY_CARE_INFOANC: "6C"
+    PRIMARY_CARE_INFOASL: "Yes"
+    PRIMARY_CARE_INFOCARDIOLOGY: " "
+    PRIMARY_CARE_INFOCHILDCARE: " "
+    PRIMARY_CARE_INFOCHILD_SPECIAL_NEEDS: " "
+    PRIMARY_CARE_INFOCHINESE_TRADITIONAL: "Yes"
+    PRIMARY_CARE_INFODENTISTRY: "Yes"
+    PRIMARY_CARE_INFODERMATOLOGY: " "
+    PRIMARY_CARE_INFOELDERLY: "Yes"
+    PRIMARY_CARE_INFOENDOCRINOLOGY: " "
+    PRIMARY_CARE_INFOENGLISH: "Yes"
+    PRIMARY_CARE_INFOEVENING_HOURS: "No"
+    PRIMARY_CARE_INFOEXCLUDED_PLANS: " "
+    PRIMARY_CARE_INFOFACILITY_AFFILIATION: " "
+    PRIMARY_CARE_INFOFACILITY_SETTING: "Community Health Center-FQHC"
+    PRIMARY_CARE_INFOFACILITY_TYPE: "Private Non-Profit"
+    PRIMARY_CARE_INFOFRENCH: "Yes"
+    PRIMARY_CARE_INFOGASTROENTEROLOGY: " "
+    PRIMARY_CARE_INFOGASTRO_ENT: "Yes"
+    PRIMARY_CARE_INFOGENERAL_SURGERY: " "
+    PRIMARY_CARE_INFOGIS_ID: "PC_32"
+    PRIMARY_CARE_INFOHEALTH_NUTR_ED: "Yes"
+    PRIMARY_CARE_INFOHIV: "Yes"
+    PRIMARY_CARE_INFOHIV_AIDS: " "
+    PRIMARY_CARE_INFOHOMELESS: "Yes"
+    PRIMARY_CARE_INFOHOSPITAL_AFFILIATION: " "
+    PRIMARY_CARE_INFOHOURS_FRIDAY: "7:45 AM- 4:00 PM"
+    PRIMARY_CARE_INFOHOURS_MONDAY: "7:45 AM- 4:00 PM"
+    PRIMARY_CARE_INFOHOURS_SATURDAY: "7:45 - 12:00 Noon"
+    PRIMARY_CARE_INFOHOURS_SUNDAY: " "
+    PRIMARY_CARE_INFOHOURS_THURSDAY: "7:45 AM- 4:00 PM"
+    PRIMARY_CARE_INFOHOURS_TUESDAY: "7:45 AM- 4:00 PM"
+    PRIMARY_CARE_INFOHOURS_WEDNESDAY: "7:45 AM- 4:00 PM"
+    PRIMARY_CARE_INFOHR_CONTACT: "Provider Specialist or Human Resources"
+    PRIMARY_CARE_INFOHR_EMAIL: "Aalleyne@Unityhealthcare.org"
+    PRIMARY_CARE_INFOHR_PHONE: "202-715-7900"
+    PRIMARY_CARE_INFOINFECTIOUS_DISEASE: "Yes"
+    PRIMARY_CARE_INFOINSURANCE_ALLIANCE: "Yes"
+    PRIMARY_CARE_INFOINSURANCE_OTHER: " "
+    PRIMARY_CARE_INFOINSURANCE_SCREEN: "Yes"
+    PRIMARY_CARE_INFOINTEL_DISABLED: "Yes"
+    PRIMARY_CARE_INFOKOREAN: "Yes"
+    PRIMARY_CARE_INFOLANGUAGE_LIMITED: "Yes"
+    PRIMARY_CARE_INFOLBGT: "Yes"
+    PRIMARY_CARE_INFOLIMITED_ACCESS: " "
+    PRIMARY_CARE_INFOMEDICAID: "Yes"
+    PRIMARY_CARE_INFOMEDICAL_SERVICES_AVAILABLE: "Infectious Disease, Nephrology, Gastroenterology, Podiatry, Primary Care, Psychiatry, Reproductive Health, STI Test/Treatment, Urology"
+    PRIMARY_CARE_INFOMEDICARE: "Yes"
+    PRIMARY_CARE_INFOMENTAL_HEALTH: " "
+    PRIMARY_CARE_INFOMENTAL_ILLNESS: "Yes"
+    PRIMARY_CARE_INFONEPHROLOGY: "Yes"
+    PRIMARY_CARE_INFONEUROLOGY: " "
+    PRIMARY_CARE_INFOOBJECTID: null
+    PRIMARY_CARE_INFOOBJECTID_1: 29
+    PRIMARY_CARE_INFOOBSTETRICS: " "
+    PRIMARY_CARE_INFOONCOLOGY: " "
+    PRIMARY_CARE_INFOOPEN_ACCESS_SCHEDULE: "Yes"
+    PRIMARY_CARE_INFOOPEN_ACCESS_TIME: "7:45AM-8:45AM; 12:45PM-1:45 PM or at provider's discretion"
+    PRIMARY_CARE_INFOOPEN_TO_PUBLIC: "Yes"
+    PRIMARY_CARE_INFOOPTHALMOLOGY: " "
+    PRIMARY_CARE_INFOORAL_SURGERY: " "
+    PRIMARY_CARE_INFOORTHOPEDIC: " "
+    PRIMARY_CARE_INFOOTHER_LANGUAGE: " "
+    PRIMARY_CARE_INFOOTHER_SERVICES: "Dental, Health Ed/Nutrition"
+    PRIMARY_CARE_INFOOTHER_SPECIALTY: " "
+    PRIMARY_CARE_INFOOTHER_SPECIAL_POP: " "
+    PRIMARY_CARE_INFOPEDIATRICS: " "
+    PRIMARY_CARE_INFOPHARMACY: " "
+    PRIMARY_CARE_INFOPHYSICALLY_DISABLED: "Yes"
+    PRIMARY_CARE_INFOPODIATRY: "Yes"
+    PRIMARY_CARE_INFOPOP_SERVED: "All"
+    PRIMARY_CARE_INFOPRACTICE_SETTING: "Community Health Center, FQHC"
+    PRIMARY_CARE_INFOPRACTICE_TYPE: " "
+    PRIMARY_CARE_INFOPRIMARY_CARE: "Yes"
+    PRIMARY_CARE_INFOPRIVATE_EMPLOYER_INSURANCE: "Yes, please call"
+    PRIMARY_CARE_INFOPRIVATE_INSURANCE: "Yes, please call"
+    PRIMARY_CARE_INFOPRIVATE_PLANS: "Blue Cross"
+    PRIMARY_CARE_INFOPSYCHIATRY: "Yes"
+    PRIMARY_CARE_INFOPUBLIC_INSURANCE: "Yes"
+    PRIMARY_CARE_INFOPUBLIC_SERVICES: "Yes"
+    PRIMARY_CARE_INFOPULMONARY_MEDICINE: " "
+    PRIMARY_CARE_INFOQUADRANT: "NW"
+    PRIMARY_CARE_INFOREPRODUCTIVE_HEALTH: "Yes"
+    PRIMARY_CARE_INFORHEUMATOLOGY: " "
+    PRIMARY_CARE_INFOSCHEDULE_APPT_EMAIL: " "
+    PRIMARY_CARE_INFOSCHEDULE_APPT_PHONE: "Yes, by phone"
+    PRIMARY_CARE_INFOSCHEDULE_APPT_WEB: " "
+    PRIMARY_CARE_INFOSLIDING_SCALE: "Yes"
+    PRIMARY_CARE_INFOSOCIAL_SERVICES: "Yes"
+    PRIMARY_CARE_INFOSPANISH: "Yes"
+    PRIMARY_CARE_INFOSTI_TEST_TREAT: "Yes"
+    PRIMARY_CARE_INFOTREATMENT_FOR_ALL: "Yes"
+    PRIMARY_CARE_INFOUROLOGY: "Yes"
+    PRIMARY_CARE_INFOVIETNAMESE: "Yes"
+    PRIMARY_CARE_INFOWEEKEND_HOURS: null
+    PRIMARY_CARE_INFOWIC: " "
+    PRIMARY_CARE_INFOYESNO_: null
+    PrimaryCarePtADDRESS: "425 2ND STREET NW"
+    PrimaryCarePtADDRID: 299726
+    PrimaryCarePtADMINISTRA: " "
+    PrimaryCarePtCHARGENURS: " "
+    PrimaryCarePtCITY: "WASHINGTON"
+    PrimaryCarePtCT_HPSA: " "
+    PrimaryCarePtFAX: " "
+    PrimaryCarePtGIS_ID: "PC_32"
+    PrimaryCarePtINSURANCE_ACCEPTED: " "
+    PrimaryCarePtLAST_MODIFIED_ACTION: null
+    PrimaryCarePtLAST_MODIFIED_DATE: null
+    PrimaryCarePtLAST_MODIFIED_USER: null
+    PrimaryCarePtMAR_CENSUS: "005900"
+    PrimaryCarePtMEDICALDIR: " "
+    PrimaryCarePtNAME: "Unity - Central Union Mission Health Center"
+    PrimaryCarePtOBJECTID: 1
+    PrimaryCarePtPHONE: "202-508-0500; 202-469-4699 (Appointment Scheduling Number)"
+    PrimaryCarePtPOPULATION_SERVED: " "
+    PrimaryCarePtSEE_PATIENTS_WHO_CANT_PAY: " "
+    PrimaryCarePtSTATE: "DC"
+    PrimaryCarePtWALKIN_UNSCHEDULED: "Yes"
+    PrimaryCarePtWARD: 6
+    PrimaryCarePtWEB_URL: "http://www.unityhealthcare.org/HealthCenters/ServiceCentralUnion.html"
+    PrimaryCarePtXCOORD: 398846.5
+    PrimaryCarePtYCOORD: 136406.27
+    PrimaryCarePtZIP: 20001
+    PrimaryCarePtZIP_1: "20001"
+    }
+}]
 
-            Y: "XXXXXX.xxxxxxxxx"
-
-        }
-
-
-        
-        }
+   ```
