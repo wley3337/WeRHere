@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import { MainMenuIcon} from '../icons/MainMenuIcon'
 import { MenuTriangle } from '../icons/MenuTriangle'

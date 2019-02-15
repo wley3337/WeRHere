@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react'
+import React from 'react'
 import ReactMapboxGl, { Layer, Feature } from "react-mapbox-gl"
 
 // refference for this: http://alex3165.github.io/react-mapbox-gl/documentation
@@ -23,29 +23,14 @@ const Map = ReactMapboxGl({
     accessToken: mapBoxToken
   });
 
-class MapFrame extends PureComponent{
+const MapFrame =({ lat, long, sprite}) => {
     
-     
-
-    // componentDidMount(){
-       
-    //     this.map = new mapboxgl.Map({
-    //         container: 'map',
-    //         style: 'mapbox://styles/mapbox/streets-v11'
-    //         });
-
-    //     }
 
     //     componentWillUnmount(){
     //         this.map.remove()
     //     }
 
-
-
-
-    render(){
-       
-       
+      
         return(
             <Map
                 //this is the style reference which is built on Map Box
@@ -57,18 +42,18 @@ class MapFrame extends PureComponent{
                 }}
 
                 // Map starting center and zoom level( 0- is global, 20-is inside of a building)
-                center={[-77.0369, 38.9072]}
-                zoom={[16]}
+                center={[lat, long]}
+                zoom={[15.75]}
             >
                 <Layer
                     type="symbol"
                     id="marker"
-                    layout={{ "icon-image": "marker-15" }}>
-                    <Feature coordinates={[-77.0369, 38.90]}/>
+                    layout={{ "icon-image": sprite }}>
+                    <Feature coordinates={[lat, long]}/>
                 </Layer>
             </Map>
         )
-    }
+    
 }
 
 

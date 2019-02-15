@@ -10,7 +10,7 @@ import{  NavBar } from '../components/NavBar'
 import MentalHealth from './MentalHealth'
 import { HealthItemDetail } from '../components/HealthItemDetail'
 import ClinicHealth from './ClinicHealth'
-import { ClinicItemDetail } from '../components/ClinicItemDetail'
+import ClinicItemDetail  from '../components/ClinicItemDetail'
 
 
 //helper function 
