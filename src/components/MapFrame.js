@@ -61,10 +61,10 @@ class MapFrame extends PureComponent{
                 zoom={[16]}
             >
                 <Layer
-                type="symbol"
-                id="marker"
-                layout={{ "icon-image": "marker-15" }}>
-                <Feature coordinates={[-77.0369, 38.90]}/>
+                    type="symbol"
+                    id="marker"
+                    layout={{ "icon-image": "marker-15" }}>
+                    <Feature coordinates={[-77.0369, 38.90]}/>
                 </Layer>
             </Map>
         )
