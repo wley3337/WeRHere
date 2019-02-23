@@ -37,7 +37,7 @@ class MentalHealth extends Component {
         return(
             <div>
                 
-                <div className="health-text">MentalHealth</div>
+                <div className="health-text">Mental Health Service Providers</div>
 
                 <Menu attached='top' tabular >
 

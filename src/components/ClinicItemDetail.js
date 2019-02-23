@@ -1,40 +1,85 @@
 import React, {PureComponent} from 'react'
 
 import MapFrame from './MapFrame';
-import { Input, Menu, Segment } from 'semantic-ui-react'
+import { Menu, Segment } from 'semantic-ui-react'
 import { ServiceDetails } from './ServiceDetails';
+import { aptPhoneNumberFormating } from '../helperFunctions/HelperFunctions'
+import { Languages } from './Languages';
+import { Hours } from './Hours';
 
 class ClinicItemDetail extends PureComponent { 
     state={ activeMenuItem: 'Map'}
 
-    setActiveMenuItem= (focus) =>{
+    setActiveMenuItem = (focus) =>{
         this.setState({
             activeMenuItem: focus
         })
     }
+    
+    phone1 = (location) =>{
+      return  location.properties.PHONE.split(";")[0]
+    }
 
-    displayList = () =>{
+    phone2 = (location) =>{
+      return  location.properties.PHONE.split(";")[1] ? 
+             aptPhoneNumberFormating(location.properties.PHONE.split(";")[1])
+             : null
+    }
+
+
+    slectedMenuItem = (location)=> {
         switch(this.state.activeMenuItem){
-            case 'Map':
-                return []
+            case "Map":
+            return (
+                <div id="map-div">
 
-            case 'Services':
-                return []
+                                        {location.geometry.coordinates[0] < -75 && location.geometry.coordinates[0] > -80 ?  
+                                            <MapFrame 
+                                                lat={location.geometry.coordinates[0]} 
+                                                long={location.geometry.coordinates[1]}
+                                                sprite="doctor-15"
+                                            />
+                                            :
+                                            <h1>No Map information available</h1>
+                                        }
+                                    </div> 
+            )
+            case "Services":
+            return <ServiceDetails properties={location.properties}/> 
+
+            case "Languages Available":
+            return <Languages properties={location.properties}/>
+
+            case "Hours":
+            return <Hours properties={location.properties}/>
 
             default:
-                return []
+            return null
         }
+
     }
-    
+
+
    render(){
+  
      const  {location} = this.props
+      
        return (!location ? null 
                :
    
                <div className="health-text">
                    <h1>{location.properties.NAME}</h1> 
-                   <p> Phone: {`${location.properties.PHONE}`}</p>
-   
+
+                   { !location.properties.WEB_URL ? null: 
+                        <a href={location.properties.WEB_URL} target="_blank">Web Site</a>
+                    }
+
+                   <p> Phone: <a href={`tel: ${this.phone1(location)}`}>{this.phone1(location)}</a></p>
+
+                    {! this.phone2(location) ? null :
+                    <p> {this.phone2(location).phoneType}: <a href={`tel: ${this.phone2(location).phoneNumber2}`}>{this.phone2(location).phoneNumber2}</a></p>
+                    }
+
                    <h2>Address: {`${location.properties.ADDRESS}`}</h2>
    
                    <div>
@@ -47,28 +92,26 @@ class ClinicItemDetail extends PureComponent {
 
                         />
                         <Menu.Item 
+                            name='Hours' 
+                            active={this.state.activeMenuItem === 'Hours'} 
+                            onClick={() => this.setActiveMenuItem('Hours')}
+                        
+                        />
+                        <Menu.Item 
                             name='Services' 
                             active={this.state.activeMenuItem === 'Services'} 
                             onClick={() => this.setActiveMenuItem('Services')}
                         
-                            />
+                        />
+                         <Menu.Item 
+                            name='Languages Available' 
+                            active={this.state.activeMenuItem === 'Languages Available'} 
+                            onClick={() => this.setActiveMenuItem('Languages Available')}
+                        
+                        />
                     </Menu>
                         <Segment attached='bottom'>
-                            {this.state.activeMenuItem === 'Map' ?
-                                    <div>
-
-                                        {/* <h1 style={{"color": "blue"}}>map</h1> */}
-                                        <MapFrame 
-                                            lat={location.geometry.coordinates[0]} 
-                                            long={location.geometry.coordinates[1]}
-                                            sprite="doctor-15"
-                                        />
-                                    </div> 
-                                :
-                                <ServiceDetails properties={location.properties}/> 
-                        
-                            }
-
+                            {this.slectedMenuItem(location)}
                         </Segment>
 
                    </div>

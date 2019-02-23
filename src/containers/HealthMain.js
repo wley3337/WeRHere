@@ -8,7 +8,7 @@ import * as actions from '../redux/actions'
 import HealthMenu from '../components/HealthMenu'
 import{  NavBar } from '../components/NavBar'
 import MentalHealth from './MentalHealth'
-import { HealthItemDetail } from '../components/HealthItemDetail'
+import { MentalHealthItemDetail } from '../components/MentalHealthItemDetail'
 import ClinicHealth from './ClinicHealth'
 import ClinicItemDetail  from '../components/ClinicItemDetail'
 
@@ -53,7 +53,7 @@ import { nameDeSlug } from '../helperFunctions/HelperFunctions'
                 } }/>
             
             <Route exact path='/health/mental-health/:id' render={ ({match}) => { 
-                    return <HealthItemDetail 
+                    return <MentalHealthItemDetail 
                                 location={this.getMentalHealthLocation(match.params.id)} />
                 } } />
 

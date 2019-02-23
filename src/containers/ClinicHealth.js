@@ -31,6 +31,7 @@ class ClinicHealth extends Component {
     }
     
     render(){
+        
         return(
             <div>
                 

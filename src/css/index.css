@@ -161,3 +161,12 @@ height: 12vh;
 .nav-bar-sub{
 
 }
+
+#map-div{
+  position: relative;
+  height: 50vh;
+}
+.menu-text{
+  color: blue;
+}
+

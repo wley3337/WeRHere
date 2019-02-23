@@ -17,3 +17,8 @@ export const removeFromKey= (arry, stringToRemove) => {
     })
     return arry
 }
+
+
+export const aptPhoneNumberFormating = (phoneAndText) =>{
+    return {phoneNumber2: phoneAndText.replace(/[a-zA-z ()]/g, ""), phoneType: phoneAndText.split("(")[1].replace(/[)]/, "") }
+}

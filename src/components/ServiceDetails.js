@@ -6,7 +6,7 @@ export const ServiceDetails = ({properties}) =>{
     // debugger
 
     return(
-        <div style={{"color": "blue"}}>
+        <div className="menu-text">
             <p>Medical Services Available: </p>
             
             <p>{properties.NAME.includes('Dialysis') ?

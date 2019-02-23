@@ -37,19 +37,22 @@ const MapFrame =({ lat, long, sprite}) => {
                 style="mapbox://styles/mapbox/streets-v9"
                 // continaer properties
                 containerStyle={{
-                    height: "100vh",
-                    width: "100vw"
+                    height: "100%",
+                    width: "100%"
                 }}
 
                 // Map starting center and zoom level( 0- is global, 20-is inside of a building)
                 center={[lat, long]}
                 zoom={[15.75]}
             >
+
+                
                 <Layer
                     type="symbol"
                     id="marker"
                     layout={{ "icon-image": sprite }}>
                     <Feature coordinates={[lat, long]}/>
+                   
                 </Layer>
             </Map>
         )
