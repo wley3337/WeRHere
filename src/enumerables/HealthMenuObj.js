@@ -9,8 +9,18 @@ export const healthMenuObj = ()=>{
                 icon: <SemanticPhoneIcon />
             },
             {
-                title: "Clinics",
+                title: "Primary Care / Hospitals / Pharmicies",
+                route: "/health/primary-care",
+                icon: <HospitalIcon />
+            },
+            {
+                title: "HIV and Dialysis Clinics",
                 route: "/health/clinics",
+                icon: <HospitalIcon />
+            },
+            {
+                title: "Rehab and Treatment Facilities",
+                route: "/health/treatment",
                 icon: <HospitalIcon />
             }
         ]

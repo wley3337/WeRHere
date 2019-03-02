@@ -9,12 +9,13 @@ import HealthMenu from '../components/HealthMenu'
 import{  NavBar } from '../components/NavBar'
 import MentalHealth from './MentalHealth'
 import { MentalHealthItemDetail } from '../components/MentalHealthItemDetail'
-import ClinicHealth from './ClinicHealth'
-import ClinicItemDetail  from '../components/ClinicItemDetail'
+import PrimaryCareMenu from './PrimaryCareMenu'
+import PrimaryCareItemDetail  from '../components/PrimaryCareItemDetail'
 
 
 //helper function 
 import { nameDeSlug } from '../helperFunctions/HelperFunctions'
+import ClinicsMenu from './ClinicsMenu';
 
  class HealthMain extends Component {
 
@@ -23,6 +24,7 @@ import { nameDeSlug } from '../helperFunctions/HelperFunctions'
         this.props.getAdultMentalHealthProviders()
         this.props.getDialysisClinics()
         this.props.getPrimaryCareCenters()
+        this.props.getHospitals()
     }
     
     getMentalHealthLocation(paramsName){
@@ -32,9 +34,16 @@ import { nameDeSlug } from '../helperFunctions/HelperFunctions'
         return locationObj
     }
 
+    getPrimaryCareCenters(paramsName){
+        const locationName = nameDeSlug(paramsName)
+        const allClinicLocations =[...this.props.hospitals, ...this.props.primaryCareCenters]
+        const locationObj = allClinicLocations.find((location) => location.properties.NAME === locationName)
+        return locationObj
+    }
+
     getClinicLocation(paramsName){
         const locationName = nameDeSlug(paramsName)
-        const allClinicLocations =[...this.props.dialysisClinics, ...this.props.primaryCareCenters]
+        const allClinicLocations =[...this.props.dialysisClinics]
         const locationObj = allClinicLocations.find((location) => location.properties.NAME === locationName)
         return locationObj
     }
@@ -57,18 +66,43 @@ import { nameDeSlug } from '../helperFunctions/HelperFunctions'
                                 location={this.getMentalHealthLocation(match.params.id)} />
                 } } />
 
-            <Route exact path='/health/clinics' render={() => {
-                   return < ClinicHealth 
-                                dialysisClinics={this.props.dialysisClinics}
+            <Route exact path='/health/primary-care' render={() => {
+                   return < PrimaryCareMenu 
+// need to add Hospitals and Pharmicies reducers etc
                                 primaryCareCenters={this.props.primaryCareCenters}
-                            
+                                hospitals={this.props.hospitals}
+                                pharmacies={this.props.pharmacies}
                             />
                 } }/>
-            
+            <Route exact path='/health/primary-care/:id' render={ ({match}) => { 
+                    return <PrimaryCareItemDetail 
+                                location={this.getPrimaryCareCenters(match.params.id)} />
+                } } /> 
+                
+            <Route exact path='/health/clinics' render={() => {
+                return < ClinicsMenu 
+                            dialysisClinics={this.props.dialysisClinics}
+// need to add HIV Clinics reducers etc
+                            primaryCareCenters={this.props.primaryCareCenters}
+                        
+                        />
+            } }/>
             <Route exact path='/health/clinics/:id' render={ ({match}) => { 
-                    return <ClinicItemDetail 
+                    return <PrimaryCareItemDetail 
                                 location={this.getClinicLocation(match.params.id)} />
-                } } />          
+                } } />  
+                   <Route exact path='/health/treatment' render={() => {
+                return < ClinicsMenu 
+                            dialysisClinics={this.props.dialysisClinics}
+// need to add Youth Rehab and Opoid Treatment reducers etc
+                            primaryCareCenters={this.props.primaryCareCenters}
+                        
+                        />
+            } }/>
+            <Route exact path='/health/treatment/:id' render={ ({match}) => { 
+                    return <PrimaryCareItemDetail 
+                                location={this.getClinicLocation(match.params.id)} />
+                } } />           
         
 
             <NavBar section={"health"} />
@@ -82,7 +116,8 @@ const mapStateToProps = (state) =>{
         childMentalHealthProviders: state.childMentalHealthProviders,
         adultMentalHealthProviders: state.adultMentalHealthProviders,
         dialysisClinics: state.dialysisClinics,
-        primaryCareCenters: state.primaryCareCenters
+        primaryCareCenters: state.primaryCareCenters,
+        hospitals: state.hospitals
     }
 }
 

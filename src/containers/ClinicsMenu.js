@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
 
 //components
-import { ClinicListItem } from '../components/ClinicListItem';
+import { ListItem } from '../components/ListItem';
 import { Input, Menu, Segment } from 'semantic-ui-react'
 
 //helper function 
 import { nameSlug } from '../helperFunctions/HelperFunctions'
 
 
-class ClinicHealth extends Component {
-    state={ activeMenuItem: 'Primary Care Centers'}
+class ClinicsMenu extends Component {
+    state={ activeMenuItem: 'HIV Clinics'}
 
     setActiveMenuItem= (focus) =>{
         this.setState({
@@ -22,7 +22,7 @@ class ClinicHealth extends Component {
             case 'Dialysis Clinics':
                 return this.props.dialysisClinics
 
-            case 'Primary Care Centers':
+            case 'HIV Clinics':
                 return this.props.primaryCareCenters
 
             default:
@@ -39,12 +39,11 @@ class ClinicHealth extends Component {
 
                 <Menu attached='top' tabular >
                     <Menu.Item 
-                        name='Primary Care Centers' 
-                        active={this.state.activeMenuItem === 'Primary Care Centers'} 
-                        onClick={() => this.setActiveMenuItem('Primary Care Centers')}
+                        name='HIV Clinics' 
+                        active={this.state.activeMenuItem === 'HIV Clinics'} 
+                        onClick={() => this.setActiveMenuItem('HIV Clinics')}
                         className="health-2 health-text" 
                     />
-
                     <Menu.Item 
                         name='Dialysis Clinics' 
                         active={this.state.activeMenuItem === 'Dialysis Clinics'} 
@@ -57,7 +56,11 @@ class ClinicHealth extends Component {
 
                         {/* used 'location' for this because of key word provider */}
                         {this.displayList().map( (location, index) => {
-                            return <ClinicListItem location={location} slug={nameSlug(location.properties.NAME)}key={index}/> 
+                            return <ListItem 
+                                        location={location} 
+                                        slug={nameSlug(location.properties.NAME)}
+                                        path={'clinics'}
+                                        key={index}/> 
                         })}
                        
                 </Segment>
@@ -67,4 +70,4 @@ class ClinicHealth extends Component {
     }
 }
 
-export default ClinicHealth
+export default ClinicsMenu

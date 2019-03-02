@@ -9,7 +9,7 @@ export const MentalHealthItemDetail = ({location}) =>{
 
             <div className="health-text">
                 <h1>{location.properties.NAME}</h1> 
-
+                <p> 24/7 Access Helpline:  <a href={`tel: ${18887934357}`}>1-888-7WE-HELP</a></p>
                 <h2>Address: {`${location.properties.ADDRESS}`}</h2>
                 <div id="map-div">
 

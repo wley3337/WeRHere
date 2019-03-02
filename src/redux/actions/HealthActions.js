@@ -2,7 +2,8 @@ import {
     SET_CHILD_MENTAL_HEALTH_PROVIDERS, 
     SET_ADULT_MENTAL_HEALTH_PROVIDERS,
     SET_DIALYSIS_CLINICS,
-    SET_PRIMARY_CARE_CENTERS
+    SET_PRIMARY_CARE_CENTERS,
+    SET_HOSPITALS
                                         } from './types'
 
 //helper functions
@@ -70,6 +71,20 @@ export const getPrimaryCareCenters = () => dispatch =>{
         const primaryCareCenters = data.features
         const adjustedPrimaryCareCenters = removeFromKey(primaryCareCenters, "PrimaryCarePt")
         dispatch({type: SET_PRIMARY_CARE_CENTERS, payload: adjustedPrimaryCareCenters})
+        
+    })
+}
+
+//** fetch Hospital Data */
+
+export const getHospitals = () => dispatch =>{
+    //geoJson
+    fetch('https://opendata.arcgis.com/datasets/6c18bb76d8644bc1bf53cac2d2199564_4.geojson')
+    .then(r=> r.json())
+    .then(data => {
+    
+        const hospitals = data.features
+        dispatch({type: SET_HOSPITALS, payload: hospitals})
         
     })
 }

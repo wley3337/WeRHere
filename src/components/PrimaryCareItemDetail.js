@@ -7,7 +7,7 @@ import { aptPhoneNumberFormating } from '../helperFunctions/HelperFunctions'
 import { Languages } from './Languages';
 import { Hours } from './Hours';
 
-class ClinicItemDetail extends PureComponent { 
+class PrimaryCareItemDetail extends PureComponent { 
     state={ activeMenuItem: 'Map'}
 
     setActiveMenuItem = (focus) =>{
@@ -32,17 +32,16 @@ class ClinicItemDetail extends PureComponent {
             case "Map":
             return (
                 <div id="map-div">
-
-                                        {location.geometry.coordinates[0] < -75 && location.geometry.coordinates[0] > -80 ?  
-                                            <MapFrame 
-                                                lat={location.geometry.coordinates[0]} 
-                                                long={location.geometry.coordinates[1]}
-                                                sprite="doctor-15"
-                                            />
-                                            :
-                                            <h1>No Map information available</h1>
-                                        }
-                                    </div> 
+                    {location.geometry.coordinates[0] < -75 && location.geometry.coordinates[0] > -80 ?  
+                        <MapFrame 
+                            lat={location.geometry.coordinates[0]} 
+                            long={location.geometry.coordinates[1]}
+                            sprite="doctor-15"
+                        />
+                        :
+                        <h1>No Map information available</h1>
+                    }
+                </div> 
             )
             case "Services":
             return <ServiceDetails properties={location.properties}/> 
@@ -70,15 +69,19 @@ class ClinicItemDetail extends PureComponent {
                <div className="health-text">
                    <h1>{location.properties.NAME}</h1> 
 
-                   { !location.properties.WEB_URL ? null: 
+                    {!location.properties.WEB_URL ? null: 
                         <a href={location.properties.WEB_URL} target="_blank">Web Site</a>
                     }
+                    {!location.properties.PHONE ? null :
+                        <div>
+                            <p> Phone: <a href={`tel: ${this.phone1(location)}`}>{this.phone1(location)}</a></p>
+                            {! this.phone2(location) ? null :
+                            <p> {this.phone2(location).phoneType}: <a href={`tel: ${this.phone2(location).phoneNumber2}`}>{this.phone2(location).phoneNumber2}</a></p>
+                            }
+                        </div>
 
-                   <p> Phone: <a href={`tel: ${this.phone1(location)}`}>{this.phone1(location)}</a></p>
-
-                    {! this.phone2(location) ? null :
-                    <p> {this.phone2(location).phoneType}: <a href={`tel: ${this.phone2(location).phoneNumber2}`}>{this.phone2(location).phoneNumber2}</a></p>
                     }
+
 
                    <h2>Address: {`${location.properties.ADDRESS}`}</h2>
    
@@ -129,4 +132,4 @@ class ClinicItemDetail extends PureComponent {
    }
 }
 
-export default ClinicItemDetail
+export default PrimaryCareItemDetail

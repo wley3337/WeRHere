@@ -259,5 +259,42 @@ properties:{
     PrimaryCarePtZIP_1: "20001"
     }
 }]
+``
 
-   ```
+
+#### Hospital API
+
+
+* URL:
+- 'https://opendata.arcgis.com/datasets/6c18bb76d8644bc1bf53cac2d2199564_4.geojson'
+
+
+* Data Structure:
+```
+[
+geometry:
+    coordinates: (2) [-77.01024721169087, 38.929284418269624]
+    type: "Point"
+
+properties:
+    ADDRESS: "50 IRVING STREET NW"
+    ADULT_MAJOR_TRAUMA: null
+    ADULT_MEDICAL: "Y"
+    ADULT_MINOR_TRAUMA: "Y"
+    AID: 243205
+    BED_COUNT: null
+    CRITICAL_BURNS: null
+    GIS_ID: "Hosp_013"
+    NAME: "Veterans Affairs Medical Center"
+    OBJECTID: 1
+    OBSTETRICS: null
+    PEDIATRIC_MAJOR_TRAUMA: null
+    PEDIATRIC_MEDICAL: null
+    PEDIATRIC_MINOR_TRAUMA: null
+    SSL: "Null"
+    TYPE: "Specialty"
+    WEB_URL: "http://www.washingtondc.va.gov/"
+
+]
+
+``

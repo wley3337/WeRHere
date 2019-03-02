@@ -5,7 +5,8 @@ import {
         SET_CHILD_MENTAL_HEALTH_PROVIDERS,
         SET_ADULT_MENTAL_HEALTH_PROVIDERS,
         SET_DIALYSIS_CLINICS,
-        SET_PRIMARY_CARE_CENTERS 
+        SET_PRIMARY_CARE_CENTERS,
+        SET_HOSPITALS 
                                             } from './actions/types'
 
 
@@ -68,6 +69,16 @@ const primaryCareCenters = (state= [], action) =>{
     }
 
 }
+const hospitals = (state= [], action) =>{
+    switch(action.type){
+        case SET_HOSPITALS:
+            return action.payload
+
+        default:
+            return state
+    }
+
+}
 
 
 
@@ -80,7 +91,8 @@ const reducers ={
     childMentalHealthProviders: childMentalHealthProviders,
     adultMentalHealthProviders: adultMentalHealthProviders,
     dialysisClinics: dialysisClinics,
-    primaryCareCenters: primaryCareCenters
+    primaryCareCenters: primaryCareCenters,
+    hospitals: hospitals
 }
 
 export default combineReducers(reducers)

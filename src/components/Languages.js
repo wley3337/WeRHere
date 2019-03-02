@@ -12,7 +12,7 @@ export const Languages = ({properties}) =>{
             {properties.PRIMARY_CARE_INFOCHINESE_TRADITIONAL.length > 1 ? <p>Chinese Traditional: {properties.PRIMARY_CARE_INFOCHINESE_TRADITIONAL}</p> : null}
             {properties.PRIMARY_CARE_INFOFRENCH.length > 1 ? <p>French: {properties.PRIMARY_CARE_INFOFRENCH}</p> : null}
             {properties.PRIMARY_CARE_INFOASL.length > 1 ? <p>ASL: {properties.PRIMARY_CARE_INFOASL}</p> : null}
-            <p>Other Languages: {properties.PRIMARY_CARE_INFOOTHER_LANGUAGE}</p>
+            {properties.PRIMARY_CARE_INFOOTHER_LANGUAGE.length > 1 ? <p>Other Languages: {properties.PRIMARY_CARE_INFOOTHER_LANGUAGE}</p> : null}
         </div>
     )
 }
