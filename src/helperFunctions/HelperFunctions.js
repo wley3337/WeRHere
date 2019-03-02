@@ -5,7 +5,7 @@ export const nameDeSlug = (name) => { return name.replace(/(_)/gm, " ").replace(
 
 
 export const removeFromKey= (arry, stringToRemove) => {
-    arry.map( (ele) => { 
+    arry.forEach( (ele) => { 
                 // a note here: properties is a sub key this might 
                 // need to be added as another argument 
                 for( let key in ele.properties){

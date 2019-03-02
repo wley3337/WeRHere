@@ -9,7 +9,7 @@ import { nameSlug } from '../helperFunctions/HelperFunctions'
 
 
 class ClinicHealth extends Component {
-    state={ activeMenuItem: 'Dialysis Clinics'}
+    state={ activeMenuItem: 'Primary Care Centers'}
 
     setActiveMenuItem= (focus) =>{
         this.setState({
@@ -38,6 +38,12 @@ class ClinicHealth extends Component {
                 <div className="health-text">Clinics</div>
 
                 <Menu attached='top' tabular >
+                    <Menu.Item 
+                        name='Primary Care Centers' 
+                        active={this.state.activeMenuItem === 'Primary Care Centers'} 
+                        onClick={() => this.setActiveMenuItem('Primary Care Centers')}
+                        className="health-2 health-text" 
+                    />
 
                     <Menu.Item 
                         name='Dialysis Clinics' 
@@ -45,12 +51,6 @@ class ClinicHealth extends Component {
                         onClick={() => this.setActiveMenuItem('Dialysis Clinics')} 
                         className="health-2 health-text"
                     />
-                    <Menu.Item 
-                        name='Primary Care Centers' 
-                        active={this.state.activeMenuItem === 'Primary Care Centers'} 
-                        onClick={() => this.setActiveMenuItem('Primary Care Centers')}
-                        className="health-2 health-text" 
-                        />
                 </Menu>
                     {/* Segment is used to display content */}
                 <Segment attached='bottom'>

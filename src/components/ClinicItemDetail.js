@@ -91,24 +91,31 @@ class ClinicItemDetail extends PureComponent {
                             onClick={() => this.setActiveMenuItem('Map')} 
 
                         />
-                        <Menu.Item 
-                            name='Hours' 
-                            active={this.state.activeMenuItem === 'Hours'} 
-                            onClick={() => this.setActiveMenuItem('Hours')}
-                        
-                        />
-                        <Menu.Item 
-                            name='Services' 
-                            active={this.state.activeMenuItem === 'Services'} 
-                            onClick={() => this.setActiveMenuItem('Services')}
-                        
-                        />
-                         <Menu.Item 
-                            name='Languages Available' 
-                            active={this.state.activeMenuItem === 'Languages Available'} 
-                            onClick={() => this.setActiveMenuItem('Languages Available')}
-                        
-                        />
+                        {!location.properties.PRIMARY_CARE_INFOHOURS_MONDAY ? null : 
+                            <Menu.Item 
+                                name='Hours' 
+                                active={this.state.activeMenuItem === 'Hours'} 
+                                onClick={() => this.setActiveMenuItem('Hours')}
+                            
+                            />
+                        }
+
+                        {!location.properties.PRIMARY_CARE_INFOMEDICAL_SERVICES_AVAILABLE ? null :
+                            <Menu.Item 
+                                name='Services' 
+                                active={this.state.activeMenuItem === 'Services'} 
+                                onClick={() => this.setActiveMenuItem('Services')}
+                            
+                            />
+                        }
+                        {!location.properties.PRIMARY_CARE_INFOENGLISH ? null :
+                            <Menu.Item 
+                                name='Languages Available' 
+                                active={this.state.activeMenuItem === 'Languages Available'} 
+                                onClick={() => this.setActiveMenuItem('Languages Available')}
+                            
+                            />
+                        }
                     </Menu>
                         <Segment attached='bottom'>
                             {this.slectedMenuItem(location)}
