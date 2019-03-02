@@ -12,7 +12,7 @@ import { nameSlug } from '../helperFunctions/HelperFunctions'
 
 
 class MentalHealth extends Component {
-    state={ activeMenuItem: 'Youth Mental Health Services'}
+    state={ activeMenuItem: 'Youth Services'}
 
     setActiveMenuItem= (focus) =>{
         this.setState({
@@ -22,10 +22,10 @@ class MentalHealth extends Component {
 
     displayList = () =>{
         switch(this.state.activeMenuItem){
-            case 'Adult Mental Health Services':
+            case 'Adult Services':
                 return this.props.adultMentalHealthProviders
 
-            case 'Youth Mental Health Services':
+            case 'Youth Services':
                 return this.props.childMentalHealthProviders
 
             default:
@@ -37,20 +37,20 @@ class MentalHealth extends Component {
         return(
             <div>
                 
-                <div className="health-text">Mental Health Service Providers</div>
+                <h1 className="health-text">Mental Health Service Providers</h1>
 
                 <Menu attached='top' tabular >
 
                     <Menu.Item 
-                        name='Youth Mental Health Services' 
-                        active={this.state.activeMenuItem === 'Youth Mental Health Services'} 
-                        onClick={() => this.setActiveMenuItem('Youth Mental Health Services')} 
+                        name='Youth Services' 
+                        active={this.state.activeMenuItem === 'Youth Services'} 
+                        onClick={() => this.setActiveMenuItem('Youth Services')} 
                         className="health-2 health-text"
                     />
                     <Menu.Item 
-                        name='Adult Mental Health Services' 
-                        active={this.state.activeMenuItem === 'Adult Mental Health Services'} 
-                        onClick={() => this.setActiveMenuItem('Adult Mental Health Services')}
+                        name='Adult Services' 
+                        active={this.state.activeMenuItem === 'Adult Services'} 
+                        onClick={() => this.setActiveMenuItem('Adult Services')}
                         className="health-2 health-text" 
                         />
                 </Menu>

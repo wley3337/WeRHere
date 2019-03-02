@@ -68,7 +68,7 @@ import ClinicsMenu from './ClinicsMenu';
 
             <Route exact path='/health/primary-care' render={() => {
                    return < PrimaryCareMenu 
-// need to add Hospitals and Pharmicies reducers etc
+// need to add  Pharmicies reducers etc
                                 primaryCareCenters={this.props.primaryCareCenters}
                                 hospitals={this.props.hospitals}
                                 pharmacies={this.props.pharmacies}
