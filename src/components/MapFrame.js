@@ -1,9 +1,8 @@
 import React from 'react'
+//library components
 import ReactMapboxGl, { Layer, Feature } from "react-mapbox-gl"
 
 // refference for this: http://alex3165.github.io/react-mapbox-gl/documentation
-
-
 
 // <bounding>
 // <westbc>-77.039842</westbc>
@@ -18,6 +17,7 @@ import ReactMapboxGl, { Layer, Feature } from "react-mapbox-gl"
 <northbc>38.971504</northbc>
 <southbc>38.824801</southbc>
 </bounding> */ 
+
 const mapBoxToken = process.env.REACT_APP_MAPBOX_API
 const Map = ReactMapboxGl({
     accessToken: mapBoxToken

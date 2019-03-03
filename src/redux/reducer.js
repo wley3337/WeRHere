@@ -6,7 +6,9 @@ import {
         SET_ADULT_MENTAL_HEALTH_PROVIDERS,
         SET_DIALYSIS_CLINICS,
         SET_PRIMARY_CARE_CENTERS,
-        SET_HOSPITALS 
+        SET_HOSPITALS, 
+        SET_PHARMACIES,
+        SET_HIV_CLINICS
                                             } from './actions/types'
 
 
@@ -80,6 +82,26 @@ const hospitals = (state= [], action) =>{
 
 }
 
+const pharmacies = (state=[], action) =>{
+    switch(action.type){
+        case SET_PHARMACIES:
+            return action.payload
+
+        default:
+            return state
+    }
+}
+
+const hivClinics = (state=[], action) =>{
+    switch(action.type){
+        case SET_HIV_CLINICS:
+            return action.payload
+
+        default:
+            return state
+    }
+}
+
 
 
 
@@ -92,7 +114,9 @@ const reducers ={
     adultMentalHealthProviders: adultMentalHealthProviders,
     dialysisClinics: dialysisClinics,
     primaryCareCenters: primaryCareCenters,
-    hospitals: hospitals
+    hospitals: hospitals,
+    pharmacies: pharmacies,
+    hivClinics: hivClinics
 }
 
 export default combineReducers(reducers)

@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
-
+//library components
+import { Menu, Segment } from 'semantic-ui-react'
 //components
 import { ListItem } from '../components/ListItem';
-import { Input, Menu, Segment } from 'semantic-ui-react'
-
 //helper function 
 import { nameSlug } from '../helperFunctions/HelperFunctions'
 
@@ -21,25 +20,19 @@ class PrimaryCareMenu extends Component {
         switch(this.state.activeMenuItem){
             case 'Hospitals':
                 return this.props.hospitals
-
             case 'Primary Care Centers':
                 return this.props.primaryCareCenters
-
-            // case 'Pharmicies':
-            //     return this.props.pharmicies
-
+            case 'Pharmacies':
+                return this.props.pharmacies
             default:
                 return []
         }
     }
     
     render(){
-        
         return(
-            <div>
-                
+            <div> 
                 <div className="health-text">Clinics</div>
-
                 <Menu attached='top' tabular >
                     <Menu.Item 
                         name='Primary Care Centers' 
@@ -53,22 +46,25 @@ class PrimaryCareMenu extends Component {
                         onClick={() => this.setActiveMenuItem('Hospitals')} 
                         className="health-2 health-text"
                     />
+                     <Menu.Item 
+                        name='Pharmacies' 
+                        active={this.state.activeMenuItem === 'Pharmacies'} 
+                        onClick={() => this.setActiveMenuItem('Pharmacies')} 
+                        className="health-2 health-text"
+                    />
                 </Menu>
                     {/* Segment is used to display content */}
                 <Segment attached='bottom'>
-
-                        {/* used 'location' for this because of key word provider */}
-                        {this.displayList().map( (location, index) => {
-                            return <ListItem 
-                                    location={location} 
-                                    slug={nameSlug(location.properties.NAME)}
-                                    path={"primary-care"}
-                                    key={index}
-                                    /> 
-                        })}
-                       
+                    {/* used 'location' for this because of key word provider */}
+                    {this.displayList().map( (location, index) => {
+                        return <ListItem 
+                                location={location} 
+                                slug={nameSlug(location.properties.NAME)}
+                                path={"primary-care"}
+                                key={index}
+                                /> 
+                    })}                   
                 </Segment>
-
             </div>
         )
     }

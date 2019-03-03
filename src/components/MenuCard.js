@@ -1,4 +1,5 @@
 import React from 'react'
+//library components
 import { Link } from 'react-router-dom'
 import { Card } from 'semantic-ui-react';
 

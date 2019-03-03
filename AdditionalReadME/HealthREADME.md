@@ -258,8 +258,7 @@ properties:{
     PrimaryCarePtZIP: 20001
     PrimaryCarePtZIP_1: "20001"
     }
-}]
-``
+    }]
 
 
 #### Hospital API
@@ -297,4 +296,67 @@ properties:
 
 ]
 
-``
+```
+
+#### Pharmacies API
+
+
+* URL:
+- 'https://opendata.arcgis.com/datasets/2335ba275c3f4320a3113f13181eab56_9.geojson'
+
+
+* Data Structure:
+```
+[{
+geometry:
+coordinates: (2) [-76.98840744432697, 38.848273304936384]
+type: "Point"
+__proto__: Object
+properties:
+ADDRESS: "1100 ALABAMA AVENUE SE"
+ADDRESSLINE2: "ROOM 113"
+ADDRID: "307946"
+CITY: "WASHINGTON"
+FACTYPE: "Pharmacy"
+H1N1: null
+LICENSE_NUMBER: "RX1000422"
+NAME: "ST ELIZABETH HOSPITAL PHARMACY"
+OBJECTID: 1
+PHONE: null
+SEASONAL: null
+SSL: "5868S   0805"
+STATE: "DC"
+WARD: "Ward 8"
+X: 401006.51
+Y: 131162.45
+ZIPCODE: "20032"
+
+}]
+```
+
+
+#### HIV Clinics API
+
+
+* URL:
+- 'https://opendata.arcgis.com/datasets/b24aa2b089e5431eb360458c44ca13b4_3.geojson'
+
+
+* Data Structure:
+```
+geometry:
+coordinates: (2) [-77.03239727553417, 38.90320260051059]
+type: "Point"
+__proto__: Object
+properties:
+ADDRESS: "1012 14TH STREET NW"
+ADDRID: "240262"
+NAME: "Carl Vogel Center"
+OBJECTID: 1
+SERVICES: "Case Management , HIV Testing Sites - Northwest, Information For Newly Diagnosed , Mental Health/Counseling Services, Nutritional Counseling & Support, Peer/Paraprofessional Counseling & Support Groups, Primary Care, Rehabilitation Care, Treatment Adherence"
+WARD: "Ward 2"
+X: 397190.06
+Y: 137260.45
+ZIP: "20005"
+
+```

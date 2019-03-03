@@ -1,12 +1,10 @@
 import React, { Component } from 'react'
-
+//library components
+import { Menu, Segment } from 'semantic-ui-react'
 //components
 import { ListItem } from '../components/ListItem';
-import { Input, Menu, Segment } from 'semantic-ui-react'
-
 //helper function 
 import { nameSlug } from '../helperFunctions/HelperFunctions'
-
 
 class ClinicsMenu extends Component {
     state={ activeMenuItem: 'HIV Clinics'}
@@ -21,22 +19,17 @@ class ClinicsMenu extends Component {
         switch(this.state.activeMenuItem){
             case 'Dialysis Clinics':
                 return this.props.dialysisClinics
-
             case 'HIV Clinics':
-                return this.props.primaryCareCenters
-
+                return this.props.hivClinics
             default:
                 return []
         }
     }
     
     render(){
-        
         return(
             <div>
-                
                 <div className="health-text">Clinics</div>
-
                 <Menu attached='top' tabular >
                     <Menu.Item 
                         name='HIV Clinics' 
@@ -57,14 +50,13 @@ class ClinicsMenu extends Component {
                         {/* used 'location' for this because of key word provider */}
                         {this.displayList().map( (location, index) => {
                             return <ListItem 
-                                        location={location} 
-                                        slug={nameSlug(location.properties.NAME)}
-                                        path={'clinics'}
-                                        key={index}/> 
+                                location={location} 
+                                slug={nameSlug(location.properties.NAME)}
+                                path={'clinics'}
+                                key={index}
+                            /> 
                         })}
-                       
                 </Segment>
-
             </div>
         )
     }

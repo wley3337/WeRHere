@@ -1,9 +1,10 @@
 import React from 'react'
+//library components
 import { Link } from 'react-router-dom'
+//icons
 import { MainMenuIcon} from '../icons/MainMenuIcon'
 import { MenuTriangle } from '../icons/MenuTriangle'
 
- 
 export const NavBar = ({section}) =>{
     return(
         <div className="ui grid inverted bottom fixed menu nav-bar">
@@ -16,22 +17,4 @@ export const NavBar = ({section}) =>{
 
         </div>
     )
-}
-
-const sectionSelection= (sectionName) =>{
-    switch (sectionName){
-        case 'health':
-        return 
-        case 'safety':
-        return 
-        case 'shelter':
-        return 
-        case 'food':
-        return 
-
-        default:
-        return null 
-
-    }
-
 }

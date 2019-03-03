@@ -8,7 +8,6 @@ export const Hours = ({properties}) =>{
                 <p>Open Acces Times: {properties.PRIMARY_CARE_INFOOPEN_ACCESS_TIME}</p>
             }
             <p>Monday: {properties.PRIMARY_CARE_INFOHOURS_MONDAY.length > 1 ? properties.PRIMARY_CARE_INFOHOURS_MONDAY : nP }</p>
-
             <p>Tuesday: {properties.PRIMARY_CARE_INFOHOURS_TUESDAY.length > 1 ? properties.PRIMARY_CARE_INFOHOURS_TUESDAY : nP }</p>
             <p>Wednesday: {properties.PRIMARY_CARE_INFOHOURS_WEDNESDAY.length > 1 ? properties.PRIMARY_CARE_INFOHOURS_WEDNESDAY : nP}</p>
             <p>Thursday: {properties.PRIMARY_CARE_INFOHOURS_THURSDAY.length > 1 ? properties.PRIMARY_CARE_INFOHOURS_THURSDAY: nP}</p>
@@ -16,7 +15,6 @@ export const Hours = ({properties}) =>{
             <p>Saturday: {properties.PRIMARY_CARE_INFOHOURS_SATURDAY.length > 1 ? properties.PRIMARY_CARE_INFOHOURS_SATURDAY : nP}</p>
             <p>Sunday: {properties.PRIMARY_CARE_INFOHOURS_SUNDAY.length> 1 ? properties.PRIMARY_CARE_INFOHOURS_SUNDAY: nP}</p>
         </div>
-
     )
 }
 

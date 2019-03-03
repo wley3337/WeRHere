@@ -3,7 +3,9 @@ import {
     SET_ADULT_MENTAL_HEALTH_PROVIDERS,
     SET_DIALYSIS_CLINICS,
     SET_PRIMARY_CARE_CENTERS,
-    SET_HOSPITALS
+    SET_HOSPITALS,
+    SET_PHARMACIES,
+    SET_HIV_CLINICS
                                         } from './types'
 
 //helper functions
@@ -85,6 +87,31 @@ export const getHospitals = () => dispatch =>{
     
         const hospitals = data.features
         dispatch({type: SET_HOSPITALS, payload: hospitals})
+        
+    })
+}
+
+//** fetch Pharmacies Data */
+
+export const getPharmacies = () => dispatch =>{
+    //geoJson
+    fetch('https://opendata.arcgis.com/datasets/2335ba275c3f4320a3113f13181eab56_9.geojson')
+    .then(r=> r.json())
+    .then(data => {
+        
+        const pharmacies = data.features
+        dispatch({type: SET_PHARMACIES, payload: pharmacies})
+        
+    })
+}
+
+export const getHIVClinics = () => dispatch =>{
+    fetch('https://opendata.arcgis.com/datasets/b24aa2b089e5431eb360458c44ca13b4_3.geojson')
+    .then(r=> r.json())
+    .then(data => {
+        
+        const hivClinics = data.features
+        dispatch({type: SET_HIV_CLINICS, payload: hivClinics})
         
     })
 }
