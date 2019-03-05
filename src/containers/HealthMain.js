@@ -14,6 +14,7 @@ import PrimaryCareItemDetail  from '../components/HealthComponents/PrimaryCareIt
 //helper function 
 import { nameDeSlug } from '../helperFunctions/HelperFunctions'
 import ClinicsMenu from './ClinicsMenu';
+import TreatmentMenu from './TreatmentMenu';
 
  class HealthMain extends Component {
     componentDidMount(){
@@ -24,6 +25,8 @@ import ClinicsMenu from './ClinicsMenu';
         this.props.getHospitals()
         this.props.getPharmacies()
         this.props.getHIVClinics()
+        this.props.getYouthRehabFacilities()
+        this.props.getOpioidTreatmentFacilities()
     }
     
     getMentalHealthLocation(paramsName){
@@ -44,6 +47,13 @@ import ClinicsMenu from './ClinicsMenu';
         const locationName = nameDeSlug(paramsName)
         const allClinicLocations =[...this.props.dialysisClinics, ...this.props.hivClinics]
         const locationObj = allClinicLocations.find((location) => location.properties.NAME === locationName)
+        return locationObj
+    }
+
+    getRehabLocation(paramsName){
+        const locationName = nameDeSlug(paramsName)
+        const allRehabLocations =[...this.props.youthRehabFacilities]
+        const locationObj = allRehabLocations.find((location) => location.properties.NAME === locationName)
         return locationObj
     }
 
@@ -85,15 +95,15 @@ import ClinicsMenu from './ClinicsMenu';
                     />
                 }}/>  
                 <Route exact path='/health/treatment' render={() => {
-                    return < ClinicsMenu 
-// need to add Youth Rehab and Opoid Treatment reducers etc
-                        dialysisClinics={this.props.dialysisClinics}
-                        primaryCareCenters={this.props.primaryCareCenters}
+                    return < TreatmentMenu 
+// need to add  Opoid Treatment reducers looking at data, this needs a different detail and show route etc
+                        youthRehabFacilities={this.props.youthRehabFacilities}
+                        opioidTreatmentFacilities={this.props.opioidTreatmentFacilities}
                     />
                 }}/>
                 <Route exact path='/health/treatment/:id' render={ ({match}) => { 
-                    return <PrimaryCareItemDetail 
-                        location={this.getClinicLocation(match.params.id)} 
+                    return <ItemDetail 
+                        location={this.getRehabLocation(match.params.id)} 
                     />
                 }}/>           
                 <NavBar section={"health"} />
@@ -110,7 +120,9 @@ const mapStateToProps = (state) =>{
         primaryCareCenters: state.primaryCareCenters,
         hospitals: state.hospitals,
         pharmacies: state.pharmacies,
-        hivClinics: state.hivClinics
+        hivClinics: state.hivClinics,
+        youthRehabFacilities: state.youthRehabFacilities,
+        opioidTreatmentFacilities: state.opioidTreatmentFacilities
     }
 }
 //need to wrap the componenent 'withRouter' because it won't rerender the children unless

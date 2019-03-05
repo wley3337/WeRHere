@@ -360,3 +360,69 @@ Y: 137260.45
 ZIP: "20005"
 
 ```
+
+
+
+#### Youth Rehabilitation Facilities API
+
+
+* URL:
+- 'https://opendata.arcgis.com/datasets/1d28aa7269dc40f9905912aa2e531f82_0.geojson'
+
+
+* Data Structure:
+```
+[{
+geometry:
+coordinates: (2) [-76.98858811908718, 38.91214705091434]
+type: "Point"
+
+properties:
+ADDRESS: "1000 MOUNT OLIVET ROAD NE"
+ADDRESSID: 290013
+GIS_ID: "DYRS_1"
+NAME: "Youth Services Center"
+OBJECTID: 1
+TYPE: " "
+WEB_LINK: "http://dyrs.dc.gov/"
+XCOORD: 400989.94
+YCOORD: 138252.92
+
+}]
+
+```
+
+#### Opioid Treatment Facilities API
+
+
+* URL:
+- 'https://opendata.arcgis.com/datasets/9e32b6bea7af491cb65796144e061d51_10.geojson'
+
+
+* Data Structure:
+```
+[{
+geometry:
+coordinates: (2) [-76.99338563692496, 38.9004206209805]
+type: "Point"
+
+properties:
+ADDRESS: "906 H Street NE"
+CITY: "Washington"
+HOURS: "Thursday & Friday 7 am - 10 am"
+LATITUDE: 38.90041317
+LONGITUDE: -76.99338336
+MAR_ID: 151203
+OBJECTID: 1
+ORG: "HIPS/Bread for the City"
+PHONE: "(800) 676-HIPS or (202) 232-8150"
+PROGRAM: "Treatment Center"
+STATE: "DC"
+WARD: "Ward 6"
+XCOORD: 400573.95
+YCOORD: 136951.15
+ZIPCODE: 20002
+
+}]
+
+```

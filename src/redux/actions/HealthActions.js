@@ -5,16 +5,13 @@ import {
     SET_PRIMARY_CARE_CENTERS,
     SET_HOSPITALS,
     SET_PHARMACIES,
-    SET_HIV_CLINICS
+    SET_HIV_CLINICS,
+    SET_YOUTH_REHAB_FACILITIES,
+    SET_OPIOID_TREATMENT_FACILITIES
                                         } from './types'
 
 //helper functions
 import { removeFromKey } from '../../helperFunctions/HelperFunctions'
-
-
-
-
-
 
 
 //health
@@ -112,6 +109,29 @@ export const getHIVClinics = () => dispatch =>{
         
         const hivClinics = data.features
         dispatch({type: SET_HIV_CLINICS, payload: hivClinics})
+        
+    })
+}
+
+export const getYouthRehabFacilities = () => dispatch =>{
+    fetch('https://opendata.arcgis.com/datasets/1d28aa7269dc40f9905912aa2e531f82_0.geojson')
+    .then(r=> r.json())
+    .then(data => {
+       
+        const youthRehabFacilities = data.features
+        dispatch({type: SET_YOUTH_REHAB_FACILITIES, payload: youthRehabFacilities})
+        
+    })
+}
+
+
+
+export const getOpioidTreatmentFacilities = () => dispatch =>{
+    fetch('https://opendata.arcgis.com/datasets/9e32b6bea7af491cb65796144e061d51_10.geojson')
+    .then(r=> r.json())
+    .then(data => {
+        const opioidTreatmentFacilities = data.features
+        dispatch({type: SET_OPIOID_TREATMENT_FACILITIES, payload: opioidTreatmentFacilities})
         
     })
 }
