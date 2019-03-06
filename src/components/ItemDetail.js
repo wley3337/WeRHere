@@ -52,7 +52,10 @@ class ItemDetail extends PureComponent {
                     {!location.properties.WEB_URL ? null: 
                         <a href={location.properties.WEB_URL} target="_blank" rel="noopener noreferrer">Web Site</a>
                     }
-
+                    
+                    {!location.properties.WEB_LINK ? null: 
+                        <a href={location.properties.WEB_LINK} target="_blank" rel="noopener noreferrer">Web Site</a>
+                    }
                     {!location.properties.PHONE ? null :
                         <div>
                             <p> Phone: <a href={`tel: ${phone1(location)}`}>{phone1(location)}</a></p>
