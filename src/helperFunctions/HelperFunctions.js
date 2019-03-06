@@ -32,6 +32,21 @@ export const phone2 = (location) =>{
            : null
   }
 
+
+export const opioidPhone1 = (location) =>{
+    return location.properties.PHONE.split("or")[0].replace(/\s/g,"")
+}
+export const opioidPhone2 = (location) =>{
+    return location.properties.PHONE.split("or")[1] ? 
+        location.properties.PHONE.split("or")[1].replace(/\s/g,"") 
+        : null
+}
+
+export const phoneToDigits = (phoneNumber) =>{
+    return phoneNumber.replace(/\D+/g, "")
+}
+
+
 //   const sectionSelection= (sectionName) =>{
     //     switch (sectionName){
     //         case 'health':

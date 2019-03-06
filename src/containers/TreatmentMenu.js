@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import { Menu, Segment } from 'semantic-ui-react'
 //components
 import { ListItem } from '../components/ListItem';
+import { OpioidListItem } from '../components/HealthComponents/OpioidListItem';
 //helper function 
 import { nameSlug } from '../helperFunctions/HelperFunctions'
 
@@ -18,9 +19,21 @@ class TreatmentMenu extends Component {
     displayList = () =>{
         switch(this.state.activeMenuItem){
             case 'Youth Rehabilitation Facilities':
-                return this.props.youthRehabFacilities
+                return this.props.youthRehabFacilities.map((location, index) => {
+                        return <ListItem 
+                            location={location} 
+                            slug={nameSlug(location.properties.NAME)}
+                            path={'treatment'}
+                            key={index}
+                        /> 
+                })
             case 'Opioid Treatment Facilities':
-                return this.props.opioidTreatmentFacilities
+                return this.props.opioidTreatmentFacilities.map((location, index) => {
+                    return <OpioidListItem 
+                        location={location} 
+                        key={index}
+                    /> 
+            })
             default:
                 return []
         }
@@ -48,14 +61,7 @@ class TreatmentMenu extends Component {
                 <Segment attached='bottom'>
 
                         {/* used 'location' for this because of key word provider */}
-                        {this.displayList().map( (location, index) => {
-                            return <ListItem 
-                                location={location} 
-                                slug={nameSlug(location.properties.NAME)}
-                                path={'treatment'}
-                                key={index}
-                            /> 
-                        })}
+                        {this.displayList()}
                 </Segment>
             </div>
         )

@@ -7,14 +7,15 @@ import * as actions from '../redux/actions'
 import MentalHealth from './MentalHealth'
 import PrimaryCareMenu from './PrimaryCareMenu'
 import HealthMenu from './HealthMenu'
+import ClinicsMenu from './ClinicsMenu';
+import TreatmentMenu from './TreatmentMenu';
 import{  NavBar } from '../components/NavBar'
 import ItemDetail from '../components/ItemDetail'
 import { MentalHealthItemDetail } from '../components/HealthComponents/MentalHealthItemDetail'
 import PrimaryCareItemDetail  from '../components/HealthComponents/PrimaryCareItemDetail'
+import OpioidDetail from '../components/HealthComponents/OpioidDetail';
 //helper function 
 import { nameDeSlug } from '../helperFunctions/HelperFunctions'
-import ClinicsMenu from './ClinicsMenu';
-import TreatmentMenu from './TreatmentMenu';
 
  class HealthMain extends Component {
     componentDidMount(){
@@ -52,11 +53,17 @@ import TreatmentMenu from './TreatmentMenu';
 
     getRehabLocation(paramsName){
         const locationName = nameDeSlug(paramsName)
-        const allRehabLocations =[...this.props.youthRehabFacilities]
-        const locationObj = allRehabLocations.find((location) => location.properties.NAME === locationName)
-        return locationObj
+        const locationObj = this.props.youthRehabFacilities.find(
+            (location) => location.properties.NAME === locationName )
+            return locationObj
     }
 
+    getOpioidTreatmentFacility(paramsName){
+        const locationObj = this.props.opioidTreatmentFacilities.find(
+            location => location.properties.MAR_ID === parseInt(paramsName) )
+        return locationObj
+    }
+        
     render(){
         return(
             <div className="health-2 bg-div">  
@@ -96,15 +103,20 @@ import TreatmentMenu from './TreatmentMenu';
                 }}/>  
                 <Route exact path='/health/treatment' render={() => {
                     return < TreatmentMenu 
-// need to add  Opoid Treatment reducers looking at data, this needs a different detail and show route etc
                         youthRehabFacilities={this.props.youthRehabFacilities}
                         opioidTreatmentFacilities={this.props.opioidTreatmentFacilities}
                     />
                 }}/>
-                <Route exact path='/health/treatment/:id' render={ ({match}) => { 
-                    return <ItemDetail 
-                        location={this.getRehabLocation(match.params.id)} 
-                    />
+                <Route exact path='/health/treatment/:id' render={ ({match}) => {
+                        let paramsName = match.params.id
+                    return !!parseInt(paramsName) ?  
+                            <OpioidDetail 
+                                location={this.getOpioidTreatmentFacility(paramsName)}
+                            />   
+                        :
+                            <ItemDetail 
+                                location={this.getRehabLocation(paramsName)} 
+                            />
                 }}/>           
                 <NavBar section={"health"} />
             </div>
