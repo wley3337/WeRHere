@@ -15,6 +15,7 @@
 
 ## Menu READMEs 
 * [Health Menu and APIs](./AdditionalREADME/HealthREADME.md) 
+* [Food Menu and APIs](./AdditionalREADME/FoodREADME.md) 
 
 ## Wireframe as of 1/20/19
 ![Wireframe image](public/imagesForReadMe/1-20-19-wireframe.jpg) 

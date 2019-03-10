@@ -4,6 +4,7 @@ import { Route } from  'react-router-dom';
 //components
 import { HomePg } from './HomePg';
 import HealthMain from './HealthMain';
+import FoodMain from './FoodMain';
 //css files
 import 'semantic-ui-css/semantic.min.css';
 import '../css/index.css';
@@ -14,6 +15,7 @@ class App extends Component {
       <div className="App">
        <Route exact path="/" render ={() => <HomePg />}/>
        <Route path="/health" render ={() => <HealthMain />}/>
+       <Route path="/food" render ={() => <FoodMain />}/>
       </div>
     );
   }
