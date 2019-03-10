@@ -13,6 +13,8 @@ import { nameDeSlug } from '../helperFunctions/HelperFunctions'
 class FoodMain extends PureComponent {
     componentDidMount(){
         this.props.getJoyfulFoodMarkets()
+        this.props.getHealthyCornerStores()
+        this.props.getWICStores()
     }
 
     render(){

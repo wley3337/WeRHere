@@ -10,7 +10,10 @@ import {
         SET_PHARMACIES,
         SET_HIV_CLINICS,
         SET_YOUTH_REHAB_FACILITIES,
-        SET_OPIOID_TREATMENT_FACILITIES
+        SET_OPIOID_TREATMENT_FACILITIES,
+        SET_JOYFUL_FOOD_MARKETS,
+        SET_HEALTHY_CORNER_STORES,
+        SET_WIC_MARKETS
                                             } from './actions/types'
 
 
@@ -119,11 +122,39 @@ const opioidTreatmentFacilities = (state=[], action) =>{
     switch(action.type){
         case SET_OPIOID_TREATMENT_FACILITIES:
             return action.payload
-
         default:
             return state
     }
 }
+
+const joyfulFoodMarkets = (state=[], action) =>{
+    switch(action.type){
+        case SET_JOYFUL_FOOD_MARKETS:
+            return action.payload
+        default:
+            return state
+    }
+}
+
+const healthyCornerStores = (state=[], action) =>{
+    switch(action.type){
+        case SET_HEALTHY_CORNER_STORES:
+            return action.payload
+        default:
+            return state
+    }
+}
+
+const wicMarkets = (state=[], action) =>{
+    switch(action.type){
+        case SET_WIC_MARKETS:
+            return action.payload
+        default:
+            return state
+    }
+}
+
+
 
 
 //combined reducers 
@@ -137,7 +168,10 @@ const reducers ={
     pharmacies: pharmacies,
     hivClinics: hivClinics,
     youthRehabFacilities: youthRehabFacilities,
-    opioidTreatmentFacilities: opioidTreatmentFacilities
+    opioidTreatmentFacilities: opioidTreatmentFacilities,
+    joyfulFoodMarkets: joyfulFoodMarkets,
+    healthyCornerStores: healthyCornerStores,
+    wicMarkets: wicMarkets
 }
 
 export default combineReducers(reducers)
