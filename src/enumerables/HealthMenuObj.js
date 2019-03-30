@@ -1,5 +1,5 @@
 import React from 'react'
-import {SemanticPhoneIcon, HospitalIcon, CompussIcon} from '../icons'
+import { SemanticPhoneIcon, HospitalIcon } from '../icons'
 export const healthMenuObj = ()=>{
     return(
         [
