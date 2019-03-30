@@ -12,7 +12,7 @@ import { nameDeSlug } from '../../helperFunctions/HelperFunctions'
 import MultiPointMapFrame from '../MultiPointMapFrame';
 
 class CornerStores extends PureComponent {
-    state={ activeMenuItem: 'Map'}
+    state={ activeMenuItem: 'All DC'}
 
     setActiveMenuItem = (focus) =>{
         this.setState({
@@ -23,35 +23,43 @@ class CornerStores extends PureComponent {
     slectedMenuItem = ()=> {
         switch(this.state.activeMenuItem){
             case "All DC":
-                return <div id="map-div">
-                        <MultiPointMapFrame 
-                            lat={-77.039003}
-                            long={38.889931}
-                            zoom={10}
-                            sprite="restaurant-15"
-                            pointArray={this.props.healthyCornerStores}
-                        />
-                       </div>
-                    // <div id="map-div">
-                    //     {location.geometry.coordinates[0] < -75 && location.geometry.coordinates[0] > -80 ?  
-                    //         <MapFrame 
-                    //             lat={location.geometry.coordinates[0]} 
-                    //             long={location.geometry.coordinates[1]}
-                    //             sprite="doctor-15"
-                    //         />
-                    //         :
-                    //         <h1>No Map information available</h1>
-                    //     }
-                    // </div> 
-                
+                return (
+                    <MultiPointMapFrame 
+                        lat={-77.039003}
+                        long={38.889931}
+                        zoom={10}
+                        sprite="restaurant-15"
+                        pointArray={this.props.healthyCornerStores}
+                    /> )
             case "NW":
-                return 
+                return <p>This program is only available in NE, SW, SE</p>
             case "NE":
-                return 
+                return (
+                    <MultiPointMapFrame 
+                        lat={-76.970003}
+                        long={38.93}
+                        zoom={11}
+                        sprite="restaurant-15"
+                        pointArray={this.props.healthyCornerStores.filter(location => location.properties.ADDRESS.includes("NE"))}
+                    /> )
             case "SW":
-                return 
+                return (
+                    <MultiPointMapFrame 
+                        lat={-77.0}
+                        long={38.85}
+                        zoom={11.5}
+                        sprite="restaurant-15"
+                        pointArray={this.props.healthyCornerStores.filter(location => location.properties.ADDRESS.includes("SW"))}
+                    /> )
             case "SE":
-                return 
+            return (
+                <MultiPointMapFrame 
+                    lat={-76.970003}
+                    long={38.87}
+                    zoom={11}
+                    sprite="restaurant-15"
+                    pointArray={this.props.healthyCornerStores.filter(location => location.properties.ADDRESS.includes("SE"))}
+                /> )
             default:
                 return null
         }
@@ -64,6 +72,10 @@ class CornerStores extends PureComponent {
     render(){
        return(
             <div className="food-text">
+                <div>
+                    {/* need to add the pop for details on click of pin */}
+                    <p>Represents corner stores currently participating in DC Central Kitchen's (DCCK) Healthy Corners program. These corner stores sell fresh, healthy produce options</p>
+                </div>
                 <div>
                     <Menu attached='top' tabular >
                         <Menu.Item 
@@ -95,7 +107,9 @@ class CornerStores extends PureComponent {
                     </Menu>
                     <Segment attached='bottom'>
                         {/* render map with array of map points based on a filter of state object (ex: nw only addresses w/ NW) */} 
-                        {this.slectedMenuItem()} 
+                        <div id="map-div">
+                            {this.slectedMenuItem()} 
+                        </div>
                     </Segment>
                 </div>
             </div>
