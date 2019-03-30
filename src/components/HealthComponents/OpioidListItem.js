@@ -3,7 +3,6 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 export const OpioidListItem = ({ location }) =>{
-    // debugger
     return (
         <div>
             <Link to={`/health/treatment/${location.properties.MAR_ID}`} > 
@@ -12,5 +11,4 @@ export const OpioidListItem = ({ location }) =>{
             </Link>
         </div>
     )
-       
 }
