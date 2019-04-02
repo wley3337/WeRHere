@@ -43,7 +43,7 @@ const MapFrame =({ lat, long, sprite}) => {
 
                 // Map starting center and zoom level( 0- is global, 20-is inside of a building)
                 center={[lat, long]}
-                zoom={[15.75]}
+                zoom={[14]}
             >
 
                 
