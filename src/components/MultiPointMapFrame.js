@@ -1,6 +1,8 @@
 import React from 'react'
 //library components
 import ReactMapboxGl, { Layer, Feature } from "react-mapbox-gl"
+import {connect} from 'react-redux'
+import * as actions from '../redux/actions'
 
 // refference for this: http://alex3165.github.io/react-mapbox-gl/documentation
 
@@ -23,14 +25,8 @@ const Map = ReactMapboxGl({
     accessToken: mapBoxToken
   });
 
-const MultiPointMapFrame =({ lat, long, sprite, pointArray, zoom }) => {
+const MultiPointMapFrame =({ lat, long, sprite, pointArray, zoom, setPopupFocus }) => {
     
-    // debugger
-    //     componentWillUnmount(){
-    //         this.map.remove()
-    //     }
-
-      
         return(
             <Map
                 //this is the style reference which is built on Map Box
@@ -51,7 +47,12 @@ const MultiPointMapFrame =({ lat, long, sprite, pointArray, zoom }) => {
                     type="symbol"
                     id="marker"
                     layout={{ "icon-image": sprite }}>
-                    {pointArray.map(location => <Feature coordinates={[location.geometry.coordinates[0], location.geometry.coordinates[1]]}/>)}
+                    {pointArray.map(location => 
+                        <Feature 
+                            coordinates={[location.geometry.coordinates[0], location.geometry.coordinates[1]]}
+                            onClick={()=>{setPopupFocus(location)}}
+                        />
+                    )}
                 </Layer>
             </Map>
         )
@@ -59,4 +60,4 @@ const MultiPointMapFrame =({ lat, long, sprite, pointArray, zoom }) => {
 }
 
 
-export default MultiPointMapFrame
+export default connect(null, actions)(MultiPointMapFrame)

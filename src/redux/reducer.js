@@ -13,7 +13,8 @@ import {
         SET_OPIOID_TREATMENT_FACILITIES,
         SET_JOYFUL_FOOD_MARKETS,
         SET_HEALTHY_CORNER_STORES,
-        SET_WIC_MARKETS
+        SET_WIC_MARKETS,
+        SET_POPUP_FOCUS
                                             } from './actions/types'
 
 
@@ -153,6 +154,14 @@ const wicMarkets = (state=[], action) =>{
             return state
     }
 }
+const popupFocus = (state = {}, action)=>{
+    switch(action.type){
+        case SET_POPUP_FOCUS:
+            return action.payload
+        default:
+            return state
+    }
+}
 
 
 
@@ -171,7 +180,8 @@ const reducers ={
     opioidTreatmentFacilities: opioidTreatmentFacilities,
     joyfulFoodMarkets: joyfulFoodMarkets,
     healthyCornerStores: healthyCornerStores,
-    wicMarkets: wicMarkets
+    wicMarkets: wicMarkets,
+    popupFocus: popupFocus
 }
 
 export default combineReducers(reducers)

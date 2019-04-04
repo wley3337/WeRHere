@@ -10,6 +10,7 @@ import { Menu, Segment } from 'semantic-ui-react'
 //helper function 
 import { nameDeSlug } from '../../helperFunctions/HelperFunctions'
 import MultiPointMapFrame from '../MultiPointMapFrame';
+import MapPopupDetail from '../MapPopupDetail';
 
 class CornerStores extends PureComponent {
     state={ activeMenuItem: 'All DC'}
@@ -72,10 +73,13 @@ class CornerStores extends PureComponent {
     render(){
        return(
             <div className="food-text">
-                <div>
-                    {/* need to add the pop for details on click of pin */}
-                    <p>Represents corner stores currently participating in DC Central Kitchen's (DCCK) Healthy Corners program. These corner stores sell fresh, healthy produce options</p>
-                </div>
+                    <div>
+                        {/* need to add the pop for details on click of pin */}
+                        <p>Represents corner stores currently participating in DC Central Kitchen's (DCCK) Healthy Corners program. These corner stores sell fresh, healthy produce options</p>
+                    </div>
+                {this.props.popupFocus.properties == undefined ? null :
+                    <MapPopupDetail />
+                }
                 <div>
                     <Menu attached='top' tabular >
                         <Menu.Item 
@@ -119,7 +123,8 @@ class CornerStores extends PureComponent {
 
 const mapStateToProps = state =>{
     return {
-        healthyCornerStores: state.healthyCornerStores
+        healthyCornerStores: state.healthyCornerStores,
+        popupFocus: state.popupFocus
     }
 }
 export default withRouter(connect(mapStateToProps, actions)(CornerStores))

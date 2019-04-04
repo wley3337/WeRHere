@@ -4,3 +4,4 @@
 
 export * from './HealthActions'
 export * from './FoodActions'
+export * from './MapActions'
