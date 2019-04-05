@@ -3,12 +3,27 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 const MapPopupDetail = ({popupFocus}) =>{
-    return(
-        <div className="food-text">
-            <p>Name: {popupFocus.properties.STORE}</p>
-            <p>Address: {popupFocus.properties.ADDRESS}</p>
-        </div>
-    )
+    let title;
+    if(popupFocus.properties != undefined){  
+        if(popupFocus.properties.STORE){
+            title = popupFocus.properties.STORE 
+        }
+        if(popupFocus.properties.SCHOOL){
+            title = popupFocus.properties.SCHOOL 
+        }
+        if(popupFocus.properties.ORGANIZATION){
+            title = popupFocus.properties.ORGANIZATION 
+        }
+        return(
+            <div className="food-text">
+                <p>Location details:</p>
+                <p>Name: {title}</p>
+                <p>Address: {popupFocus.properties.ADDRESS}</p>
+            </div>
+        )
+    }else{
+        return null
+    }
 }
 
 const mapStateToProps = (state) =>{

@@ -1,6 +1,7 @@
 import React from 'react'
 //library components
 import ReactMapboxGl, { Layer, Feature } from "react-mapbox-gl"
+//redux
 import {connect} from 'react-redux'
 import * as actions from '../redux/actions'
 

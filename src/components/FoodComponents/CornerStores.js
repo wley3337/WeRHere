@@ -1,14 +1,11 @@
 import React, {PureComponent} from 'react'
-import { Route, withRouter } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 //redux
 import { connect } from 'react-redux'
 import * as actions from '../../redux/actions'
 //library components
 import { Menu, Segment } from 'semantic-ui-react'
 //components
-
-//helper function 
-import { nameDeSlug } from '../../helperFunctions/HelperFunctions'
 import MultiPointMapFrame from '../MultiPointMapFrame';
 import MapPopupDetail from '../MapPopupDetail';
 
@@ -66,20 +63,14 @@ class CornerStores extends PureComponent {
         }
     }
 
-// <Route exact path='/food/corner-stores/:id' render={ ({match}) => {  */}
-//     return <PrimaryCareItemDetail 
-//       location={this.getPrimaryCareCenters(match.params.id)} 
-//   />
+
     render(){
        return(
             <div className="food-text">
-                    <div>
-                        {/* need to add the pop for details on click of pin */}
-                        <p>Represents corner stores currently participating in DC Central Kitchen's (DCCK) Healthy Corners program. These corner stores sell fresh, healthy produce options</p>
-                    </div>
-                {this.props.popupFocus.properties == undefined ? null :
-                    <MapPopupDetail />
-                }
+                <div>
+                    <p>Represents corner stores currently participating in DC Central Kitchen's (DCCK) Healthy Corners program. These corner stores sell fresh, healthy produce options</p>
+                </div>
+                <MapPopupDetail />
                 <div>
                     <Menu attached='top' tabular >
                         <Menu.Item 

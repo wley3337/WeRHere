@@ -21,11 +21,11 @@ class FoodMain extends PureComponent {
         return(
             <div className="food-2 bg-div">  
                 <Route exact path='/food' component={FoodMenu} />  
-
+                {/* make CornerStores generic name and then pass as props the array */}
             {/* ******* put in explanations for each menu about the program at the top before the map */}
                 <Route exact path='/food/joyful-food' component={JoyfulFood} />  
                
-                <Route exact path='/food/corner-stores' component={CornerStores} />
+                <Route exact path='/food/corner-stores' render={() =>{return <CornerStores locations={this.props.CornerStores}/>}} />
             
                 <Route exact path='/food/wic' component={WIC} />
                 
@@ -35,4 +35,12 @@ class FoodMain extends PureComponent {
 }
 }
 
-export default withRouter(connect(null, actions)(FoodMain))
+const mapStateToProps= (state) =>{
+    return{
+        healthyCornerStores: state.healthyCornerStores,
+        joyfulFoodMarkets: state.joyfulFoodMarkets,
+        wicMarkets: state.wicMarkets
+    }
+}
+
+export default withRouter(connect(mapStateToProps, actions)(FoodMain))
