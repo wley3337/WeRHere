@@ -24,13 +24,6 @@ const Map = ReactMapboxGl({
   });
 
 const MapFrame =({ lat, long, sprite}) => {
-    
-
-    //     componentWillUnmount(){
-    //         this.map.remove()
-    //     }
-
-      
         return(
             <Map
                 //this is the style reference which is built on Map Box
@@ -45,19 +38,14 @@ const MapFrame =({ lat, long, sprite}) => {
                 center={[lat, long]}
                 zoom={[14]}
             >
-
-                
                 <Layer
                     type="symbol"
                     id="marker"
                     layout={{ "icon-image": sprite }}>
                     <Feature coordinates={[lat, long]}/>
-                   
                 </Layer>
             </Map>
         )
-    
 }
-
 
 export default MapFrame

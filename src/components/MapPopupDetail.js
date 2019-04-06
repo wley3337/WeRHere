@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 
 const MapPopupDetail = ({popupFocus}) =>{
     let title;
-    if(popupFocus.properties != undefined){  
+    if(popupFocus.properties !== undefined){  
         if(popupFocus.properties.STORE){
             title = popupFocus.properties.STORE 
         }

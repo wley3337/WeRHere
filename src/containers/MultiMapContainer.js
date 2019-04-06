@@ -2,14 +2,14 @@ import React, {PureComponent} from 'react'
 import { withRouter } from 'react-router-dom'
 //redux
 import { connect } from 'react-redux'
-import * as actions from '../../redux/actions'
+import * as actions from '../redux/actions'
 //library components
 import { Menu, Segment } from 'semantic-ui-react'
 //components
-import MultiPointMapFrame from '../MultiPointMapFrame';
-import MapPopupDetail from '../MapPopupDetail';
+import MultiPointMapFrame from '../components/MultiPointMapFrame';
+import MapPopupDetail from '../components/MapPopupDetail';
 
-class CornerStores extends PureComponent {
+class MultimapContainer extends PureComponent {
     state={ activeMenuItem: 'All DC'}
 
     setActiveMenuItem = (focus) =>{
@@ -27,10 +27,17 @@ class CornerStores extends PureComponent {
                         long={38.889931}
                         zoom={10}
                         sprite="restaurant-15"
-                        pointArray={this.props.healthyCornerStores}
+                        pointArray={this.props.locations}
                     /> )
             case "NW":
-                return <p>This program is only available in NE, SW, SE</p>
+                return (
+                    <MultiPointMapFrame 
+                        lat={-77.06}
+                        long={38.93}
+                        zoom={11}
+                        sprite="restaurant-15"
+                        pointArray={this.props.locations.filter(location => location.properties.ADDRESS.includes("NW"))}
+                    /> )
             case "NE":
                 return (
                     <MultiPointMapFrame 
@@ -38,37 +45,36 @@ class CornerStores extends PureComponent {
                         long={38.93}
                         zoom={11}
                         sprite="restaurant-15"
-                        pointArray={this.props.healthyCornerStores.filter(location => location.properties.ADDRESS.includes("NE"))}
+                        pointArray={this.props.locations.filter(location => location.properties.ADDRESS.includes("NE"))}
                     /> )
             case "SW":
                 return (
                     <MultiPointMapFrame 
-                        lat={-77.0}
-                        long={38.85}
+                        lat={-77.019}
+                        long={38.855}
                         zoom={11.5}
                         sprite="restaurant-15"
-                        pointArray={this.props.healthyCornerStores.filter(location => location.properties.ADDRESS.includes("SW"))}
+                        pointArray={this.props.locations.filter(location => location.properties.ADDRESS.includes("SW"))}
                     /> )
             case "SE":
-            return (
-                <MultiPointMapFrame 
-                    lat={-76.970003}
-                    long={38.87}
-                    zoom={11}
-                    sprite="restaurant-15"
-                    pointArray={this.props.healthyCornerStores.filter(location => location.properties.ADDRESS.includes("SE"))}
-                /> )
+                return (
+                    <MultiPointMapFrame 
+                        lat={-76.970003}
+                        long={38.87}
+                        zoom={11}
+                        sprite="restaurant-15"
+                        pointArray={this.props.locations.filter(location => location.properties.ADDRESS.includes("SE"))}
+                    /> )
             default:
                 return null
         }
     }
 
-
     render(){
        return(
             <div className="food-text">
                 <div>
-                    <p>Represents corner stores currently participating in DC Central Kitchen's (DCCK) Healthy Corners program. These corner stores sell fresh, healthy produce options</p>
+                   {this.props.prgDescription} 
                 </div>
                 <MapPopupDetail />
                 <div>
@@ -101,7 +107,6 @@ class CornerStores extends PureComponent {
                         />
                     </Menu>
                     <Segment attached='bottom'>
-                        {/* render map with array of map points based on a filter of state object (ex: nw only addresses w/ NW) */} 
                         <div id="map-div">
                             {this.slectedMenuItem()} 
                         </div>
@@ -114,8 +119,7 @@ class CornerStores extends PureComponent {
 
 const mapStateToProps = state =>{
     return {
-        healthyCornerStores: state.healthyCornerStores,
         popupFocus: state.popupFocus
     }
 }
-export default withRouter(connect(mapStateToProps, actions)(CornerStores))
+export default withRouter(connect(mapStateToProps, actions)(MultimapContainer))
