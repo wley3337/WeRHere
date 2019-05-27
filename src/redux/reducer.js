@@ -14,7 +14,8 @@ import {
         SET_JOYFUL_FOOD_MARKETS,
         SET_HEALTHY_CORNER_STORES,
         SET_WIC_MARKETS,
-        SET_POPUP_FOCUS
+        SET_POPUP_FOCUS,
+        SET_HOMELESS_SHELTER_LOCATIONS
                                             } from './actions/types'
 
 
@@ -128,6 +129,8 @@ const opioidTreatmentFacilities = (state=[], action) =>{
     }
 }
 
+// food reducers
+
 const joyfulFoodMarkets = (state=[], action) =>{
     switch(action.type){
         case SET_JOYFUL_FOOD_MARKETS:
@@ -154,6 +157,19 @@ const wicMarkets = (state=[], action) =>{
             return state
     }
 }
+
+// shelter reducer
+
+const homelessShelterLocations = (state = [], action)=>{
+    switch(action.type){
+        case SET_HOMELESS_SHELTER_LOCATIONS:
+            return action.payload 
+        default:
+            return state
+    }
+}
+
+// map reducer
 const popupFocus = (state = {}, action)=>{
     switch(action.type){
         case SET_POPUP_FOCUS:
@@ -181,7 +197,8 @@ const reducers ={
     joyfulFoodMarkets: joyfulFoodMarkets,
     healthyCornerStores: healthyCornerStores,
     wicMarkets: wicMarkets,
-    popupFocus: popupFocus
+    popupFocus: popupFocus,
+    homelessShelterLocations: homelessShelterLocations
 }
 
 export default combineReducers(reducers)

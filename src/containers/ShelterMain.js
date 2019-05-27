@@ -12,6 +12,7 @@ class ShelterMain extends PureComponent {
         this.props.getHomelessShelterLocations()
     }
     render(){
+        debugger
         return(
             <div>shelter main </div>
         )
@@ -20,7 +21,7 @@ class ShelterMain extends PureComponent {
 
 const mSTP = (state)=>{
     return{
-
+        homelessShelterLocations: state.homelessShelterLocations
     }
 }
 
