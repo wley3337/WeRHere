@@ -8,6 +8,7 @@ import { Menu, Segment } from 'semantic-ui-react'
 //components
 import MultiPointMapFrame from '../components/MultiPointMapFrame';
 import MapPopupDetail from '../components/MapPopupDetail';
+import ShelterPopupDetail from '../components/ShelterComponents/ShelterPopupDetail';
 
 class MultimapContainer extends PureComponent {
     state={ activeMenuItem: 'All DC'}
@@ -26,7 +27,7 @@ class MultimapContainer extends PureComponent {
                         lat={-77.039003}
                         long={38.889931}
                         zoom={10}
-                        sprite="restaurant-15"
+                        sprite={this.props.sprite}
                         pointArray={this.props.locations}
                     /> )
             case "NW":
@@ -35,7 +36,7 @@ class MultimapContainer extends PureComponent {
                         lat={-77.06}
                         long={38.93}
                         zoom={11}
-                        sprite="restaurant-15"
+                        sprite={this.props.sprite}
                         pointArray={this.props.locations.filter(location => location.properties.ADDRESS.includes("NW"))}
                     /> )
             case "NE":
@@ -44,7 +45,7 @@ class MultimapContainer extends PureComponent {
                         lat={-76.970003}
                         long={38.93}
                         zoom={11}
-                        sprite="restaurant-15"
+                        sprite={this.props.sprite}
                         pointArray={this.props.locations.filter(location => location.properties.ADDRESS.includes("NE"))}
                     /> )
             case "SW":
@@ -53,7 +54,7 @@ class MultimapContainer extends PureComponent {
                         lat={-77.019}
                         long={38.855}
                         zoom={11.5}
-                        sprite="restaurant-15"
+                        sprite={this.props.sprite}
                         pointArray={this.props.locations.filter(location => location.properties.ADDRESS.includes("SW"))}
                     /> )
             case "SE":
@@ -62,7 +63,7 @@ class MultimapContainer extends PureComponent {
                         lat={-76.970003}
                         long={38.87}
                         zoom={11}
-                        sprite="restaurant-15"
+                        sprite={this.props.sprite}
                         pointArray={this.props.locations.filter(location => location.properties.ADDRESS.includes("SE"))}
                     /> )
             default:
@@ -77,6 +78,7 @@ class MultimapContainer extends PureComponent {
                    {this.props.prgDescription} 
                 </div>
                 <MapPopupDetail />
+                <ShelterPopupDetail/>
                 <div>
                     <Menu attached='top' tabular >
                         <Menu.Item 

@@ -14,6 +14,9 @@ const MapPopupDetail = ({popupFocus}) =>{
         if(popupFocus.properties.ORGANIZATION){
             title = popupFocus.properties.ORGANIZATION 
         }
+        if(popupFocus.properties.OWNER_RENTER){
+            title = popupFocus.properties.FACILITY_NAME
+        }
         return(
             <div className="food-text">
                 <p>Location details:</p>

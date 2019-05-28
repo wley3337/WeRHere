@@ -11,10 +11,19 @@ class ShelterMain extends PureComponent {
     componentDidMount(){
         this.props.getHomelessShelterLocations()
     }
+
+    shelterSubMenuDescriptions = ()=>{
+        return "A map with all the shelters in DC. Click on an icon for information about that shelter."
+    }
     render(){
-        debugger
+ 
         return(
-            <div>shelter main </div>
+            <div className="shelter-2 bg-div">
+                 <Route exact path='/shelter/shelters' render={() =>{
+                    return <MultimapContainer locations={this.props.homelessShelterLocations} prgDescription={this.shelterSubMenuDescriptions()} sprite="lodging-15"/>}}  
+                />  
+             <NavBar section={"shelter"} />
+            </div>
         )
     }
 }

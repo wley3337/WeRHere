@@ -33,12 +33,12 @@ class FoodMain extends PureComponent {
                 <Route exact path='/food' component={FoodMenu} />  
                 
                 <Route exact path='/food/joyful-food' render={() =>{
-                    return <MultimapContainer locations={this.props.joyfulFoodMarkets} prgDescription={this.joyfulFoodMarketProgramDescription()}/>}}  
+                    return <MultimapContainer locations={this.props.joyfulFoodMarkets} prgDescription={this.joyfulFoodMarketProgramDescription()} sprite="restaurant-15"/> } }  
                 />  
                
-                <Route exact path='/food/corner-stores' render={() =>{return <MultimapContainer locations={this.props.healthyCornerStores} prgDescription={this.healthyCornerStoresProgramDescription()} />}} />
+                <Route exact path='/food/corner-stores' render={() =>{return <MultimapContainer locations={this.props.healthyCornerStores} prgDescription={this.healthyCornerStoresProgramDescription()} sprite="restaurant-15" />}} />
             
-                <Route exact path='/food/wic' render={() =>{return <MultimapContainer locations={this.props.wicMarkets} prgDescription={this.wicProgramDescription()} />}} />
+                <Route exact path='/food/wic' render={() =>{return <MultimapContainer locations={this.props.wicMarkets} prgDescription={this.wicProgramDescription()} sprite="restaurant-15"/>}} />
                 
                 <NavBar section={"food"} />
             </div>
