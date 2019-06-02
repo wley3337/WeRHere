@@ -22,7 +22,7 @@ export const MainMenuIcon = ({bgColorCallOut})=> {
                 
                 <polygon 
                     points="101 172.66, 151 86, 201 172.66"
-                    className="shelter-icon"
+                    className="services-icon"
                 />
             </svg>
         )

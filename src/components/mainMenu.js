@@ -9,17 +9,17 @@ const MainMenu= (props) =>{
   return(
     <div>
       <svg width="100%" height="100%" viewBox="0 0 203 173">
-        <Link to="/safety" alt="safety">
+        <Link to="/services" alt="services">
           <polygon 
             points="51 86, 151 86, 101 .44" 
-            className="safety-icon"
+            className="services-icon"
           />
           <text 
             x="82.5" 
             y="61"
-            className="safety-icon-text icon-text" 
+            className="services-icon-text icon-text" 
           >
-            Safety
+           Services 
           </text>
         </Link>
         <Link to="/health" alt="health" >

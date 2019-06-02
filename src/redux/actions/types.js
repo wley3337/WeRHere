@@ -26,3 +26,6 @@ export const SET_WIC_MARKETS = "SET_WIC_MARKETS"
 
 // safety action types
 export const SET_HOMELESS_SHELTER_LOCATIONS = "SET_HOMELESS_SHELTER_LOCATIONS"
+
+//service action types
+export const SET_SERVICES = "SET_SERVICES"

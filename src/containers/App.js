@@ -6,6 +6,7 @@ import { HomePg } from './HomePg';
 import HealthMain from './HealthMain';
 import FoodMain from './FoodMain';
 import ShelterMain from './ShelterMain';
+import ServiceMain from './ServiceMain'
 //css files
 import 'semantic-ui-css/semantic.min.css';
 import '../css/index.css';
@@ -18,6 +19,7 @@ class App extends Component {
        <Route path="/health" render ={() => <HealthMain />}/>
        <Route path="/food" render ={() => <FoodMain />}/>
        <Route path="/shelter" render ={() => <ShelterMain />}/>
+       <Route path ="/services" render={() =><ServiceMain />} />
       </div>
     );
   }

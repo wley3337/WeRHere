@@ -30,7 +30,7 @@ code {
   color: white;
 }
 
-.shelter-text, .safety-text{
+.shelter-text, .services-text{
   color: black;
 }
 
@@ -79,13 +79,13 @@ code {
   fill: white;
 }
 
-.shelter-icon-text, .safety-icon-text{
+.shelter-icon-text, .services-icon-text{
   fill: black;
 }
 
 
 /* Primary colors */
-.safety-icon{
+.services-icon{
   stroke: #000;
   stroke-width : .080rem;
   fill:#ffc107; 
@@ -108,7 +108,7 @@ code {
 }
 
 /* Secondary Color */
-.safety-2{
+.services-2{
   background-color: #008ba3;
   fill: #008ba3;
 }
@@ -131,7 +131,7 @@ code {
 
 /* Highlight color */
 
-.safety-l{
+.services-l{
   background-color: #fff350;
 }
 
