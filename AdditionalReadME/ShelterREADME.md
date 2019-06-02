@@ -2,7 +2,7 @@
 
 * Redux actions are under ShelterActions.js
 
-
+Icon from: [BomSymbols](https://www.iconfinder.com/korawan_m)
 
 #### Homeless Shelter Locations API
 
