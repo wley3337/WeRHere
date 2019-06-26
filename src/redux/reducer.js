@@ -15,7 +15,9 @@ import {
         SET_HEALTHY_CORNER_STORES,
         SET_WIC_MARKETS,
         SET_POPUP_FOCUS,
-        SET_HOMELESS_SHELTER_LOCATIONS
+        SET_HOMELESS_SHELTER_LOCATIONS,
+        SET_SERVICES,
+        SET_SERVICE_TARGETS_DROPDOWN
                                             } from './actions/types'
 
 
@@ -178,7 +180,25 @@ const popupFocus = (state = {}, action)=>{
             return state
     }
 }
+// services reducer
 
+const services = (state = [], action) =>{
+    switch(action.type){
+        case SET_SERVICES:
+            return action.payload
+        default:
+            return state
+    }
+}
+
+const serviceTargets =(state=[], action)=>{
+    switch(action.type){
+        case SET_SERVICE_TARGETS_DROPDOWN:
+            return action.payload
+        default:
+            return state
+    }
+}
 
 
 
@@ -198,7 +218,9 @@ const reducers ={
     healthyCornerStores: healthyCornerStores,
     wicMarkets: wicMarkets,
     popupFocus: popupFocus,
-    homelessShelterLocations: homelessShelterLocations
+    homelessShelterLocations: homelessShelterLocations,
+    services: services,
+    serviceTargets: serviceTargets
 }
 
 export default combineReducers(reducers)
