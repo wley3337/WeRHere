@@ -17,7 +17,7 @@ export const getServices = ()=>(dispatch)=>{
                 )
             }
         }
-       debugger
+    
         dispatch({type: SET_SERVICES, payload: allServiceProviders})
         dispatch({type: SET_SERVICE_TARGETS_DROPDOWN, payload: targetObjs})
     })
