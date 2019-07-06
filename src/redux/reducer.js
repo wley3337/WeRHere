@@ -17,7 +17,10 @@ import {
         SET_POPUP_FOCUS,
         SET_HOMELESS_SHELTER_LOCATIONS,
         SET_SERVICES,
-        SET_SERVICE_TARGETS_DROPDOWN
+        SET_SERVICE_TARGETS_DROPDOWN,
+        TOGGLE_OR_AND,
+        ADD_REMOVE_FROM_FILTER,
+        SET_SELECTED_SERVICE_TARGET
                                             } from './actions/types'
 
 
@@ -200,6 +203,38 @@ const serviceTargets =(state=[], action)=>{
     }
 }
 
+const selectedServiceTarget = (state="", action)=>{
+    switch(action.type){
+        case SET_SELECTED_SERVICE_TARGET:
+            return action.payload
+        default:
+            return state
+    }
+}
+
+const orAnd = (state= 'or', action)=>{
+    switch(action.type){
+        case TOGGLE_OR_AND:
+            return action.payload
+        default:
+            return state
+    }
+}
+
+const filterOptions = (state = [], action)=>{
+    switch(action.type){
+        case ADD_REMOVE_FROM_FILTER:
+            if(state.includes(action.payload)){
+                return state.filter(el => el != action.payload)
+            }else{
+                return [...state, action.payload]
+            }
+            
+        default:
+            return state
+    }
+}
+
 
 
 //combined reducers 
@@ -220,7 +255,10 @@ const reducers ={
     popupFocus: popupFocus,
     homelessShelterLocations: homelessShelterLocations,
     services: services,
-    serviceTargets: serviceTargets
+    serviceTargets: serviceTargets,
+    orAnd: orAnd,
+    filterOptions: filterOptions,
+    selectedServiceTarget: selectedServiceTarget
 }
 
 export default combineReducers(reducers)

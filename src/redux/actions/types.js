@@ -30,3 +30,26 @@ export const SET_HOMELESS_SHELTER_LOCATIONS = "SET_HOMELESS_SHELTER_LOCATIONS"
 //service action types
 export const SET_SERVICES = "SET_SERVICES"
 export const SET_SERVICE_TARGETS_DROPDOWN = "SET_SERVICE_TARGETS_DROPDOWN"
+export const SET_SELECTED_SERVICE_TARGET = "SET_SELECTED_SERVICE_TARGET"
+export const TOGGLE_OR_AND ="TOGGLE_OR_AND"
+export const ADD_REMOVE_FROM_FILTER = "ADD_REMOVE_FROM_FILTER"
+
+//service top menue 
+// export const FOOD_GROCERIES = "FOOD_GROCERIES"
+// export const HOUSING = "HOUSING"
+// export const MEALS = "MEALS"
+// export const OPEN_TO_PUBLIC = "OPEN_TO_PUBLIC"
+// export const PUBLIC_RESTROOMS = "PUBLIC_RESTROOMS"
+// export const REFRESHMENTS = "REFRESHMENTS"
+
+
+// FOOD_GROCERIES(pin):null
+// HOUSING(pin):null
+// MEALS(pin):null
+// OPEN_TO_PUBLIC(pin):null
+// PUBLIC_RESTROOMS(pin):"Yes"
+// REFRESHMENTS(pin):null
+// SHOWERS(pin):null
+// TARGET(pin):"Men & Women"
+// TANF Temporary Assistance for Needy Families
+// TANF_FINANCIAL_ASSISTANCE(pin):null
