@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, {PureComponent} from 'react'
 //redux
 import {connect} from 'react-redux'
 import * as actions from '../../redux/actions'
@@ -6,7 +6,7 @@ import SelectorButton from '../SelectorButton'
 import { Dropdown } from 'semantic-ui-react'
 
 
-class ServiceTop extends Component{
+class ServiceTop extends PureComponent{
     options = () => [
         {
             text: "Food/Groceries",
@@ -56,8 +56,6 @@ class ServiceTop extends Component{
             selected: this.props.filterOptions.includes("TANF_FINANCIAL_ASSISTANCE"),
             optionID: "st-8"
         }
-
-
     ]
 
     render(){
@@ -67,7 +65,7 @@ class ServiceTop extends Component{
                     options={this.props.serviceTargets}
                     value={this.props.selectedServiceTarget}
                     onChange={(re,suie) => this.props.setServiceTarget(suie.value)}
-                    placeholder='Target Group' 
+                    placeholder='All Target Groups' 
                     clearable selection 
                 />
                 { this.options().map( option => <SelectorButton {...option} key={option.optionID} /> ) }
