@@ -14,7 +14,7 @@
 ### note: 
     * current CSS is designed for a smartphone sized viewport and is minimal at present.
     * Health, Food, and Shelter are working (but not as a PWA yet) 
-    * Services is in first stages of development
+    * Services is in the first stages of development
 
 ## Current Planned Dependancies: 
 
