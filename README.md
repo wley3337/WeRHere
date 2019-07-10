@@ -5,6 +5,17 @@
 
 #### Goal: Keep things modular so that this can act as a potential model or template for projects in other locals. 
 
+## Directions: 
+* clone down repo 
+* Add a Mapbox Api Key to `.envExample` and rename the file to `.env` (this is already in the gitignor) 
+* NPM install 
+* NPM start
+
+### note: 
+    * current CSS is designed for a smartphone sized viewport and is minimal at present.
+    * Health, Food, and Shelter are working (but not as a PWA yet) 
+    * Services is in first stages of development
+
 ## Current Planned Dependancies: 
 
 * react-router
