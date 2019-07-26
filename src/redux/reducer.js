@@ -19,8 +19,9 @@ import {
         SET_SERVICES,
         SET_SERVICE_TARGETS_DROPDOWN,
         TOGGLE_OR_AND,
-        ADD_REMOVE_FROM_FILTER,
-        SET_SELECTED_SERVICE_TARGET
+        SET_SELECTED_SERVICE_TARGET,
+        REMOVE_FROM_FILTER,
+        ADD_TO_FILTER
                                             } from './actions/types'
 
 
@@ -223,13 +224,10 @@ const orAnd = (state= 'or', action)=>{
 
 const filterOptions = (state = [], action)=>{
     switch(action.type){
-        case ADD_REMOVE_FROM_FILTER:
-            if(state.includes(action.payload)){
-                return state.filter(el => el != action.payload)
-            }else{
-                return [...state, action.payload]
-            }
-            
+        case ADD_TO_FILTER:
+            return [...state, action.payload]
+        case REMOVE_FROM_FILTER:
+            return state.filter(el => el != action.payload) 
         default:
             return state
     }

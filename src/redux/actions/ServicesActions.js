@@ -2,8 +2,9 @@ import {
         SET_SERVICES, 
         SET_SERVICE_TARGETS_DROPDOWN,
         TOGGLE_OR_AND,
-        ADD_REMOVE_FROM_FILTER,
-        SET_SELECTED_SERVICE_TARGET
+        SET_SELECTED_SERVICE_TARGET,
+        ADD_TO_FILTER,
+        REMOVE_FROM_FILTER
                                         } from './types'
 
 export const getServices = ()=>(dispatch)=>{
@@ -38,6 +39,10 @@ export const toggleOrAnd = (checked) =>{
     return {type: TOGGLE_OR_AND, payload: result}  
 }
 
-export const addRemoveFromFilter = (item)=>{
-    return {type: ADD_REMOVE_FROM_FILTER, payload: item}
+export const addToFilter = (item)=>{
+    return {type: ADD_TO_FILTER, payload: item}
+}
+
+export const removeFromFilter = (item) =>{
+    return {type: REMOVE_FROM_FILTER, payload: item}
 }
