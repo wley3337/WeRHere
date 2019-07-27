@@ -49,7 +49,8 @@ const MultiPointMapFrame =({ lat, long, sprite, pointArray, zoom, setPopupFocus 
                     id="marker"
                     layout={{ "icon-image": sprite }}>
                     {pointArray.map(location => 
-                        <Feature 
+                        <Feature
+                            key={`${location.geometry.coordinates[0]}-${location.geometry.coordinates[1]}`} 
                             coordinates={[location.geometry.coordinates[0], location.geometry.coordinates[1]]}
                             onClick={()=>{setPopupFocus(location)}}
                         />

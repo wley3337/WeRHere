@@ -1,10 +1,12 @@
+import { removeFromKey } from '../../helperFunctions/HelperFunctions'
 import {
         SET_SERVICES, 
         SET_SERVICE_TARGETS_DROPDOWN,
         TOGGLE_OR_AND,
         SET_SELECTED_SERVICE_TARGET,
         ADD_TO_FILTER,
-        REMOVE_FROM_FILTER
+        REMOVE_FROM_FILTER,
+        CLEAR_SERVICE_FILTER
                                         } from './types'
 
 export const getServices = ()=>(dispatch)=>{
@@ -23,8 +25,11 @@ export const getServices = ()=>(dispatch)=>{
                      value: service.attributes.TARGET}
                 )
             }
+            //this adds an array for multipoint map functionality
+            //and makes the data from this api meet the same formating data as all the others
+            service.geometry.coordinates = [service.geometry.x, service.geometry.y]
+            service.properties = { ADDRESS: service.attributes.STREET_ADDRESS, service: {org: service.attributes.ORGANIZATION_NAME, program: service.attributes.PROGRAM_NAME}  }
         }
-    
         dispatch({type: SET_SERVICES, payload: allServiceProviders})
         dispatch({type: SET_SERVICE_TARGETS_DROPDOWN, payload: targetObjs})
     })
@@ -45,4 +50,8 @@ export const addToFilter = (item)=>{
 
 export const removeFromFilter = (item) =>{
     return {type: REMOVE_FROM_FILTER, payload: item}
+}
+
+export const clearServiceFilter = ()=>{
+    return {type: CLEAR_SERVICE_FILTER}
 }

@@ -7,6 +7,7 @@ export const TRUE = "TRUE"
 export const FALSE = "FALSE" 
 //map types
 export const SET_POPUP_FOCUS = "SET_POPUP_FOCUS"
+export const CLEAR_POPUP_FOCUS = "CLEAR_POPUP_FOCUS"
 
 // health action types
 export const SET_CHILD_MENTAL_HEALTH_PROVIDERS = "SET_CHILD_MENTAL_HEALTH_PROVIDERS"
@@ -35,6 +36,7 @@ export const TOGGLE_OR_AND ="TOGGLE_OR_AND"
 export const ADD_REMOVE_FROM_FILTER = "ADD_REMOVE_FROM_FILTER"
 export const ADD_TO_FILTER = "ADD_TO_FILTER"
 export const REMOVE_FROM_FILTER = "REMOVE_FROM_FILTER"
+export const CLEAR_SERVICE_FILTER = "CLEAR_SERVICE_FILTER"
 
 //service top menue 
 // export const FOOD_GROCERIES = "FOOD_GROCERIES"

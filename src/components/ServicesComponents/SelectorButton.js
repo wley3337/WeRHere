@@ -6,13 +6,14 @@ class SelectorButton extends PureComponent {
   
 
     render(){
-        const {text} = this.props
-        const selected = this.props.filterOptions.includes(text)
+        const {text, apiKey} = this.props
+        const option= {text: text, apiKey: apiKey}
+        const selected = this.props.filterOptions.includes(option)
         const background = selected ? "selected" : "not-selected"
         const callBack = selected ? this.props.removeFromFilter : this.props.addToFilter 
         return (
             <button 
-                onClick={() =>callBack(text)} 
+                onClick={() =>callBack(option)} 
                 className={background + " service-s-btn"}
             >
                 {text}

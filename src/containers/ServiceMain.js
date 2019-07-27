@@ -5,9 +5,9 @@ import * as actions from '../redux/actions'
 //react router
 import {Route, withRouter} from 'react-router-dom'
 //components
-import ServiceNavBar from '../components/ServicesComponents/ServiceNavBar';
-import { serviceTop, serviceMedical, serviceResources, serviceOther} from '../enumerables/ServiceFilterOptions'
-import SelectorButton from '../components/ServicesComponents/SelectorButton';
+import { NavBar } from '../components/NavBar'
+import ServiceFilterSelection from './ServiceFilterSelection';
+import ServiceResults from '../components/ServicesComponents/ServiceResults';
 
 //have a filter section .select( item => item.attributes.BORROW_MATERIALS !== null) with check boxes for a variety of properties. Then should render a multimap component by quadrent where people can click on icon for detail like in food and shelters.
 
@@ -18,22 +18,11 @@ class ServiceMain extends Component{
     }
 
     render(){
-        
         return(
             <div className="services-2 bg-div">
-                <ServiceNavBar/>
-                <div className={serviceTop.location}>
-                    {serviceTop.options.map( option => <SelectorButton text={option.text} key={option.optionID}/>)}
-                </div>
-                <div className={serviceMedical.location}>
-                    {serviceMedical.options.map( option => <SelectorButton text={option.text} key={option.optionID}/>)}
-                </div>
-                <div className={serviceResources.location}>
-                    {serviceResources.options.map( option => <SelectorButton text={option.text} key={option.optionID}/>)}
-                </div>
-                <div className={serviceOther.location}>
-                    {serviceOther.options.map( option => <SelectorButton text={option.text} key={option.optionID}/>)}
-                </div>
+                <Route exact path="/services" component={ServiceFilterSelection} />
+                <Route exact path="/services/results" component={ServiceResults} />
+                <NavBar section={"services"} />
             </div>
         )
     }
@@ -41,8 +30,9 @@ class ServiceMain extends Component{
 
 const mSTP = (state)=>{
     return{
-       
+        serviceTargets: state.serviceTargets,
+        selectedServiceTarget: state.selectedServiceTarget
     }
 }
 
-export default connect(mSTP, actions)(ServiceMain)
+export default withRouter(connect(mSTP, actions)(ServiceMain))

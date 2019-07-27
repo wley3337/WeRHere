@@ -1,38 +1,29 @@
 import React, {Component} from 'react'
 //redux
 import {connect} from 'react-redux'
-import * as actions from '../../redux/actions'
-import { Radio } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
+import { Button } from 'semantic-ui-react';
 
-class ServiceNavBar extends Component{
-    handleToggle = (checked) =>{
-        
-    }
-
-    render(){
-        return(
-            <div className="service-Navbar">
-                <p className="service-navbar-or">Or</p>
-                <Radio 
-                toggle
-                checked={this.props.orAnd === 'and'? true:false} 
-                onChange={(e, {checked})=>{this.props.toggleOrAnd(checked)}}
-                />
-                <p className="service-navbar-and">And</p>
-               <Link to="/services/results" id="service-search">
-                Search
-               </Link> 
-                
-            </div>
-        )
-    }
+const ServiceNavBar = ({filterOptions}) => {
+    const selectedFOText = filterOptions.map(option => option.text)
+    const displayText = selectedFOText.length > 0 ? selectedFOText.join(" and ") : "select options below"
+    
+    return(
+        <div className="service-Navbar">
+            <div id="service-fo-display">
+                Search for services that have: {displayText}
+            </div> 
+            <Link to="/services/results" id="service-search">
+                <Button id="service-search-btn">Search</Button>
+            </Link> 
+        </div>
+    )
 }
 
 const mSTP = (state) =>{
     return{
-        orAnd: state.orAnd
+        filterOptions: state.filterOptions
     }
 }
 
-export default connect(mSTP, actions)(ServiceNavBar)
+export default connect(mSTP)(ServiceNavBar)

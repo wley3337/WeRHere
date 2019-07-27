@@ -15,13 +15,15 @@ import {
         SET_HEALTHY_CORNER_STORES,
         SET_WIC_MARKETS,
         SET_POPUP_FOCUS,
+        CLEAR_POPUP_FOCUS,
         SET_HOMELESS_SHELTER_LOCATIONS,
         SET_SERVICES,
         SET_SERVICE_TARGETS_DROPDOWN,
         TOGGLE_OR_AND,
         SET_SELECTED_SERVICE_TARGET,
         REMOVE_FROM_FILTER,
-        ADD_TO_FILTER
+        ADD_TO_FILTER,
+        CLEAR_SERVICE_FILTER
                                             } from './actions/types'
 
 
@@ -180,6 +182,8 @@ const popupFocus = (state = {}, action)=>{
     switch(action.type){
         case SET_POPUP_FOCUS:
             return action.payload
+        case CLEAR_POPUP_FOCUS:
+            return {}
         default:
             return state
     }
@@ -227,7 +231,9 @@ const filterOptions = (state = [], action)=>{
         case ADD_TO_FILTER:
             return [...state, action.payload]
         case REMOVE_FROM_FILTER:
-            return state.filter(el => el !== action.payload) 
+            return state.filter(el => el !== action.payload)
+        case CLEAR_SERVICE_FILTER:
+            return []
         default:
             return state
     }

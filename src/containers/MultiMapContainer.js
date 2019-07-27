@@ -13,6 +13,10 @@ import ShelterPopupDetail from '../components/ShelterComponents/ShelterPopupDeta
 class MultimapContainer extends PureComponent {
     state={ activeMenuItem: 'All DC'}
 
+    componentDidMount(){
+        //clear popup focus
+        this.props.clearPopupFocus()
+    }
     setActiveMenuItem = (focus) =>{
         this.setState({
             activeMenuItem: focus
