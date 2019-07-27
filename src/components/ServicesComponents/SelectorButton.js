@@ -1,6 +1,6 @@
 import React, {PureComponent} from 'react'
 import { connect } from 'react-redux'
-import * as actions from '../redux/actions'
+import * as actions from '../../redux/actions'
 
 class SelectorButton extends PureComponent {
   
@@ -10,9 +10,13 @@ class SelectorButton extends PureComponent {
         const selected = this.props.filterOptions.includes(text)
         const background = selected ? "selected" : "not-selected"
         const callBack = selected ? this.props.removeFromFilter : this.props.addToFilter 
-        //write in a turnery using the prop as argument for the call back. Connect this component and also make two actions, an add and remove
         return (
-            <div onClick={() =>callBack(text)} className={background}>{text}</div>
+            <button 
+                onClick={() =>callBack(text)} 
+                className={background + " service-s-btn"}
+            >
+                {text}
+            </button>
            
         )
     }
@@ -21,4 +25,5 @@ class SelectorButton extends PureComponent {
 const mSTP = (state) =>{
     return {filterOptions: state.filterOptions}
 }
+
 export default connect(mSTP, actions)(SelectorButton)

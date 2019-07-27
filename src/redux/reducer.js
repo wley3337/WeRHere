@@ -227,7 +227,7 @@ const filterOptions = (state = [], action)=>{
         case ADD_TO_FILTER:
             return [...state, action.payload]
         case REMOVE_FROM_FILTER:
-            return state.filter(el => el != action.payload) 
+            return state.filter(el => el !== action.payload) 
         default:
             return state
     }
