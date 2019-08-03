@@ -3,8 +3,8 @@ import React from 'react'
 export const MainMenuIcon = ({bgColorCallOut})=> {
         return(
             
-            <svg width="100%" height="100%" viewBox="0 0 203 173" >
-                <rect width="100%" height="100%" className={bgColorCallOut} />
+            <svg  viewBox="0 0 203 173" >
+                <rect className={bgColorCallOut} />
                 <polygon 
                     points="51 86, 151 86, 101 .44" 
                     className="safety-icon"

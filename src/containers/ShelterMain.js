@@ -4,7 +4,6 @@ import { Route, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import * as actions from '../redux/actions'
 //components
-import { NavBar } from '../components/NavBar'
 import ShelterMenu from './ShelterMenu'
 import MultimapContainer from './MultiMapContainer';
 
@@ -26,7 +25,6 @@ class ShelterMain extends PureComponent {
                         return <MultimapContainer locations={this.props.homelessShelterLocations} prgDescription={this.shelterSubMenuDescriptions()} sprite="lodging-15"/>}
                     }  
                 />  
-             <NavBar section={"shelter"} />
             </div>
         )
     }

@@ -47,26 +47,23 @@ class ItemDetail extends PureComponent {
         return (!location ? null 
                 :
                 <div className="health-text">
-                    <h1>{location.properties.NAME}</h1> 
-
+                    <h1 className="name">{location.properties.NAME}</h1> 
+                    <p className="address">Address: { `${location.properties.ADDRESS + (location.properties.ADDRESSLINE2 ? ` ${location.properties.ADDRESSLINE2}`: "")}` }</p>
                     {!location.properties.WEB_URL ? null: 
-                        <a href={location.properties.WEB_URL} target="_blank" rel="noopener noreferrer">Web Site</a>
+                        <a href={location.properties.WEB_URL} target="_blank" rel="noopener noreferrer" className="web-site">Web Site</a>
                     }
                     
                     {!location.properties.WEB_LINK ? null: 
-                        <a href={location.properties.WEB_LINK} target="_blank" rel="noopener noreferrer">Web Site</a>
+                        <a href={location.properties.WEB_LINK} target="_blank" rel="noopener noreferrer" className="web-site">Web Site</a>
                     }
                     {!location.properties.PHONE ? null :
-                        <div>
-                            <p> Phone: <a href={`tel: ${phone1(location)}`}>{phone1(location)}</a></p>
+                        <div className="phone-wrapper">
+                            <p className="phone-1"> Phone: <a href={`tel: ${phone1(location)}`}>{phone1(location)}</a></p>
                             {! phone2(location) ? null :
-                            <p> {phone2(location).phoneType}: <a href={`tel: ${phone2(location).phoneNumber2}`}>{phone2(location).phoneNumber2}</a></p>
+                            <p className="phone-2"> {phone2(location).phoneType}: <a href={`tel: ${phone2(location).phoneNumber2}`}>{phone2(location).phoneNumber2}</a></p>
                             }
                         </div>
                     }
-
-                    <h3>Address: { `${location.properties.ADDRESS + (location.properties.ADDRESSLINE2 ? ` ${location.properties.ADDRESSLINE2}`: "")}` }</h3>
-                    
                     <div>
                         <Menu attached='top' tabular >
                             <Menu.Item 

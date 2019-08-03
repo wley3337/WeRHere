@@ -7,11 +7,11 @@ import { MenuTriangle } from '../icons/MenuTriangle'
 
 export const NavBar = ({section}) =>{
     return(
-        <div className="ui grid inverted bottom fixed menu nav-bar">
-            <Link to="/" className="eight wide column nav-bar-main">
+        <div className={`nav-bar ${section}-2`} >
+            <Link to="/" className="nav-bar-main">
                 <MainMenuIcon bgColorCallOut={`${section}-2`} />
             </Link>
-            <Link to={`/${section}`} className="eight wide column nav-bar-sub" >
+            <Link to={`/${section}`} className="nav-bar-sub" >
                 <MenuTriangle section={section} />
             </Link>
 

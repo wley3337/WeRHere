@@ -2,8 +2,6 @@ import React, {Component} from 'react'
 //redux
 import {connect} from 'react-redux'
 import * as actions from '../redux/actions'
-//react router
-import {Route, withRouter} from 'react-router-dom'
 //components
 import ServiceNavBar from '../components/ServicesComponents/ServiceNavBar';
 import { serviceTop, serviceMedical, serviceResources, serviceOther} from '../enumerables/ServiceFilterOptions'

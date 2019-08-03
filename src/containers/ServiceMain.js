@@ -5,7 +5,6 @@ import * as actions from '../redux/actions'
 //react router
 import {Route, withRouter} from 'react-router-dom'
 //components
-import { NavBar } from '../components/NavBar'
 import ServiceFilterSelection from './ServiceFilterSelection';
 import ServiceResults from '../components/ServicesComponents/ServiceResults';
 
@@ -22,7 +21,6 @@ class ServiceMain extends Component{
             <div className="services-2 bg-div">
                 <Route exact path="/services" component={ServiceFilterSelection} />
                 <Route exact path="/services/results" component={ServiceResults} />
-                <NavBar section={"services"} />
             </div>
         )
     }

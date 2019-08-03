@@ -28,6 +28,7 @@ class FoodMain extends PureComponent {
     }
 
     render(){
+       
         return(
             <div className="food-2 bg-div">  
                 <Route exact path='/food' component={FoodMenu} />  
@@ -39,8 +40,6 @@ class FoodMain extends PureComponent {
                 <Route exact path='/food/corner-stores' render={() =>{return <MultimapContainer locations={this.props.healthyCornerStores} prgDescription={this.healthyCornerStoresProgramDescription()} sprite="restaurant-15" />}} />
             
                 <Route exact path='/food/wic' render={() =>{return <MultimapContainer locations={this.props.wicMarkets} prgDescription={this.wicProgramDescription()} sprite="restaurant-15"/>}} />
-                
-                <NavBar section={"food"} />
             </div>
         )
     }

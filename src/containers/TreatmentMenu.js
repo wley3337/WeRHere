@@ -42,7 +42,7 @@ class TreatmentMenu extends Component {
     render(){
         return(
             <div>
-                <div className="health-text">Clinics</div>
+                <div className="health-text treat-wrapper">Clinics</div>
                 <Menu attached='top' tabular >
                     <Menu.Item 
                         name='Youth Rehabilitation Facilities' 

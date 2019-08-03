@@ -29,7 +29,6 @@ class ClinicsMenu extends Component {
     render(){
         return(
             <div>
-                <div className="health-text">Clinics</div>
                 <Menu attached='top' tabular >
                     <Menu.Item 
                         name='HIV Clinics' 

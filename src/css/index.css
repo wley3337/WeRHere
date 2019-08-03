@@ -12,9 +12,15 @@ code {
 }
 
 .bg-div{
+  grid-area: content;
+  /* height: 100%;
+  width: 100%; */
+  padding-top: 2rem;
+  overflow-y: scroll;
+}
+.full-screen{
   height: 100vh;
-  width: 100%;
-  
+  width: 100vw;
 }
 
 .flex{
@@ -64,7 +70,7 @@ code {
   background-color: #bcbcbc;
 }
 
-/* ************* Health Menu Style ********** */
+
 
 
 
@@ -165,6 +171,7 @@ code {
 .mm-div{
  padding: 2em;
  max-width: 620px;
+ max-height: 400px;
  margin-left: auto;
  margin-right:auto;
 }
@@ -176,19 +183,35 @@ code {
   font-size: 110%;
   color: white;
 }
+/* ******** Content Containers */
+.container{
+  height: 100vh;
+  display:grid;
+  grid-template-rows: auto 9fr 1fr;
+  grid-template-areas: "." "content" "navBar";
+}
 /* ******** Bottom NavBar ******** */
 
 .nav-bar{
-height: 12vh;
- 
+  grid-area: navBar;
+  padding: .2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: .5rem;
+  grid-template-areas: "mainMenu subMenu";
+
 }
 
 .nav-bar-main{
-
+grid-area: mainMenu;
+width: 100%;
+height: 100%;
 }
 
 .nav-bar-sub{
-
+grid-area:subMenu;
+width: 100%;
+height: 100%;
 }
 
 #map-div{
@@ -199,3 +222,77 @@ height: 12vh;
   color: blue;
 }
 
+.restrict-size{
+  height:100%;
+  width: 100%;
+}
+.restrict-size div:first-child p{
+  padding: .2rem;
+  text-align: center;
+  font-size: 90%;
+  font-weight: 500;
+}
+
+/* ******Map Menu Style ******* */
+.ui.tabular.menu .item{
+  font-size: 80%;
+  color:white;
+}
+.ui.tabular.menu .active.item{
+  color: black;
+  font-size: 90%;
+}
+
+/* ******Service Menu Style ******* */
+.li-wrapper{
+  border-bottom: solid .1rem black;
+  padding: .2rem;
+  margin-top:.2rem;
+}
+.li-wrapper a{
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-areas: "content arrow"
+
+}
+.li-info{
+  grid-area: content;
+}
+.li-name{
+  font-size: 110%;
+}
+.li-address{
+  grid-area: content;
+  font-size:90%;
+}
+#arrow{
+  grid-area: arrow;
+  justify-self: end;
+  align-self: center;
+  font-size: 150%;
+}
+/* ******Food Menu Style ******* */
+
+
+/* ******Health Menu Style ******* */
+
+
+.name{
+  font-size: 150%;
+  margin-bottom: .4rem;
+}
+.address{
+margin: .3rem;
+margin-bottom: 1rem;
+}
+.web-site{
+
+}
+.phone-1{
+
+}
+
+.health-menu{
+  margin-top: 1rem;
+}
+/* ******Shelter Menu Style ******* */

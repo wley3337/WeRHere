@@ -77,11 +77,11 @@ class MultimapContainer extends PureComponent {
 
     render(){
        return(
-            <div className="food-text">
-                <div>
+            <div className="food-text restrict-size">
+                {this.props.popupFocus.properties !== undefined ?  <MapPopupDetail /> : (<div>
                    {this.props.prgDescription} 
-                </div>
-                <MapPopupDetail />
+                </div>)}
+               
                 <ShelterPopupDetail/>
                 <div>
                     <Menu attached='top' tabular >

@@ -9,7 +9,6 @@ import PrimaryCareMenu from './PrimaryCareMenu'
 import HealthMenu from './HealthMenu'
 import ClinicsMenu from './ClinicsMenu';
 import TreatmentMenu from './TreatmentMenu';
-import{  NavBar } from '../components/NavBar'
 import ItemDetail from '../components/ItemDetail'
 import { MentalHealthItemDetail } from '../components/HealthComponents/MentalHealthItemDetail'
 import PrimaryCareItemDetail  from '../components/HealthComponents/PrimaryCareItemDetail'
@@ -118,7 +117,6 @@ import { nameDeSlug } from '../helperFunctions/HelperFunctions'
                                 location={this.getRehabLocation(paramsName)} 
                             />
                 }}/>           
-                <NavBar section={"health"} />
             </div>
         )
     }

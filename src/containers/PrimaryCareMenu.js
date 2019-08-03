@@ -32,7 +32,6 @@ class PrimaryCareMenu extends Component {
     render(){
         return(
             <div> 
-                <div className="health-text">Clinics</div>
                 <Menu attached='top' tabular >
                     <Menu.Item 
                         name='Primary Care Centers' 

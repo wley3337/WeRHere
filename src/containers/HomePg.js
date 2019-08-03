@@ -5,7 +5,7 @@ import MainMenu from '../components/MainMenu';
 
 export const HomePg = () =>{
     return(
-        <div className="health-l bg-div">
+        <div className="health-l full-screen">
             <p className="hp-title">
                 WeRHere Main Menu
             </p>
