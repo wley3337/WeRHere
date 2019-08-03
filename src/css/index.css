@@ -147,6 +147,35 @@ code {
   background-color: #62efff;
 }
 
+/* ********* Home Page ********** */
+.hp-title{
+  text-align: center;
+  padding-top: 2rem;
+  font-weight: 800;
+  font-size: 180%;
+  color: white; 
+}
+.hp-mm-instructions{
+  text-align: center;
+  /* padding-top: 2rem; */
+  font-weight: 800;
+  font-size: 140%;
+  color: white;  
+}
+.mm-div{
+ padding: 2em;
+ max-width: 620px;
+ margin-left: auto;
+ margin-right:auto;
+}
+.hp-instructions{
+  margin-top: 2rem;
+  text-align: center;
+  padding: 1rem;
+  font-weight: 800;
+  font-size: 110%;
+  color: white;
+}
 /* ******** Bottom NavBar ******** */
 
 .nav-bar{

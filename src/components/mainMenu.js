@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 
 const MainMenu= (props) =>{
   return(
-    <div>
+    <div className="mm-div">
       <svg width="100%" height="100%" viewBox="0 0 203 173">
         <Link to="/services" alt="services">
           <polygon 
@@ -15,7 +15,7 @@ const MainMenu= (props) =>{
             className="services-icon"
           />
           <text 
-            x="82.5" 
+            x="76.5" 
             y="61"
             className="services-icon-text icon-text" 
           >
