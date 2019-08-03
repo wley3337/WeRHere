@@ -44,12 +44,13 @@ class OpioidDetail extends PureComponent {
         return (!location ? null 
                 :
                 <div className="health-text">
-                    <h1>{location.properties.ORG}</h1>
-                    <p>Facility number: {location.properties.MAR_ID}</p> 
+                    <h1 className="name">{location.properties.ORG}</h1>
+                    <p>Facility number: {location.properties.MAR_ID}</p>
+                    <p className="address">Address: { `${location.properties.ADDRESS}` }</p>
 
                     {!location.properties.PHONE ? null :
-                        <div>
-                            <p> Phone: 
+                        <div className="phone-wrapper">
+                            <p className="phone-1"> Phone: 
                                 {phoneToDigits(opioidPhone1(location)).length === 10 ? 
                                         <a href={`tel: ${opioidPhone1(location)}`}>{opioidPhone1(location)}</a> 
                                     :
@@ -57,7 +58,7 @@ class OpioidDetail extends PureComponent {
                                 } 
                             </p> 
                             {!opioidPhone2(location) ? null :
-                                <p> 
+                                <p className="phone-2"> 
                                     <a href={`tel: ${phoneToDigits(opioidPhone2(location))}`}>
                                         {opioidPhone2(location)}
                                     </a>
@@ -66,10 +67,10 @@ class OpioidDetail extends PureComponent {
                         </div>
                     }
 
-                    <h3>Address: { `${location.properties.ADDRESS}` }</h3>
+                  
                     <p>Hours: {location.properties.HOURS.replace("*", "")}</p>
                     
-                    <div>
+                    <div className="health-menu">
                         <Menu attached='top' tabular >
                             <Menu.Item 
                                 name='Map' 

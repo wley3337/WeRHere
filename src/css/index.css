@@ -276,7 +276,10 @@ height: 100%;
 
 /* ******Health Menu Style ******* */
 
-
+.mh-access-phone{
+  text-align: center;
+  font-size: 110%;
+}
 .name{
   font-size: 150%;
   margin-bottom: .4rem;

@@ -64,7 +64,7 @@ class ItemDetail extends PureComponent {
                             }
                         </div>
                     }
-                    <div>
+                    <div className="health-menu">
                         <Menu attached='top' tabular >
                             <Menu.Item 
                                 name='Map' 
