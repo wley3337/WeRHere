@@ -3,7 +3,9 @@ import React from 'react'
 
 export const MenuTriangle = ({section}) =>{
     return(
-        <svg width="100%" height="100%" viewBox="0 0 203 173">
+      <div className="svg-wrapper">
+
+        <svg viewBox="0 0 203 173" preserveAspectRatio="xMidYMid meet" className="svg-content">
           <polygon 
               points="1 172.66, 201 172.66, 101 .44" 
               className={`${section}-icon`}
@@ -15,6 +17,7 @@ export const MenuTriangle = ({section}) =>{
             >
               {section.charAt(0).toUpperCase() + section.slice(1)}
           </text>
-    </svg>
+        </svg>
+      </div>
     )
 }

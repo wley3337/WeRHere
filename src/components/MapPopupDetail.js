@@ -21,10 +21,10 @@ const MapPopupDetail = ({popupFocus}) =>{
             title = `${popupFocus.properties.service.program}   Organization: ${popupFocus.properties.service.org}`
         }
         return(
-            <div className="food-text">
-                <p>Location details:</p>
-                <p>Name: {title}</p>
-                <p>Address: {popupFocus.properties.ADDRESS}</p>
+            <div className="food-text f-detail-wrapper">
+                <p className="f-detail-title">Location details:</p>
+                <p className="name">{title}</p>
+                <p className="address">Address: <span className="space bold">{popupFocus.properties.ADDRESS}</span></p>
             </div>
         )
     }else{

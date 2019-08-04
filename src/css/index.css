@@ -187,14 +187,14 @@ code {
 .container{
   height: 100vh;
   display:grid;
-  grid-template-rows: auto 9fr 1fr;
-  grid-template-areas: "." "content" "navBar";
+  grid-template-rows:  9fr .5fr;
+  grid-template-areas: "content" "navBar";
 }
 /* ******** Bottom NavBar ******** */
 
 .nav-bar{
   grid-area: navBar;
-  padding: .2rem;
+  /* padding: .2rem; */
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-column-gap: .5rem;
@@ -226,7 +226,7 @@ height: 100%;
   height:100%;
   width: 100%;
 }
-.restrict-size div:first-child p{
+.description{
   padding: .2rem;
   text-align: center;
   font-size: 90%;
@@ -272,7 +272,19 @@ height: 100%;
   font-size: 150%;
 }
 /* ******Food Menu Style ******* */
-
+.f-detail-wrapper{
+  padding-left: 1rem;
+  margin-bottom: .8rem;
+}
+.f-detail-title{
+  margin-bottom: .5rem;
+}
+.space{
+  margin-left: .2rem;
+}
+.bold{
+  font-weight: bold;
+}
 
 /* ******Health Menu Style ******* */
 
@@ -299,3 +311,21 @@ margin-bottom: 1rem;
   margin-top: 1rem;
 }
 /* ******Shelter Menu Style ******* */
+
+
+.svg-wrapper{
+  display: inline-block;
+	position: relative;
+  width: 100%;
+
+	padding-bottom: 100%; 
+	vertical-align: middle; 
+	overflow: hidden; 
+}
+
+.svg-content{
+  display: inline-block;
+	position: absolute;
+	top: 0;
+  left: 0;
+}
