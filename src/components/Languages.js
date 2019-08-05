@@ -3,7 +3,7 @@ import React from 'react'
 export const Languages = ({properties}) =>{
         // note: length > 1 because some fields have " " not ""
     return(
-        <div className="menu-text">
+        <div className="menu-text char-space">
             { properties.PRIMARY_CARE_INFOENGLISH.length > 1? <p>English: {properties.PRIMARY_CARE_INFOENGLISH}</p> : null}
             { properties.PRIMARY_CARE_INFOSPANISH.length > 1 ? <p>Spanish: {properties.PRIMARY_CARE_INFOSPANISH}</p> : null}
             { properties.PRIMARY_CARE_INFOVIETNAMESE.length > 1 ? <p>Vietnamese: {properties.PRIMARY_CARE_INFOVIETNAMESE}</p> : null}

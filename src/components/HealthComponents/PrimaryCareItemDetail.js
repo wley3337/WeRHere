@@ -48,12 +48,14 @@ class PrimaryCareItemDetail extends PureComponent {
         const  {location} = this.props
         return (!location ? null 
             :
-            <div className="health-text detail-wrapper">
+            <div className="health-text h-detail-wrapper">
                 <h1 className="name">{location.properties.NAME}</h1> 
                 <p className="address">Address: { `${location.properties.ADDRESS + (location.properties.ADDRESSLINE2 ? ` ${location.properties.ADDRESSLINE2}`: "")}` }</p>
 
                 {!location.properties.WEB_URL ? null: 
-                    <a href={location.properties.WEB_URL} target="_blank" rel="noopener noreferrer" className="web-site">Web Site</a>
+                    <div className="web-site">
+                        <a href={location.properties.WEB_URL} target="_blank" rel="noopener noreferrer" >Click For Web Site</a>
+                    </div>
                 }
 
                 {!location.properties.PHONE ? null :

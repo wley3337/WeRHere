@@ -2,7 +2,7 @@ import React from 'react'
 
 export const PrimaryCareServiceDetails = ({properties}) =>{
     return(
-        <div className="menu-text pc-detail-wrapper">
+        <div className="menu-text pc-detail-wrapper char-space">
             <p className="pc-menu-title">Medical Services Available: </p>
             
             <p className="pc-menu-ser">{properties.PRIMARY_CARE_INFOMEDICAL_SERVICES_AVAILABLE}</p>
