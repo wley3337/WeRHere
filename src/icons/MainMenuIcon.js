@@ -9,7 +9,7 @@ export const MainMenuIcon = ({bgColorCallOut})=> {
                     <rect className={bgColorCallOut} />
                     <polygon 
                         points="51 86, 151 86, 101 .44" 
-                        className="safety-icon"
+                        className="services-icon"
                         />
             
                     <polygon 
@@ -24,7 +24,7 @@ export const MainMenuIcon = ({bgColorCallOut})=> {
                     
                     <polygon 
                         points="101 172.66, 151 86, 201 172.66"
-                        className="services-icon"
+                        className="shelter-icon"
                     />
                 </svg>
             </div>

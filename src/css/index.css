@@ -187,14 +187,14 @@ code {
 .container{
   height: 100vh;
   display:grid;
-  grid-template-rows:  9fr .5fr;
+  grid-template-rows:  9fr 1fr;
   grid-template-areas: "content" "navBar";
 }
 /* ******** Bottom NavBar ******** */
 
 .nav-bar{
   grid-area: navBar;
-  /* padding: .2rem; */
+  
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-column-gap: .5rem;
@@ -204,14 +204,18 @@ code {
 
 .nav-bar-main{
 grid-area: mainMenu;
-width: 100%;
-height: 100%;
+margin-left: auto;
+margin-right: auto;
+width: 60%;
+height: auto;
 }
 
 .nav-bar-sub{
 grid-area:subMenu;
-width: 100%;
-height: 100%;
+margin-left: auto;
+margin-right: auto;
+width: 60%;
+height: auto;
 }
 
 #map-div{
