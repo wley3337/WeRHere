@@ -8,7 +8,7 @@ export const MentalHealthItemDetail = ({location}) =>{
             <div className="health-text mh-item-detail">
                 <p className="mh-access-phone"> 24/7 Access Helpline:  <a href={`tel: ${18887934357}`}>1-888-7WE-HELP</a></p>
                 <h1 className="name">{location.properties.NAME}</h1> 
-                <p className="address">Address: {`${location.properties.ADDRESS}`}</p>
+                <p className="address">Address: <span className="space-left">{`${location.properties.ADDRESS}`}</span></p>
                 <div id="map-div">
                     {location.geometry.coordinates[0] < -75 && location.geometry.coordinates[0] > -80 ?  
                         <MapFrame 

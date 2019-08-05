@@ -283,22 +283,29 @@ height: auto;
 .f-detail-title{
   margin-bottom: .5rem;
 }
-.space{
-  margin-left: .2rem;
+.space-left{
+  margin-left: .3rem;
 }
 .bold{
   font-weight: bold;
 }
 
 /* ******Health Menu Style ******* */
-
+.mh-item-detail{
+  padding: .5rem;
+  padding-left: 1rem;
+}
 .mh-access-phone{
   text-align: center;
   font-size: 110%;
 }
+.mh-access-phone a{
+  padding-left: 1rem;
+}
 .name{
   font-size: 150%;
   margin-bottom: .4rem;
+  padding-left: .3rem;
 }
 .address{
 margin: .3rem;
@@ -309,6 +316,12 @@ margin-bottom: 1rem;
 }
 .phone-1{
 
+}
+#map-div{
+  margin: .3rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: .5rem;
 }
 
 .health-menu{
