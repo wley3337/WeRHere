@@ -46,9 +46,9 @@ class ItemDetail extends PureComponent {
         const  {location} = this.props 
         return (!location ? null 
                 :
-                <div className="health-text">
+                <div className="health-text char-space">
                     <h1 className="name">{location.properties.NAME}</h1> 
-                    <p className="address">Address: { `${location.properties.ADDRESS + (location.properties.ADDRESSLINE2 ? ` ${location.properties.ADDRESSLINE2}`: "")}` }</p>
+                    <p className="address">Address: <span className="space-left">{ `${location.properties.ADDRESS + (location.properties.ADDRESSLINE2 ? ` ${location.properties.ADDRESSLINE2}`: "")}` }</span> </p>
                     {!location.properties.WEB_URL ? null: 
                         <a href={location.properties.WEB_URL} target="_blank" rel="noopener noreferrer" className="web-site">Web Site</a>
                     }

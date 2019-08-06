@@ -43,10 +43,10 @@ class OpioidDetail extends PureComponent {
         const  {location} = this.props 
         return (!location ? null 
                 :
-                <div className="health-text">
+                <div className="health-text h-detail-wrapper">
                     <h1 className="name">{location.properties.ORG}</h1>
-                    <p>Facility number: {location.properties.MAR_ID}</p>
-                    <p className="address">Address: { `${location.properties.ADDRESS}` }</p>
+                    <p >Facility number: <span className="space-left char-space">{location.properties.MAR_ID}</span></p>
+                    <p className="address">Address: <span className="space-left char-space">{ `${location.properties.ADDRESS}` }</span></p>
 
                     {!location.properties.PHONE ? null :
                         <div className="phone-wrapper">
@@ -68,7 +68,9 @@ class OpioidDetail extends PureComponent {
                     }
 
                   
-                    <p>Hours: {location.properties.HOURS.replace("*", "")}</p>
+                    <p>Hours: <span className="space-left char-space">
+                    {location.properties.HOURS.replace("*", " ")}
+                    </span></p>
                     
                     <div className="health-menu">
                         <Menu attached='top' tabular >
