@@ -22,7 +22,6 @@ const MapPopupDetail = ({popupFocus}) =>{
         }
         return(
             <div className="food-text f-detail-wrapper">
-                <p className="f-detail-title">Location details:</p>
                 <p className="name">{title}</p>
                 <p className="address">Address: <span className="space-left bold">{popupFocus.properties.ADDRESS}</span></p>
             </div>

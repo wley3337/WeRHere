@@ -66,19 +66,18 @@ class OpioidDetail extends PureComponent {
                             }
                         </div>
                     }
-
-                  
-                    <p>Hours: <span className="space-left char-space">
-                    {location.properties.HOURS.replace("*", " ")}
-                    </span></p>
-                    
+                    <p>
+                        Hours: 
+                        <span className="space-left char-space">
+                            {location.properties.HOURS.replace("*", " ")}
+                        </span>
+                    </p>
                     <div className="health-menu">
                         <Menu attached='top' tabular >
                             <Menu.Item 
                                 name='Map' 
                                 active={this.state.activeMenuItem === 'Map'} 
                                 onClick={() => this.setActiveMenuItem('Map')} 
-
                             /> 
                         </Menu>
                         <Segment attached='bottom'>

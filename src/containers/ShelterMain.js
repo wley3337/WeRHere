@@ -11,12 +11,10 @@ class ShelterMain extends PureComponent {
     componentDidMount(){
         this.props.getHomelessShelterLocations()
     }
-
     shelterSubMenuDescriptions = ()=>{
         return "A map with all the shelters in DC. Click on an icon for information about that shelter."
     }
     render(){
- 
         return(
             <div className="shelter-2 bg-div">
                 <Route exact path='/shelter' component={ShelterMenu} />

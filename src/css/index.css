@@ -114,7 +114,7 @@ code {
 }
 
 /* Secondary Color */
-.services-2{
+.shelter-2{
   background-color: #008ba3;
   fill: #008ba3;
 }
@@ -129,7 +129,7 @@ code {
   fill: #005005;
 }
 
-.shelter-2{
+.services-2{
   background-color: #c79100;
   fill: #c79100;
 }
@@ -348,6 +348,51 @@ margin-bottom: .5rem;
   letter-spacing: .08em;
 }
 /* ******Shelter Menu Style ******* */
+.s-detail-top{
+  margin-bottom: .3rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "web core";
+}
+.s-detail-top .web-site{
+  grid-area: web;
+}
+.s-core{
+  grid-area: core;
+}
+
+.s-sub-detail-wrapper{
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: repeat(4, minmax(.5fr, 1fr));
+  grid-template-areas: "focus subtype" "how access" "ageServe age" "lgbtq info";
+}
+.s-focus{
+  grid-area: focus;
+}
+.s-subtype{
+  grid-area: subtype;
+}
+.s-how-to{
+  grid-area: how;
+}
+.s-access{
+  grid-area: access;
+}
+.s-age-served{
+  grid-area: ageServe;
+}
+.s-age{
+  grid-area: age;
+}
+.s-lgbtq{
+  grid-area: lgbtq;
+}
+.s-info{
+  grid-area: info;
+}
+
+
 
 /* *********SVG Styles ******* */
 .svg-wrapper{
