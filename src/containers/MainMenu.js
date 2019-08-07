@@ -1,7 +1,4 @@
 import React from 'react'
-//redux
-import { connect } from 'react-redux'
-import * as actions from '../redux/actions'
 //library components
 import { Link } from 'react-router-dom'
 
@@ -66,7 +63,7 @@ const MainMenu= (props) =>{
   )
 }
 
-export default connect(null, actions)(MainMenu)
+export default MainMenu
 
 // A[10; 0] B[0; 0] C[5; 8.66]
 //equilateral triangle coordinates for triangle with 10 unit sides: A[0; -100] B[-100; -100] C[-50; -14.44]
