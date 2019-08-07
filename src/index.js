@@ -3,11 +3,7 @@ import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
 import { BrowserRouter as Router} from 'react-router-dom';
 import store from './redux/store'
-
-
-
 import App from './containers/App';
-
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(

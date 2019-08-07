@@ -421,7 +421,7 @@ margin-bottom: .5rem;
 .s-detail-top{
   margin-bottom: .3rem;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1.5fr;
   grid-template-areas: "web core";
 }
 .s-detail-top .web-site{

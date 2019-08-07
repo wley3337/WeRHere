@@ -150,7 +150,7 @@ export const serviceResources = {
             optionID: "sr-10"
         }, 
         {
-            text: "Snap Food Stamps",
+            text: "SNAP Food Stamps",
             apiKey: "SNAP_FOOD_STAMPS",
             optionID: "sr-11"
         }, 

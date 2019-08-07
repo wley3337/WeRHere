@@ -12,9 +12,10 @@
 * NPM start
 
 ### note: 
+    * Health-PC languages list languages in the language instead of english
     * current CSS is designed for a smartphone sized viewport and is minimal at present.
-    * Health, Food, and Shelter are working (but not as a PWA yet) 
-    * Services is in the first stages of development
+    * Health, Food, Shelter, and Services are working as a PWA 
+    * No Icon yet for home screen and other PWA settings but service worker is working
 
 ## Current Planned Dependancies: 
 
