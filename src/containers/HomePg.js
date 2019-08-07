@@ -16,4 +16,5 @@ export const HomePg = () =>{
             </p>
         </div>
     )
-}
+} 
+//this is having issues finding main menu
