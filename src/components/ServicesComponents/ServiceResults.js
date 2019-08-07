@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import * as actions from '../../redux/actions'
 //components
 import MultimapContainer from '../../containers/MultiMapContainer'
+import ServiceNoResults from './ServiceNoResults';
 
 class ServiceResults extends PureComponent{
     mapIt = (filterAPIKeys, location) =>{
@@ -25,17 +26,18 @@ class ServiceResults extends PureComponent{
     }
 
     serviceTargetFilter = () =>{
+        // debugger
        return this.props.selectedServiceTarget === "" ? 
             this.props.services 
             : 
-            this.props.services.filter( location => location.action.TARGET === this.props.selectedServiceTarget )
+            this.props.services.filter( local => local.attributes.TARGET === this.props.selectedServiceTarget )
     }
 
     resultsToMap = () =>{
         const resultsToMap = []
         const filterAPIKeys = this.props.filterOptions.map(option => option.apiKey)
         const locationsWithServiceTarget = this.serviceTargetFilter()
-        //if at any point an object's key has a value not null and it's in the filter API Keys array then incriment counter, if counter is === to the lenght of the filterAPIKeys array then add it to the array to be maped and 
+        //if at any point an object's key has a value not null and it's in the filter API Keys array then incriment counter, if counter is === to the length of the filterAPIKeys array then add it to the array to be maped
         locationsWithServiceTarget.forEach(location => {
             if(this.mapIt(filterAPIKeys, location)){
                 resultsToMap.push(location)
@@ -52,7 +54,7 @@ class ServiceResults extends PureComponent{
 
         return(
             <div>
-                {locationsToDisplay.length > 0 ? <MultimapContainer locations={locationsToDisplay} prgDescription={desc} sprite="embassy-15"/> : null} 
+                {locationsToDisplay.length > 0 ? <MultimapContainer locations={locationsToDisplay} prgDescription={desc} sprite="embassy-15"/> : <ServiceNoResults/>} 
             </div>
         )
     }

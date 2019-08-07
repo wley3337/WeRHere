@@ -248,6 +248,76 @@ height: auto;
 }
 
 /* ******Service Menu Style ******* */
+.service-navbar{
+  margin: .1rem .3rem;
+  padding: .2rem;
+  display:grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-areas: "s-text s-search";
+}
+#service-fo-display{
+  grid-area: s-text;
+  padding: .2rem;
+}
+#service-search{
+  grid-area: s-search;
+}
+#service-search-btn{
+  background-color: black;
+  color: white;
+
+}
+.service-s-btn{
+  font-weight: 100%;
+  margin: .1rem;
+  border: solid .1rem black;
+  border-radius: .3rem;
+  padding: .2rem;
+}
+.selected{
+  background-color: black;
+  color: white;
+}
+.not-selected{
+  background-color: cornsilk;
+  color: black;
+}
+.s-f-btn-dd{
+  margin: .3rem .2rem;
+  display: grid;
+  grid-template-columns: 1.5fr 2fr;
+  grid-template-areas: "clear dd";
+}
+#services-clear-all-btn{
+  grid-area: clear;
+  background-color: black;
+  color: white; 
+}
+#services-target-dd{
+  grid-area: dd;
+}
+
+
+.s-no-results-wrapper{
+  text-align: center;
+  padding: 1rem;
+  padding-top: 4rem;
+}
+
+.s-no-results{
+  font-size: 150%;
+}
+.s-no-results-link{
+  margin-top: 5rem;
+  font-size: 150%;
+  text-decoration: underline;
+}
+.s-no-results-link a{
+  color: black;
+}
+
+
+/* ******General Menu Styles ****** */
 .li-wrapper{
   border-bottom: solid .1rem black;
   padding: .2rem;

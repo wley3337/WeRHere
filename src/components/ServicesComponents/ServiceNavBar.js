@@ -9,9 +9,9 @@ const ServiceNavBar = ({filterOptions}) => {
     const displayText = selectedFOText.length > 0 ? selectedFOText.join(" and ") : "select options below"
     
     return(
-        <div className="service-Navbar">
+        <div className="service-navbar">
             <div id="service-fo-display">
-                Search for services that have: {displayText}
+                Search for services that have: <span className="s-fo-disp-text char-space">{displayText}</span>
             </div> 
             <Link to="/services/results" id="service-search">
                 <Button id="service-search-btn">Search</Button>

@@ -13,14 +13,17 @@ class ServiceFilterSelection extends Component{
         return(
             <div className="service-filter-selection">
                 <ServiceNavBar/>
-                <Button id="services-clear-all-btn" onClick={this.props.clearServiceFilter}>Clear all filter options</Button>
-                <Dropdown 
-                    options={this.props.serviceTargets}
-                    value={this.props.selectedServiceTarget}
-                    onChange={(re,suie) => this.props.setServiceTarget(suie.value)}
-                    placeholder='All Target Groups' 
-                    clearable selection 
-                />
+                <div className="s-f-btn-dd">
+                    <Button id="services-clear-all-btn" onClick={this.props.clearServiceFilter}>Clear all filter options</Button>
+                    <Dropdown
+                        id="services-target-dd"
+                        options={this.props.serviceTargets}
+                        value={this.props.selectedServiceTarget}
+                        onChange={(re,suie) => this.props.setServiceTarget(suie.value)}
+                        placeholder='All Target Groups' 
+                        clearable selection 
+                    />
+                </div>
                 <div className={serviceTop.location}>
                     {serviceTop.options.map( option => <SelectorButton text={option.text} apiKey={option.apiKey} key={option.optionID}/>)}
                 </div>
