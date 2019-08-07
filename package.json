@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "private": true,
   "engines": {
-    "node": "12.x"
+    "node": "12.8.9",
+    "npm": "6.10.2"
   },
   "dependencies": {
     "mapbox-gl": "^0.53.0",
