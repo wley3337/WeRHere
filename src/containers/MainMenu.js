@@ -2,7 +2,7 @@ import React from 'react'
 //library components
 import { Link } from 'react-router-dom'
 
-const MainMenu= (props) =>{
+const MainMenu= () =>{
   return(
     <div className="mm-div">
       <svg width="100%" height="100%" viewBox="0 0 203 173">

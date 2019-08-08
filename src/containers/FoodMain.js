@@ -4,7 +4,6 @@ import { Route, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import * as actions from '../redux/actions'
 //components
-import { NavBar } from '../components/NavBar'
 import { FoodMenu } from './FoodMenu'
 import MultimapContainer from './MultiMapContainer';
 
@@ -45,7 +44,7 @@ class FoodMain extends PureComponent {
     }
 }
 
-const mapStateToProps= (state) =>{
+const mSTP= (state) =>{
     return{
         healthyCornerStores: state.healthyCornerStores,
         joyfulFoodMarkets: state.joyfulFoodMarkets,
@@ -53,4 +52,4 @@ const mapStateToProps= (state) =>{
     }
 }
 
-export default withRouter(connect(mapStateToProps, actions)(FoodMain))
+export default withRouter(connect(mSTP, actions)(FoodMain))

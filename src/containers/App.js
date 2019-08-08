@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 //library components
 import { Route } from  'react-router-dom';
 //components
-import { HomePg } from './HomePg';
+import HomePg from './HomePg';
 import HealthMain from './HealthMain';
 import FoodMain from './FoodMain';
 import ShelterMain from './ShelterMain';

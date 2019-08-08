@@ -1,12 +1,12 @@
 import React from 'react'
-import { SemanticPhoneIcon, HospitalIcon } from '../icons'
+import { HospitalIcon } from '../icons'
 export const healthMenuObj = ()=>{
     return(
         [
             {
                 title: "Mental Health",
                 route: "/health/mental-health",
-                icon: <SemanticPhoneIcon />
+                icon: <HospitalIcon />
             },
             {
                 title: "Primary Care / Hospitals / Pharmicies",

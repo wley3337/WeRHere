@@ -4,7 +4,6 @@ import { Route, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import * as actions from '../redux/actions'
 //components
-import ShelterMenu from './ShelterMenu'
 import MultimapContainer from './MultiMapContainer';
 
 class ShelterMain extends PureComponent {
@@ -17,12 +16,13 @@ class ShelterMain extends PureComponent {
     render(){
         return(
             <div className="shelter-2 bg-div">
-                <Route exact path='/shelter' component={ShelterMenu} />
-                <Route exact path='/shelter/shelters' 
-                    render={() =>{
-                        return <MultimapContainer locations={this.props.homelessShelterLocations} prgDescription={this.shelterSubMenuDescriptions()} sprite="lodging-15"/>}
-                    }  
-                />  
+                {this.props.homelessShelterLocations.length === 0 ? null : 
+                    <Route exact path='/shelter' 
+                        render={() =>{
+                            return <MultimapContainer locations={this.props.homelessShelterLocations} prgDescription={this.shelterSubMenuDescriptions()} sprite="lodging-15"/>}
+                        }  
+                    />  
+                }
             </div>
         )
     }
