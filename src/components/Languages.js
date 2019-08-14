@@ -9,10 +9,10 @@ export const Languages = ({properties}) =>{
             { properties.PRIMARY_CARE_INFOVIETNAMESE.length > 1 ? <p>Tiếng Việt : 
 Vâng</p> : null}
             { properties.PRIMARY_CARE_INFOKOREAN.length > 1 ? <p>
-한국어 : 예</p> : null}
+한국어 : 네</p> : null}
             {properties.PRIMARY_CARE_INFOAMHARIC.length > 1 ? <p>
 አማርኛ : አዎ</p> : null}
-            {properties.PRIMARY_CARE_INFOCHINESE_TRADITIONAL.length > 1 ? <p>普通话 : 是 </p> : null}
+            {properties.PRIMARY_CARE_INFOCHINESE_TRADITIONAL.length > 1 ? <p>中文 : 可以 </p> : null}
             {properties.PRIMARY_CARE_INFOFRENCH.length > 1 ? <p>Français : Oui</p> : null}
             {properties.PRIMARY_CARE_INFOASL.length > 1 ? <p>ASL: Yes</p> : null}
             {properties.PRIMARY_CARE_INFOOTHER_LANGUAGE.length > 1 ? <p>Other Languages: {properties.PRIMARY_CARE_INFOOTHER_LANGUAGE}</p> : null}
