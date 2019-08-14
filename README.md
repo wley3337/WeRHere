@@ -13,7 +13,6 @@
 * `npm run startDev` for local environment
 
 ### notes to work on: 
-    * Health-PC languages list languages in the language instead of english
     * current CSS is designed for a smartphone sized viewport and is minimal at present.
     * Health, Food, Shelter, and Services are working as a PWA 
     * No Icon yet for home screen and other PWA settings but service worker is working
