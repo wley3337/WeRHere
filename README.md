@@ -14,7 +14,6 @@
 
 ### notes to work on: 
     * current CSS is designed for a smartphone sized viewport and is minimal at present.
-    * Health, Food, Shelter, and Services are working as a PWA 
     * No Icon yet for home screen and other PWA settings but service worker is working
 
 ## Current Planned Dependancies: 
@@ -36,3 +35,9 @@
 ## Wireframe as of 6/1/19
 ![Wireframe image](public/imagesForReadMe/food-shelter-layout.png) 
 
+## Actual screen shots of application 8/13/19
+![Main Menu](public/imagesForReadMe/main-menu.png) 
+![Services](public/imagesForReadMe/services.png) 
+![Food](public/imagesForReadMe/food.png)
+![Health](public/imagesForReadMe/Health.png) 
+![Shelter](public/imagesForReadMe/shelter.png) 
