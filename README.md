@@ -1,4 +1,4 @@
-# This is still a work in progress. 
+# This is still a work in progress - see notes section for the todo's. 
 ### Current version deployed on [Heroku](https://werhere.herokuapp.com/)
 
 # This is a free project intedned to be a PWA for those experiencing homelessness.
@@ -14,7 +14,6 @@
 
 ### notes to work on: 
     * current CSS is designed for a smartphone sized viewport and is minimal at present.
-    * No Icon yet for home screen and other PWA settings but service worker is working
 
 ## Current Planned Dependancies: 
 
