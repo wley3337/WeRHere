@@ -84,7 +84,7 @@ class MultimapContainer extends PureComponent {
                
                 <ShelterPopupDetail/>
                 <div>
-                    <Menu attached='top' tabular >
+                    <Menu attached='top' tabular className="map-menu">
                         <Menu.Item 
                             name='All DC' 
                             active={this.state.activeMenuItem === 'All DC'} 

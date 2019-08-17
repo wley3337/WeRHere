@@ -233,7 +233,7 @@ height: auto;
 .description{
   padding: .2rem;
   text-align: center;
-  font-size: 90%;
+  font-size: 110%;
   font-weight: 500;
 }
 
@@ -337,7 +337,7 @@ height: auto;
 }
 .li-address{
   grid-area: content;
-  font-size:90%;
+  font-size:110%;
 }
 #arrow{
   grid-area: arrow;
@@ -385,6 +385,7 @@ height: auto;
 .address{
 /* margin: .3rem; */
 margin-bottom: .8rem;
+font-size: 110%;
 }
 .web-site{
 margin-bottom: .5rem;
@@ -408,6 +409,14 @@ margin-bottom: .5rem;
   margin-left: auto;
   margin-right: auto;
   padding: .5rem;
+}
+
+.ui.tabular.menu .item{
+  font-size: 110%;
+  padding: .95em;
+}
+.ui.segment[class*="bottom attached"]{
+  border-top-right-radius: .28571429rem ;
 }
 
 .health-menu{
