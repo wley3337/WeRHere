@@ -1,7 +1,16 @@
 import React from 'react'
 
 export const MenuTriangle = ({section}) =>{
-  const servicesTextAdjustX = section === "services" ? "57.5" : "65.8"
+  const servicesTextAdjustX = () =>{
+    switch(section){
+    case "services":
+     return "57.5"
+    case "food":
+     return "72"
+    default:
+      return "64"
+  }}
+
   return(
     <div className="svg-wrapper">
       <svg viewBox="0 0 203 173" preserveAspectRatio="xMidYMid meet" className="svg-content">
@@ -10,7 +19,7 @@ export const MenuTriangle = ({section}) =>{
             className={`${section}-icon`}
           />
         <text 
-          x={servicesTextAdjustX} 
+          x={servicesTextAdjustX()} 
           y="110"
           className={`${section}-icon-text icon-text mini-sub-icon-text`}
           >
