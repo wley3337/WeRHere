@@ -2,7 +2,7 @@ import React from 'react'
 //library components
 import ReactMapboxGl, { Layer, Feature } from "react-mapbox-gl"
 
-const mapBoxToken = process.env.REACT_APP_MAPBOX_API
+const mapBoxToken = "pk.eyJ1Ijoid2xleTMzMzciLCJhIjoiY2pzMGQ0N2R5MWkwcTQzbHZ6YnM5bjBwMCJ9.-RiMyhrgweV4aKVG3GfNbA"
 const Map = ReactMapboxGl({
     accessToken: mapBoxToken
   });
