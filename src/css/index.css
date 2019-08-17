@@ -201,6 +201,19 @@ code {
   grid-template-areas: "mainMenu subMenu";
 
 }
+.mini-main-icon-bg-text{
+  fill: black;
+}
+
+.mini-main-icon-text{
+  fill: white;
+  font-size: 1.8rem;
+  background-color: black; 
+}
+
+.mini-sub-icon-text{
+  font-size: 1.8rem; 
+}
 
 .nav-bar-main{
 grid-area: mainMenu;

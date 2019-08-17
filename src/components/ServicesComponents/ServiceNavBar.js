@@ -11,7 +11,7 @@ const ServiceNavBar = ({filterOptions}) => {
     return(
         <div className="service-navbar">
             <div id="service-fo-display">
-                Search for services that have: <span className="s-fo-disp-text char-space">{displayText}</span>
+                Click on search button for services that have: <span className="s-fo-disp-text char-space">{displayText}</span>
             </div> 
             <Link to="/services/results" id="service-search">
                 <Button id="service-search-btn">Search</Button>

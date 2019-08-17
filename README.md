@@ -14,7 +14,7 @@
 
 ### notes to work on: 
     * current CSS is designed for a smartphone sized viewport and is minimal at present.
-
+    * add 'home' over home icon in bottom nav bar
 ## Current Planned Dependancies: 
 
 * react-router
@@ -40,3 +40,9 @@
 ![Food](public/imagesForReadMe/food.png)
 ![Health](public/imagesForReadMe/Health.png) 
 ![Shelter](public/imagesForReadMe/shelter.png) 
+
+
+### Icon Credits
+
+* Food icon design by: [Daniel Rodriguez](https://www.iconfinder.com/DanielRT97)
+* Hospital icon design by: [Hopnguyen Mr](https://www.iconfinder.com/Mr.hopnguyen)

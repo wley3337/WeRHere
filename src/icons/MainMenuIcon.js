@@ -26,6 +26,19 @@ export const MainMenuIcon = ({bgColorCallOut})=> {
                         points="101 172.66, 151 86, 201 172.66"
                         className="shelter-icon"
                     />
+                    <g>
+                    <rect x="35" y="104" width="134" height="35" rx="15" />
+                    {/* <rect points ="1 10, 10 -5" className="mini-main-icon-bg-text"></rect> */}
+                     <text 
+                        x="38"
+                        y="130"
+                        className={`mini-main-icon-text`}
+                        >
+                            Main Menu
+                    </text>
+                    
+                    </g>
+                    
                 </svg>
             </div>
         )
