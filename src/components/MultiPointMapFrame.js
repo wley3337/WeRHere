@@ -21,7 +21,7 @@ import * as actions from '../redux/actions'
 <southbc>38.824801</southbc>
 </bounding> */ 
 
-const mapBoxToken = "pk.eyJ1Ijoid2xleTMzMzciLCJhIjoiY2pzMGQ0N2R5MWkwcTQzbHZ6YnM5bjBwMCJ9.-RiMyhrgweV4aKVG3GfNbA"
+const mapBoxToken = process.env.REACT_APP_MAPBOX_API
 const Map = ReactMapboxGl({
     accessToken: mapBoxToken
   });
@@ -57,3 +57,19 @@ const MultiPointMapFrame =({ lat, long, sprite, pointArray, zoom, setPopupFocus 
 }
 
 export default connect(null, actions)(MultiPointMapFrame)
+
+
+//This file is part of WeRHere.
+
+// WeRHere is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+
+// WeRHere is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+
+// You should have received a copy of the GNU General Public License
+// along with WeRHere.  If not, see <https://www.gnu.org/licenses/>

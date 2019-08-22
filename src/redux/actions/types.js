@@ -38,22 +38,17 @@ export const ADD_TO_FILTER = "ADD_TO_FILTER"
 export const REMOVE_FROM_FILTER = "REMOVE_FROM_FILTER"
 export const CLEAR_SERVICE_FILTER = "CLEAR_SERVICE_FILTER"
 
-//service top menue 
-// export const FOOD_GROCERIES = "FOOD_GROCERIES"
-// export const HOUSING = "HOUSING"
-// export const MEALS = "MEALS"
-// export const OPEN_TO_PUBLIC = "OPEN_TO_PUBLIC"
-// export const PUBLIC_RESTROOMS = "PUBLIC_RESTROOMS"
-// export const REFRESHMENTS = "REFRESHMENTS"
+//This file is part of WeRHere.
 
+// WeRHere is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
 
-// FOOD_GROCERIES(pin):null
-// HOUSING(pin):null
-// MEALS(pin):null
-// OPEN_TO_PUBLIC(pin):null
-// PUBLIC_RESTROOMS(pin):"Yes"
-// REFRESHMENTS(pin):null
-// SHOWERS(pin):null
-// TARGET(pin):"Men & Women"
-// TANF Temporary Assistance for Needy Families
-// TANF_FINANCIAL_ASSISTANCE(pin):null
+// WeRHere is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+
+// You should have received a copy of the GNU General Public License
+// along with WeRHere.  If not, see <https://www.gnu.org/licenses/

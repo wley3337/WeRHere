@@ -2,6 +2,7 @@
 ### Current version deployed on [Heroku](https://werhere.herokuapp.com/)
 
 # This is a free project intedned to be a PWA for those experiencing homelessness.
+[license](./license)
 #### This utilizes specificly the Washington DC Government API's available. 
 
 #### Goal: Keep things modular so that this can act as a potential model or template for projects in other locals. 
@@ -46,3 +47,18 @@
 
 * Food icon design by: [Daniel Rodriguez](https://www.iconfinder.com/DanielRT97)
 * Hospital icon design by: [Hopnguyen Mr](https://www.iconfinder.com/Mr.hopnguyen)
+
+<!-- This file is part of WeRHere.
+
+WeRHere is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+WeRHere is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with WeRHere.  If not, see <https://www.gnu.org/licenses/ -->
