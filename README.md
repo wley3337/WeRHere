@@ -24,7 +24,8 @@
 * mapbox-gl
 * react-responsive 
 
-## Menu READMEs 
+## Menu READMEs
+
 * [Health Menu and APIs](./AdditionalREADME/HealthREADME.md) 
 * [Food Menu and APIs](./AdditionalREADME/FoodREADME.md) 
 * [Shelter Menu and APIs](./AdditionalREADME/ShelterREADME.md) 
@@ -34,6 +35,7 @@
 ![Wireframe image](public/imagesForReadMe/food-shelter-layout.png) 
 
 ## Actual screen shots of application 8/13/19
+![Desktop View](public/imagesForReadMe/desktopView.png)
 ![Main Menu](public/imagesForReadMe/main-menu.png) 
 ![Services](public/imagesForReadMe/services.png) 
 ![Food](public/imagesForReadMe/food.png)
