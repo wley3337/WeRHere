@@ -1,9 +1,9 @@
-# This is still a work in progress - see notes section for the todo's. 
-### Current version deployed on [Heroku](https://werhere.herokuapp.com/)
 
-# This is a free project intedned to be a PWA for those experiencing homelessness.
+# Current version deployed on [Heroku](https://werhere.herokuapp.com/)
+
+# This is a free project intended to be a PWA for those experiencing homelessness.
 [license](./license)
-#### This utilizes specificly the Washington DC Government API's available. 
+#### This utilizes specifically the Washington DC Government API's available. 
 
 #### Goal: Keep things modular so that this can act as a potential model or template for projects in other locals. 
 
@@ -13,9 +13,6 @@
 * NPM install 
 * `npm run startDev` for local environment
 
-### notes to work on: 
-    * current CSS is designed for a smartphone sized viewport and is minimal at present.
-    * add 'home' over home icon in bottom nav bar
 ## Current Planned Dependancies: 
 
 * react-router
@@ -25,6 +22,7 @@
 * redux-thunk
 * semantic-ui-react
 * mapbox-gl
+* react-responsive 
 
 ## Menu READMEs 
 * [Health Menu and APIs](./AdditionalREADME/HealthREADME.md) 
