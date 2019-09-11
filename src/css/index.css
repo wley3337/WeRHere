@@ -30,8 +30,6 @@ code {
 
 .bg-div{
   grid-area: content;
-  /* height: 100%;
-  width: 100%; */
   padding-top: 2rem;
   overflow-y: scroll;
 }
@@ -548,7 +546,7 @@ margin-bottom: .5rem;
   }
   .container{
     grid-area: content2;
-    height: 50rem;
+    height: 60rem;
     width:100%;
   }
   .tb-title{
