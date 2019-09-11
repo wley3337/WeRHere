@@ -10,8 +10,6 @@ import ServiceMain from './ServiceMain'
 //css files
 import 'semantic-ui-css/semantic.min.css';
 import '../css/index.css';
-import dcFlag from '../icons/dc-map-flag.png'
-import { NavBar } from '../components/NavBar';
 
 class TabletPlusView extends Component {
   render() {
@@ -25,7 +23,6 @@ class TabletPlusView extends Component {
                     return(
                         <React.Fragment>
                         <HealthMain/>
-                        {/* <NavBar section={"health"}/> */}
                         </React.Fragment>
                     )
                     }
@@ -34,7 +31,6 @@ class TabletPlusView extends Component {
                     return(
                     <React.Fragment>
                         <FoodMain/>
-                        {/* <NavBar section={"food"}/> */}
                     </React.Fragment>
                     )
                     }}/>
@@ -42,14 +38,12 @@ class TabletPlusView extends Component {
                     return(
                     <React.Fragment>
                         <ShelterMain/>
-                        {/* <NavBar section={"shelter"}/> */}
                     </React.Fragment>
                 )}}/>
                 <Route path ="/services" render={() =>{
                     return(
                     <React.Fragment>
                         <ServiceMain />
-                        {/* <NavBar section={"services"}/> */}
                     </React.Fragment>
                 )}} />
             </div>

@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 //library components
-import { Route } from  'react-router-dom';
+import MediaQuery from 'react-responsive'
 //components
 import MobileView from './MobileView';
 import TabletPlusView from './TabletPlusView';
-import MediaQuery from 'react-responsive'
 //css files
 import 'semantic-ui-css/semantic.min.css';
 import '../css/index.css';
