@@ -531,8 +531,8 @@ margin-bottom: .5rem;
   height: 100vh;
   width: 100vw;
   display: grid;
-  grid-template-columns: .5fr 1fr .5fr 1fr .5fr;
-  grid-template-rows: minmax(50px .5fr) .75fr minmax(50px .5fr);
+  grid-template-columns: .5fr 1fr .5fr 1.2fr .3fr;
+  grid-template-rows: minmax(70px .5fr) .75fr minmax(50px .5fr);
   grid-template-areas: 
   "top-empty top-empty top-empty top-empty top-empty" 
   "tb-left main-menu tb-center content2 tb-right" 
@@ -553,9 +553,9 @@ margin-bottom: .5rem;
   width:100%;
 }
 
-.hp-instructions{
+/* .hp-instructions{
   visibility: hidden;
-}
+} */
 .tb-title{
   margin: 3rem 1rem;
   padding: .3rem;
@@ -573,10 +573,14 @@ margin-bottom: .5rem;
   /* color:black; */
   padding: .3rem;
   margin-bottom: .4rem;
+  padding-bottom: 1.3rem;
 }
 .tb-adjust{
   background-color: transparent;
-  margin-bottom: 5rem;
+ 
+}
+.ui.centered.cards{
+  padding-top: 1.3rem;
 }
 .mm-div{
   margin-top: 6rem;

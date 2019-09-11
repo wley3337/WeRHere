@@ -16,7 +16,7 @@ class MobileView extends Component {
   render() {
     return (
       <div className="container">
-       <Route exact path="/" render ={() => <HomePg />}/>
+       <Route exact path="/" render ={() => <HomePg tbPlus={false}/>}/>
        <Route path="/health" render ={() => {
          return(
             <React.Fragment>

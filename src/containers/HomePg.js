@@ -1,7 +1,7 @@
 import React from 'react';
 import MainMenu from './MainMenu'
 
-const HomePg = () =>{
+const HomePg = ({tbPlus}) =>{
     return(
         <div className="health-l tb-adjust full-screen">
             <div className="tb-title"> 
@@ -12,9 +12,11 @@ const HomePg = () =>{
 
             </div>
             <MainMenu/>
-            <p className="hp-instructions">
-                 If you click through each menu to the map, that information will be available even when you don't have an internet connection.
-            </p>
+            {tbPlus? null: 
+                <p className="hp-instructions">
+                    If you click through each menu to the map, that information will be available even when you don't have an internet connection.
+                </p>
+            }
         </div>
     )
 } 

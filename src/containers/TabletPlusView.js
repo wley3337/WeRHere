@@ -18,7 +18,7 @@ class TabletPlusView extends Component {
     return (
         <div className="tab-plus-wrapper">
             <div className="tab-plus-hp-wrapper">
-                <HomePg />
+                <HomePg tbPlus={true}/>
             </div>
             <div className="container">
                 <Route path="/health" render ={() => {
