@@ -520,3 +520,68 @@ margin-bottom: .5rem;
 	top: 0;
   left: 0;
 }
+
+@media(min-width: 511px){
+.tab-plus-wrapper{
+  
+  background-image: url('/dc-map-flag.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: .5fr 1fr .5fr 1fr .5fr;
+  grid-template-rows: minmax(50px .5fr) .75fr minmax(50px .5fr);
+  grid-template-areas: 
+  "top-empty top-empty top-empty top-empty top-empty" 
+  "tb-left main-menu tb-center content2 tb-right" 
+  "bottom-empty bottom-empty bottom-empty bottom-empty bottom-empty";
+}
+.tab-plus-hp-wrapper{
+  grid-area: main-menu;
+  height: 100%;
+
+}
+.full-screen{
+  height: 90%;
+  width: 100%;
+}
+.container{
+  grid-area: content2;
+  height: 50rem;
+  width:100%;
+}
+
+.hp-instructions{
+  visibility: hidden;
+}
+.tb-title{
+  margin: 3rem 1rem;
+  padding: .3rem;
+  background-color: rgb(0, 0, 112, .8);
+  border-radius: .3rem;
+
+}
+.bg-div{
+  padding: .2rem;
+}
+/* .hp-title{
+  color:black;  
+} */
+.hp-mm-instructions{
+  /* color:black; */
+  padding: .3rem;
+  margin-bottom: .4rem;
+}
+.tb-adjust{
+  background-color: transparent;
+  margin-bottom: 5rem;
+}
+.mm-div{
+  margin-top: 6rem;
+}
+.ui.tabular.menu .item{
+  font-size: 74%;
+}
+}
