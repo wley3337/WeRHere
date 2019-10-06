@@ -26,10 +26,10 @@
 
 ## Menu READMEs
 
-* [Health Menu and APIs](./AdditionalREADME/HealthREADME.md) 
-* [Food Menu and APIs](./AdditionalREADME/FoodREADME.md) 
-* [Shelter Menu and APIs](./AdditionalREADME/ShelterREADME.md) 
-* [Services Menu and APIs](./AdditionalREADME/ServicesREADME.md) 
+* [Health Menu and APIs](./AdditionalReadME/HealthREADME.md) 
+* [Food Menu and APIs](./AdditionalReadME/FoodREADME.md) 
+* [Shelter Menu and APIs](./AdditionalReadME/ShelterREADME.md) 
+* [Services Menu and APIs](./AdditionalReadME/ServicesREADME.md) 
 
 ## Wireframe as of 6/1/19
 ![Wireframe image](public/imagesForReadMe/food-shelter-layout.png) 
