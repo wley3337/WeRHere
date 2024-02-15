@@ -1,3 +1,17 @@
+/* This file is part of WeRHere.
+
+WeRHere is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+WeRHere is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with WeRHere.  If not, see <https://www.gnu.org/licenses/>. */
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -10,4 +24,542 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.bg-div {
+  grid-area: content;
+  padding-top: 2rem;
+  overflow-y: scroll;
+}
+.full-screen {
+  height: 100vh;
+  width: 100vw;
+}
+
+.flex {
+  display: flex;
+}
+.inline-block {
+  display: inline-block;
+}
+/* ********** Text ******** */
+
+.health-text,
+.food-text {
+  color: white;
+}
+
+.shelter-text,
+.services-text {
+  color: black;
+}
+
+.gray-l {
+  color: black;
+  background-color: #e2f1f8;
+}
+
+.gray {
+  color: black;
+  background-color: #b0bec5;
+}
+
+.gray-d {
+  color: black;
+  background-color: #808e95;
+}
+
+.white-l {
+  color: black;
+  background-color: #fff;
+}
+
+.white {
+  color: black;
+  background-color: #eee;
+}
+
+.white-d {
+  color: black;
+  background-color: #bcbcbc;
+}
+
+/* ********* Icon Styles ******** */
+
+/* note: color for svg text fields is a fill property */
+.icon-text {
+  font-size: 1rem;
+}
+.health-icon-text,
+.food-icon-text {
+  fill: white;
+}
+
+.shelter-icon-text,
+.services-icon-text {
+  fill: black;
+}
+
+/* Primary colors */
+.services-icon {
+  stroke: #000;
+  stroke-width: 0.08rem;
+  fill: #ffc107;
+}
+
+.health-icon {
+  stroke: #000;
+  fill: #4527a0;
+}
+
+.food-icon {
+  stroke: #000;
+  stroke-width: 0.08rem;
+  fill: #2e7d32;
+}
+.shelter-icon {
+  stroke: #000;
+  stroke-width: 0.08rem;
+  fill: #00bcd4;
+}
+
+/* Secondary Color */
+.shelter-2 {
+  background-color: #008ba3;
+  fill: #008ba3;
+}
+
+.health-2 {
+  background-color: #000070;
+  fill: #000070;
+}
+
+.food-2 {
+  background-color: #005005;
+  fill: #005005;
+}
+
+.services-2 {
+  background-color: #c79100;
+  fill: #c79100;
+}
+
+/* Highlight color */
+
+.services-l {
+  background-color: #fff350;
+}
+
+.health-l {
+  background-color: #7953d2;
+}
+
+.food-l {
+  background-color: #60ad5e;
+}
+
+.shelter-l {
+  background-color: #62efff;
+}
+
+/* ********* Home Page ********** */
+.hp-title {
+  text-align: center;
+  padding-top: 2rem;
+  font-weight: 800;
+  font-size: 180%;
+  color: white;
+}
+.hp-mm-instructions {
+  text-align: center;
+  /* padding-top: 2rem; */
+  font-weight: 800;
+  font-size: 140%;
+  color: white;
+}
+.mm-div {
+  padding: 2em;
+  max-width: 620px;
+  max-height: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.hp-instructions {
+  margin-top: 2rem;
+  text-align: center;
+  padding: 1rem;
+  font-weight: 800;
+  font-size: 110%;
+  color: white;
+}
+/* ******** Content Containers */
+.container {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 9fr 1fr;
+  grid-template-areas: "content" "navBar";
+}
+/* ******** Bottom NavBar ******** */
+
+.nav-bar {
+  grid-area: navBar;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 0.5rem;
+  grid-template-areas: "mainMenu subMenu";
+}
+.mini-main-icon-bg-text {
+  fill: black;
+}
+
+.mini-main-icon-text {
+  fill: white;
+  font-size: 1.8rem;
+  background-color: black;
+}
+
+.mini-sub-icon-text {
+  font-size: 1.8rem;
+}
+
+.nav-bar-main {
+  grid-area: mainMenu;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  height: auto;
+}
+
+.nav-bar-sub {
+  grid-area: subMenu;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  height: auto;
+}
+
+#map-div {
+  position: relative;
+  height: 50vh;
+}
+.menu-text {
+  color: blue;
+}
+
+.restrict-size {
+  height: 100%;
+  width: 100%;
+}
+.description {
+  padding: 0.2rem;
+  text-align: center;
+  font-size: 110%;
+  font-weight: 500;
+}
+
+/* ******Map Menu Style ******* */
+.ui.tabular.menu .item {
+  font-size: 80%;
+  color: white;
+}
+.ui.tabular.menu .active.item {
+  color: black;
+  font-size: 90%;
+}
+
+/* ******Service Menu Style ******* */
+.service-navbar {
+  margin: 0.1rem 0.3rem;
+  padding: 0.2rem;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-areas: "s-text s-search";
+}
+#service-fo-display {
+  grid-area: s-text;
+  padding: 0.2rem;
+}
+#service-search {
+  grid-area: s-search;
+}
+#service-search-btn {
+  background-color: black;
+  color: white;
+}
+.service-s-btn {
+  font-weight: 100%;
+  margin: 0.1rem;
+  border: solid 0.1rem black;
+  border-radius: 0.3rem;
+  padding: 0.2rem;
+}
+.selected {
+  background-color: black;
+  color: white;
+}
+.not-selected {
+  background-color: cornsilk;
+  color: black;
+}
+.s-f-btn-dd {
+  margin: 0.3rem 0.2rem;
+  display: grid;
+  grid-template-columns: 1.5fr 2fr;
+  grid-template-areas: "clear dd";
+}
+#services-clear-all-btn {
+  grid-area: clear;
+  background-color: black;
+  color: white;
+}
+#services-target-dd {
+  grid-area: dd;
+}
+
+.s-no-results-wrapper {
+  text-align: center;
+  padding: 1rem;
+  padding-top: 4rem;
+}
+
+.s-no-results {
+  font-size: 150%;
+}
+.s-no-results-link {
+  margin-top: 5rem;
+  font-size: 150%;
+  text-decoration: underline;
+}
+.s-no-results-link a {
+  color: black;
+}
+
+/* ******General Menu Styles ****** */
+.li-wrapper {
+  border-bottom: solid 0.1rem black;
+  padding: 0.2rem;
+  margin-top: 0.2rem;
+}
+.li-wrapper a {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-areas: "content arrow";
+}
+.li-info {
+  grid-area: content;
+}
+.li-name {
+  font-size: 110%;
+}
+.li-address {
+  grid-area: content;
+  font-size: 110%;
+}
+#arrow {
+  grid-area: arrow;
+  justify-self: end;
+  align-self: center;
+  font-size: 150%;
+}
+/* ******Food Menu Style ******* */
+.f-detail-wrapper {
+  padding-left: 1rem;
+  margin-bottom: 0.8rem;
+}
+.f-detail-title {
+  margin-bottom: 0.5rem;
+}
+.space-left {
+  margin-left: 0.3rem;
+}
+.bold {
+  font-weight: bold;
+}
+
+/* ******Health Menu Style ******* */
+.mh-item-detail {
+  padding: 0.5rem;
+  padding-left: 1rem;
+}
+.mh-access-phone {
+  text-align: center;
+  font-size: 110%;
+}
+.mh-access-phone a {
+  padding-left: 1rem;
+}
+.h-detail-wrapper {
+  padding: 0.2rem 0.2rem 0.2rem 0.8rem;
+}
+
+.name {
+  font-size: 150%;
+  margin-bottom: 0.4rem;
+  text-align: center;
+  /* padding-left: .3rem; */
+}
+.address {
+  /* margin: .3rem; */
+  margin-bottom: 0.8rem;
+  font-size: 110%;
+}
+.web-site {
+  margin-bottom: 0.5rem;
+}
+.web-site a {
+  font-size: 120%;
+  color: white;
+  border-bottom: solid 0.1rem white;
+}
+.phone-1,
+.phone-2 {
+  margin-top: 0.3rem;
+  margin-bottom: 0.2rem;
+}
+.phone-1 a,
+.phone-2 a {
+  font-weight: bold;
+  padding-left: 0.3rem;
+}
+#map-div {
+  margin: 0.3rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0.5rem;
+}
+
+.ui.tabular.menu .item {
+  font-size: 110%;
+  padding: 0.95em;
+}
+.ui.segment[class*="bottom attached"] {
+  border-top-right-radius: 0.28571429rem;
+}
+
+.health-menu {
+  margin-top: 1rem;
+}
+
+.char-space {
+  letter-spacing: 0.08em;
+}
+/* ******Shelter Menu Style ******* */
+.s-detail-top {
+  margin-bottom: 0.3rem;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  grid-template-areas: "web core";
+}
+.s-detail-top .web-site {
+  grid-area: web;
+}
+.s-core {
+  grid-area: core;
+}
+
+.s-sub-detail-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: repeat(4, minmax(0.5fr, 1fr));
+  grid-template-areas: "focus subtype" "how access" "ageServe age" "lgbtq info";
+}
+.s-focus {
+  grid-area: focus;
+}
+.s-subtype {
+  grid-area: subtype;
+}
+.s-how-to {
+  grid-area: how;
+}
+.s-access {
+  grid-area: access;
+}
+.s-age-served {
+  grid-area: ageServe;
+}
+.s-age {
+  grid-area: age;
+}
+.s-lgbtq {
+  grid-area: lgbtq;
+}
+.s-info {
+  grid-area: info;
+}
+
+/* *********SVG Styles ******* */
+.svg-wrapper {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+
+  padding-bottom: 100%;
+  vertical-align: middle;
+  overflow: hidden;
+}
+
+.svg-content {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+/* ************ STYLES FOR TABLET PLUS SIZE VIEWPORTS ******** */
+@media (min-width: 511px) {
+  .tab-plus-wrapper {
+    background-image: url("/dc-map-flag.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 0.5fr 1fr 0.5fr 1.2fr 0.3fr;
+    grid-template-rows: minmax(70px 0.5fr) 0.75fr minmax(50px 0.5fr);
+    grid-template-areas:
+      "top-empty top-empty top-empty top-empty top-empty"
+      "tb-left main-menu tb-center content2 tb-right"
+      "bottom-empty bottom-empty bottom-empty bottom-empty bottom-empty";
+  }
+  .tab-plus-hp-wrapper {
+    grid-area: main-menu;
+    height: 100%;
+  }
+  .full-screen {
+    height: 90%;
+    width: 100%;
+  }
+  .container {
+    grid-area: content2;
+    height: 60rem;
+    width: 100%;
+  }
+  .tb-title {
+    margin: 3rem 1rem;
+    padding: 0.3rem;
+    background-color: rgb(0, 0, 112, 0.8);
+    border-radius: 0.3rem;
+  }
+  .bg-div {
+    padding: 0.2rem;
+  }
+  .hp-mm-instructions {
+    padding: 0.3rem;
+    margin-bottom: 0.4rem;
+    padding-bottom: 1.3rem;
+  }
+  .tb-adjust {
+    background-color: transparent;
+  }
+  .ui.centered.cards {
+    padding-top: 1.3rem;
+  }
+  .mm-div {
+    margin-top: 6rem;
+  }
+  .ui.tabular.menu .item {
+    font-size: 74%;
+  }
 }

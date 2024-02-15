@@ -1,14 +1,27 @@
-import Shelters from "src/components/Shelters"
+import { useGetAllSheltersQuery } from "src/Data/apis/shelters/shelters"
+import Shelter from "src/components/Shelters/Shelter"
 
-const App = () => {
+const Shelters = () => {
+  const { data: shelters, error, isLoading } = useGetAllSheltersQuery("/")
+  console.log({ shelters, error, isLoading })
+
   return (
     <div>
-      <Shelters />
+      {isLoading ? (
+        <div>shelters are loading</div>
+      ) : (
+        <div>
+          {shelters?.map((shelter) => (
+            <Shelter shelter={shelter} />
+          ))}
+        </div>
+      )}
     </div>
   )
 }
 
-export default App
+export default Shelters
+
 /* This file is part of WeRHere.
 
 WeRHere is free software: you can redistribute it and/or modify
