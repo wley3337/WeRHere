@@ -1,16 +1,12 @@
-import Services from "src/components/Services"
-import Shelters from "src/components/Shelters"
+import { useGetServicesQuery } from "src/Data/apis/services/services"
 
-const App = () => {
-  return (
-    <div>
-      <Shelters />
-      <Services />
-    </div>
-  )
+const Services = () => {
+  const { data: services, error, isLoading } = useGetServicesQuery("/")
+  return <div>services</div>
 }
 
-export default App
+export default Services
+
 /* This file is part of WeRHere.
 
 WeRHere is free software: you can redistribute it and/or modify

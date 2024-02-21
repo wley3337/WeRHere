@@ -3,7 +3,6 @@ import Shelter from "src/components/Shelters/Shelter"
 
 const Shelters = () => {
   const { data: shelters, error, isLoading } = useGetAllSheltersQuery("/")
-  console.log({ shelters, error, isLoading })
 
   return (
     <div>
@@ -12,7 +11,7 @@ const Shelters = () => {
       ) : (
         <div>
           {shelters?.map((shelter) => (
-            <Shelter shelter={shelter} />
+            <Shelter key={shelter.properties.objectid} shelter={shelter} />
           ))}
         </div>
       )}

@@ -7,14 +7,30 @@ import {
 import { toCamleCase } from "src/Data/utils/camelCaseKeys"
 
 const servicesUrl =
-  "https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Public_Service_WebMercator/MapServer/6/query?outFields=*&where=1%3D1&f=geojson"
+  "https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Public_Service_WebMercator/MapServer/6/"
 
 export const servicesApi = createApi({
   reducerPath: "servicessApi",
   baseQuery: fetchBaseQuery({ baseUrl: servicesUrl }),
   endpoints: (build) => ({
     getServices: build.query<ServicesFeatureCamelCase[]>({
-      query: (query: Record<string, any>) => `${new URLSearchParams(query)}`,
+      query: (query: Record<string, any>) => {
+        const baseEntries = [
+          // this is what the query param should look like.
+          // It should not be all caps like the website.
+          // descriptive fields are not partial search, they're exact match
+          // ["where", "BORROW_MATERIALS='Yes'"],
+          // this is what no filter looks like
+          ["where", "1=1"],
+          // returns all fields of a feature
+          ["outFields", "*"],
+          ["outSR", "4326"],
+          ["f", "json"],
+        ]
+
+        const search = new URLSearchParams(baseEntries)
+        return `query?${search.toString()}`
+      },
       transformResponse: (rawResult: ServicesAPIReturn) => {
         return rawResult.features.map((feature) =>
           toCamleCase<typeof feature>(feature),

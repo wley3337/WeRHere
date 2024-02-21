@@ -5,7 +5,7 @@ interface ShelterProps {
 }
 
 const Shelter = ({ shelter }: ShelterProps) => {
-  const { geometry, properties } = shelter
+  const { properties } = shelter
   const {
     agesServed,
     howToAccess,
@@ -16,7 +16,6 @@ const Shelter = ({ shelter }: ShelterProps) => {
     type,
     webUrl,
   } = properties
-  console.log({ shelter })
   return (
     <div>
       <div className="f-detail-wrapper">
