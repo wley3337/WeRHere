@@ -1,18 +1,21 @@
 import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit"
 import { setupListeners } from "@reduxjs/toolkit/query"
+
+import { dialysisClinicsApi } from "src/Data/apis/health/dialysisClinics/dialysisClinics"
 import { servicesApi } from "src/Data/apis/services/services"
 import { shelterApi } from "src/Data/apis/shelters/shelters"
-//import counterReducer from "../features/counter/counterSlice"
 
 export const store = configureStore({
   reducer: {
-    [shelterApi.reducerPath]: shelterApi.reducer,
+    [dialysisClinicsApi.reducerPath]: dialysisClinicsApi.reducer,
     [servicesApi.reducerPath]: servicesApi.reducer,
+    [shelterApi.reducerPath]: shelterApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(
-      shelterApi.middleware,
+      dialysisClinicsApi.middleware,
       servicesApi.middleware,
+      shelterApi.middleware,
     ),
 })
 
