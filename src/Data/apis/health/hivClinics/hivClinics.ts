@@ -1,21 +1,21 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react"
 
 import {
-  DialysisClinicFeatureCamelCase,
-  DialysisClinicsAPIReturn,
-} from "src/Data/apis/health/dialysisClinics/types"
+  HIVClinicAPIReturn,
+  HIVClinicsFeatureCamelCase,
+} from "src/Data/apis/health/hivClinics/types"
 import { toCamleCase } from "src/Data/utils/camelCaseKeys"
 
-const dialysisClinicsUrl =
-  "https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Health_WebMercator/MapServer/10/query?outFields=*&where=1%3D1&f=geojson"
+const hivClinicsUrl =
+  "https://maps2.dcgis.dc.gov/dcgis/rest/services/DCGIS_DATA/Health_WebMercator/MapServer/3/query?outFields=*&where=1%3D1&f=geojson"
 
-export const dialysisClinicsApi = createApi({
-  reducerPath: "dialysisClinicssApi",
-  baseQuery: fetchBaseQuery({ baseUrl: dialysisClinicsUrl }),
+export const hivClinicsApi = createApi({
+  reducerPath: "hivClinicssApi",
+  baseQuery: fetchBaseQuery({ baseUrl: hivClinicsUrl }),
   endpoints: (build) => ({
-    getAllDialysisClinics: build.query<DialysisClinicFeatureCamelCase[]>({
+    getAllHIVClinics: build.query<HIVClinicsFeatureCamelCase[]>({
       query: () => "/",
-      transformResponse: (rawResult: DialysisClinicsAPIReturn) => {
+      transformResponse: (rawResult: HIVClinicAPIReturn) => {
         return rawResult.features.map((feature) =>
           toCamleCase<typeof feature>(feature),
         )
@@ -24,7 +24,7 @@ export const dialysisClinicsApi = createApi({
   }),
 })
 
-export const { useGetAllDialysisClinicsQuery } = dialysisClinicsApi
+export const { useGetAllHIVClinicsQuery } = hivClinicsApi
 
 /* This file is part of WeRHere.
 
